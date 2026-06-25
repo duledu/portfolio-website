@@ -1,0 +1,79 @@
+// ============================================================
+// WEBSITES PAGE
+// ============================================================
+
+.page-websites {
+  padding-top: 8rem;
+
+  @include lg {
+    padding-top: 10rem;
+  }
+}
+
+.websites-hero {
+  padding: 0 $gutter $space-lg;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: 0 $gutter-lg $space-xl;
+  }
+
+  &__headline {
+    font-family: $font-display;
+    font-size: clamp(2.5rem, 6vw, 7.5rem);
+    font-weight: 300;
+    line-height: 0.93;
+    letter-spacing: -0.025em;
+    margin-bottom: 2.5rem;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @include lg {
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    span {
+      font-size: 0.8125rem;
+      color: $slate;
+
+      strong {
+        color: $muted;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.websites-filter {
+  padding: 2rem $gutter;
+  border-bottom: 1px solid $line;
+  position: sticky;
+  top: 4.5rem;
+  z-index: 10;
+  background: rgba($black, 0.9);
+  backdrop-filter: blur(12px);
+
+  @include lg {
+    padding: 1.75rem $gutter-lg;
+  }
+}
+
+.websites-grid {
+  padding: $space-lg $gutter;
+
+  @include lg {
+    padding: $space-xl $gutter-lg;
+  }
+}
+
+// ============================================================
+// WEBSITES PAGE — SINGLE PROJECT
+// ============================================================
+
+// See _website-single.scss

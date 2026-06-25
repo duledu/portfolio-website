@@ -1,0 +1,551 @@
+// ============================================================
+// HOME PAGE
+// ============================================================
+
+// ---- Hero ----
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 $gutter;
+  padding-bottom: $space-lg;
+  padding-top: 8rem;
+  position: relative;
+  overflow: hidden;
+
+  @include lg {
+    padding: 0 $gutter-lg;
+    padding-bottom: $space-xl;
+    padding-top: 10rem;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    // Subtle noise texture
+    &::after {
+      content: '';
+      @include fill;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 72rem;
+  }
+
+  &__label {
+    margin-bottom: 3rem;
+  }
+
+  &__headline {
+    font-family: $font-display;
+    font-size: clamp(3rem, 7.5vw, 9.5rem);
+    font-weight: 300;
+    line-height: 0.93;
+    letter-spacing: -0.025em;
+    color: $paper;
+    margin-bottom: 3rem;
+
+    em {
+      font-style: italic;
+      color: $gold;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    @include lg {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  &__sub {
+    font-size: clamp(0.9375rem, 1.25vw, 1.125rem);
+    color: $muted;
+    line-height: 1.7;
+    max-width: 30rem;
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  // ---- Scroll indicator ----
+  &__scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    right: $gutter;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 1;
+
+    @include lg {
+      right: $gutter-lg;
+    }
+
+    span {
+      writing-mode: vertical-rl;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $slate;
+    }
+
+    &-line {
+      width: 1px;
+      height: 3rem;
+      background: $line;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $gold;
+        animation: scroll-line 2s $ease-in-out infinite;
+      }
+    }
+  }
+}
+
+@keyframes scroll-line {
+  0%   { top: -100%; }
+  100% { top: 100%; }
+}
+
+// ---- Featured project ----
+.section-featured {
+  padding: $space-lg $gutter;
+  border-top: 1px solid $line;
+
+  @include lg {
+    padding: $space-xl $gutter-lg;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $space-lg;
+  }
+}
+
+// ---- Selected works (home preview) ----
+.section-works {
+  padding: $space-lg $gutter 0;
+  border-top: 1px solid $line;
+
+  @include lg {
+    padding: $space-xl $gutter-lg 0;
+  }
+}
+
+// ---- About preview ----
+.section-about-preview {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+    align-items: center;
+  }
+
+  &__img {
+    position: relative;
+    @include aspect(3/4);
+    overflow: hidden;
+    background: $dark;
+
+    img {
+      @include fill;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__body {
+    font-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
+    color: $muted;
+    line-height: 1.75;
+  }
+}
+
+// ---- Services preview ----
+.section-services-preview {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+}
+
+.services-list {
+  margin-top: $space-lg;
+  border-top: 1px solid $line;
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid $line;
+  @include transition(background);
+  position: relative;
+  cursor: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba($paper, 0.02);
+    opacity: 0;
+    transition: opacity $duration-fast $ease;
+  }
+
+  &:hover::before { opacity: 1; }
+
+  &__num {
+    font-family: $font-mono;
+    font-size: 0.6875rem;
+    color: $slate;
+    letter-spacing: 0.08em;
+    width: 2.5rem;
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    @include transition(color);
+  }
+
+  &:hover &__name { color: $gold; }
+
+  &__arrow {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+    transition: opacity $duration-fast $ease, transform $duration-fast $ease;
+    color: $muted;
+
+    svg { width: 1.25rem; height: 1.25rem; }
+  }
+
+  &:hover &__arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// ---- Process ----
+.section-process {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+  background: $dark;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: $space-lg;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.process-step {
+  border-top: 1px solid $line;
+  padding-top: 2rem;
+
+  &__num {
+    font-family: $font-mono;
+    font-size: 0.6875rem;
+    color: $gold;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+  }
+
+  &__body {
+    font-size: 0.875rem;
+    color: $slate;
+    line-height: 1.75;
+  }
+}
+
+// ---- Stats ----
+.section-stats {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-item {
+  padding: 2.5rem 0;
+  border-right: 1px solid $line;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: 3rem 2rem;
+  }
+
+  &:last-child,
+  &:nth-child(2) {
+    border-right: none;
+
+    @include lg {
+      border-right: 1px solid $line;
+    }
+  }
+
+  &:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  @include lg {
+    &:last-child { border-right: none; }
+    &:nth-child(2) { border-right: 1px solid $line; }
+    &:nth-last-child(-n+4) { border-bottom: none; }
+  }
+
+  &__num {
+    font-family: $font-display;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    color: $paper;
+    line-height: 1;
+
+    span {
+      color: $gold;
+    }
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    color: $slate;
+    letter-spacing: 0.08em;
+    margin-top: 0.75rem;
+    text-transform: uppercase;
+  }
+}
+
+// ---- Testimonials ----
+.section-testimonials {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+  background: $dark;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: $line;
+  border: 1px solid $line;
+  margin-top: $space-lg;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimonial-item {
+  background: $dark;
+  padding: 2.5rem 2rem;
+
+  @include lg {
+    padding: 3rem;
+  }
+
+  &__quote {
+    font-family: $font-display;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.55;
+    color: $paper;
+    margin-bottom: 2rem;
+
+    &::before {
+      content: '"';
+      display: block;
+      font-size: 3rem;
+      color: $gold;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  &__author {
+    &-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $paper;
+    }
+
+    &-role {
+      font-size: 0.75rem;
+      color: $slate;
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+// ---- Tech stack ----
+.section-tech {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  background: $line;
+  border: 1px solid $line;
+  margin-top: $space-lg;
+
+  @include md {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.tech-item {
+  background: $black;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  @include transition(background);
+
+  &:hover {
+    background: $dark;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $muted;
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+
+  &__name {
+    font-size: 0.6875rem;
+    color: $slate;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+// ---- Final CTA ----
+.section-final-cta {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+  text-align: center;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+
+  &__headline {
+    font-family: $font-display;
+    font-size: clamp(2.5rem, 6vw, 7rem);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin-bottom: 2.5rem;
+
+    em {
+      font-style: italic;
+      color: $gold;
+    }
+  }
+}

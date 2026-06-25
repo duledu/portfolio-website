@@ -1,0 +1,96 @@
+// ============================================================
+// GRID
+// ============================================================
+
+// Base layout grid
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: $gutter;
+
+  @include lg {
+    column-gap: $gutter-lg;
+  }
+}
+
+// Column spans
+.col-full  { grid-column: 1 / -1; }
+.col-half  { grid-column: 1 / -1; @include md { grid-column: span 6; } }
+.col-6     { grid-column: 1 / -1; @include lg { grid-column: span 6; } }
+.col-7     { grid-column: 1 / -1; @include lg { grid-column: span 7; } }
+.col-8     { grid-column: 1 / -1; @include lg { grid-column: span 8; } }
+.col-5     { grid-column: 1 / -1; @include lg { grid-column: span 5; } }
+.col-4     { grid-column: 1 / -1; @include lg { grid-column: span 4; } }
+.col-3     { grid-column: 1 / -1; @include lg { grid-column: span 3; } }
+
+// Content width constraints
+.content-narrow {
+  max-width: 40rem;
+}
+
+.content-medium {
+  max-width: 56rem;
+}
+
+.content-wide {
+  max-width: 72rem;
+}
+
+// Section intro row
+.section-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: $space-lg;
+
+  @include lg {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: $space-xl;
+  }
+
+  &__text {
+    flex: 1;
+    max-width: 36rem;
+  }
+
+  &__action {
+    flex-shrink: 0;
+  }
+}
+
+// Two column split
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include lg {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-xl;
+  }
+}
+
+// Asymmetric split
+.split-6-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include lg {
+    grid-template-columns: 6fr 4fr;
+    gap: $space-xl;
+  }
+}
+
+.split-4-6 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include lg {
+    grid-template-columns: 4fr 6fr;
+    gap: $space-xl;
+  }
+}

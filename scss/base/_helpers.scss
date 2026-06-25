@@ -1,0 +1,125 @@
+// ============================================================
+// HELPERS
+// ============================================================
+
+// Container
+.container {
+  @include container;
+}
+
+// Horizontal rule
+hr, .hr {
+  @include hr;
+}
+
+// Section spacing
+.section {
+  padding: $space-xl 0;
+
+  @include lg {
+    padding: $space-2xl 0;
+  }
+}
+
+.section--sm {
+  padding: $space-lg 0;
+}
+
+.section--lg {
+  padding: $space-2xl 0;
+
+  @include lg {
+    padding: $space-3xl 0;
+  }
+}
+
+// Fade up elements (JS targets)
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(2.5rem);
+  transition: opacity 0.75s $ease-out, transform 0.75s $ease-out;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-reveal-delay="1"] { transition-delay: 0.1s; }
+[data-reveal-delay="2"] { transition-delay: 0.2s; }
+[data-reveal-delay="3"] { transition-delay: 0.3s; }
+[data-reveal-delay="4"] { transition-delay: 0.4s; }
+[data-reveal-delay="5"] { transition-delay: 0.5s; }
+[data-reveal-delay="6"] { transition-delay: 0.6s; }
+
+// Image reveal wrapper
+.img-reveal {
+  overflow: hidden;
+
+  img {
+    transform: scale(1.08);
+    transition: transform 1.2s $ease-out;
+  }
+
+  &.is-visible img {
+    transform: scale(1);
+  }
+}
+
+// Grid helpers
+.grid {
+  display: grid;
+}
+
+.grid--2 {
+  grid-template-columns: 1fr;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid--3 {
+  grid-template-columns: 1fr;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid--4 {
+  grid-template-columns: repeat(2, 1fr);
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Visually hidden (accessible)
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Divider line
+.divider {
+  width: 100%;
+  height: 1px;
+  background: $line;
+}
+
+// No cursor pages
+.no-cursor {
+  cursor: none;
+}

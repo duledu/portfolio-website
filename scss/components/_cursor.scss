@@ -1,0 +1,109 @@
+// ============================================================
+// CUSTOM CURSOR
+// ============================================================
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-cursor;
+  pointer-events: none;
+  mix-blend-mode: difference;
+
+  // ---- Dot ----
+  &__dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: $paper;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s $ease, height 0.2s $ease, opacity 0.2s $ease;
+    will-change: transform;
+  }
+
+  // ---- Ring ----
+  &__ring {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba($paper, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.35s $ease-out, height 0.35s $ease-out, opacity 0.2s $ease, border-color 0.2s $ease;
+    will-change: transform;
+  }
+
+  // ---- States ----
+  &.is-link &__ring {
+    width: 56px;
+    height: 56px;
+    border-color: rgba($paper, 0.3);
+  }
+
+  &.is-link &__dot {
+    width: 4px;
+    height: 4px;
+    opacity: 0.5;
+  }
+
+  &.is-hover &__ring {
+    width: 80px;
+    height: 80px;
+    border-color: rgba($gold, 0.5);
+  }
+
+  &.is-hover &__dot {
+    background: $gold;
+  }
+
+  &.is-hidden &__dot,
+  &.is-hidden &__ring {
+    opacity: 0;
+  }
+
+  &.is-drag &__ring {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+// ---- Cursor label (for project cards) ----
+.cursor-label {
+  position: fixed;
+  z-index: $z-cursor;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity $duration-fast $ease;
+
+  span {
+    display: block;
+    padding: 0.5rem 1rem;
+    background: $paper;
+    color: $black;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &.is-visible {
+    opacity: 1;
+  }
+}
+
+// Hide system cursor on all interactive elements
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  label,
+  [role="button"] {
+    cursor: none !important;
+  }
+}

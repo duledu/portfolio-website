@@ -1,0 +1,53 @@
+// ============================================================
+// VARIABLES
+// ============================================================
+
+// Colors
+$black:   #050509;
+$dark:    #0B0B0F;
+$paper:   #F9F4ED;
+$muted:   #AEB4C0;
+$slate:   #737E87;
+$gold:    #A48442;
+$line:    rgba(249,244,237,.12);
+
+// Typography
+$font-display: 'Cormorant Garamond', 'Georgia', serif;
+$font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+$font-mono:    'DM Mono', 'Courier New', monospace;
+
+// Spacing
+$space-xs:  0.5rem;
+$space-sm:  1rem;
+$space-md:  2rem;
+$space-lg:  4rem;
+$space-xl:  8rem;
+$space-2xl: 12rem;
+$space-3xl: 16rem;
+
+// Grid
+$max-width: 1440px;
+$gutter:    2rem;
+$gutter-lg: 4rem;
+
+// Transitions
+$ease:      cubic-bezier(0.25, 0.1, 0.25, 1);
+$ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+$ease-in:   cubic-bezier(0.4, 0, 1, 1);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$duration:  0.6s;
+$duration-fast: 0.3s;
+
+// Breakpoints
+$bp-sm:  640px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;
+$bp-2xl: 1440px;
+
+// Z-index
+$z-cursor:  9999;
+$z-loader:  9998;
+$z-nav:     900;
+$z-header:  800;
+$z-overlay: 700;

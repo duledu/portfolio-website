@@ -1,0 +1,353 @@
+// ============================================================
+// WEBSITE SINGLE — CASE STUDY
+// ============================================================
+
+.page-single {
+  padding-top: 8rem;
+
+  @include lg {
+    padding-top: 10rem;
+  }
+}
+
+// ---- Project hero ----
+.project-hero {
+  padding: 0 $gutter;
+  margin-bottom: $space-xl;
+
+  @include lg {
+    padding: 0 $gutter-lg;
+  }
+
+  &__label {
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(2.5rem, 6vw, 8rem);
+    font-weight: 300;
+    line-height: 0.93;
+    letter-spacing: -0.025em;
+    margin-bottom: 3rem;
+  }
+
+  &__image {
+    width: 100%;
+    overflow: hidden;
+    background: $dark;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+// ---- Project overview ----
+.project-overview {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+
+  @include lg {
+    padding: $space-xl $gutter-lg;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 2rem;
+
+    @include lg {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__field {
+    &-label {
+      @extend .eyebrow;
+      margin-bottom: 0.75rem;
+      font-size: 0.625rem;
+    }
+
+    &-value {
+      font-family: $font-body;
+      font-size: 0.9375rem;
+      color: $paper;
+    }
+
+    &-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__description {
+    font-family: $font-display;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 300;
+    line-height: 1.45;
+    color: $muted;
+    letter-spacing: -0.01em;
+  }
+
+  &__live {
+    margin-top: 2rem;
+  }
+}
+
+// ---- Case study sections ----
+.case-section {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+
+  @include lg {
+    padding: $space-xl $gutter-lg;
+  }
+
+  &--dark {
+    background: $dark;
+  }
+
+  &__inner {
+    max-width: 56rem;
+  }
+
+  &__heading {
+    font-family: $font-display;
+    font-size: clamp(1.75rem, 3vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+
+  &__body {
+    font-size: 1rem;
+    color: $muted;
+    line-height: 1.8;
+
+    p + p {
+      margin-top: 1.25rem;
+    }
+  }
+
+  &__list {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 0.9375rem;
+      color: $muted;
+
+      &::before {
+        content: '—';
+        color: $gold;
+        flex-shrink: 0;
+        margin-top: 0.1em;
+      }
+    }
+  }
+}
+
+// ---- Screenshot gallery ----
+.project-gallery {
+  padding: 0 $gutter $space-xl;
+  border-top: 1px solid $line;
+
+  @include lg {
+    padding: 0 $gutter-lg $space-xl;
+  }
+
+  &__header {
+    padding: $space-xl 0 $space-lg;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__img {
+    overflow: hidden;
+    background: $dark;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.85s $ease-out;
+    }
+
+    &:hover img {
+      transform: scale(1.02);
+    }
+
+    &--full {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+// ---- Results ----
+.project-results {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+  background: $dark;
+
+  @include lg {
+    padding: $space-xl $gutter-lg;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: $space-lg;
+
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__stat {
+    border-top: 1px solid $line;
+    padding-top: 1.5rem;
+
+    &-num {
+      font-family: $font-display;
+      font-size: clamp(2rem, 4vw, 4rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: $paper;
+
+      span { color: $gold; }
+    }
+
+    &-label {
+      font-size: 0.75rem;
+      color: $slate;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// ---- Project testimonial ----
+.project-testimonial {
+  padding: $space-xl $gutter;
+  border-top: 1px solid $line;
+  text-align: center;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+
+  &__quote {
+    font-family: $font-display;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    color: $paper;
+    max-width: 52rem;
+    margin: 0 auto 2.5rem;
+
+    &::before {
+      content: '"';
+      color: $gold;
+      display: block;
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__author {
+    &-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $muted;
+    }
+
+    &-role {
+      font-size: 0.75rem;
+      color: $slate;
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+// ---- Next project ----
+.next-project {
+  display: block;
+  border-top: 1px solid $line;
+  padding: $space-xl $gutter;
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+
+  @include lg {
+    padding: $space-xl $gutter-lg;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+
+    img {
+      @include fill;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.1);
+      transition: opacity 0.6s $ease, transform 1s $ease-out;
+    }
+  }
+
+  &:hover &__bg img {
+    opacity: 0.12;
+    transform: scale(1);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__label {
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(2rem, 5vw, 6rem);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    color: $paper;
+    @include transition(color);
+  }
+
+  &:hover &__title {
+    color: $gold;
+  }
+}

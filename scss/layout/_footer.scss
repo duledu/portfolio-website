@@ -1,0 +1,170 @@
+// ============================================================
+// FOOTER
+// ============================================================
+
+.footer {
+  background: $dark;
+  border-top: 1px solid $line;
+
+  // ---- CTA band ----
+  &__cta {
+    padding: $space-xl $gutter;
+    border-bottom: 1px solid $line;
+    text-align: center;
+
+    @include lg {
+      padding: $space-2xl $gutter-lg;
+    }
+
+    &-label {
+      @extend .eyebrow;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+
+      &::before { display: none; }
+    }
+
+    &-headline {
+      font-family: $font-display;
+      font-size: clamp(3rem, 7vw, 8rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.025em;
+      color: $paper;
+      margin-bottom: 3rem;
+
+      em {
+        color: $gold;
+        font-style: italic;
+      }
+    }
+
+    &-email {
+      display: inline-block;
+      font-family: $font-display;
+      font-size: clamp(1.25rem, 2.5vw, 2rem);
+      font-weight: 300;
+      color: $muted;
+      letter-spacing: -0.01em;
+      @include hover-line;
+
+      &:hover {
+        color: $paper;
+      }
+    }
+  }
+
+  // ---- Main footer grid ----
+  &__main {
+    padding: $space-lg $gutter;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    @include md {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include lg {
+      padding: $space-lg $gutter-lg;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 0;
+    }
+  }
+
+  &__brand {
+    .footer__logo {
+      font-family: $font-display;
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: $paper;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+
+      span { color: $gold; }
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: $slate;
+      line-height: 1.65;
+      max-width: 22rem;
+    }
+  }
+
+  &__col {
+    &-title {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $slate;
+      margin-bottom: 1.25rem;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    a {
+      font-size: 0.875rem;
+      color: $muted;
+      @include transition(color);
+
+      &:hover {
+        color: $paper;
+      }
+    }
+  }
+
+  // ---- Bottom bar ----
+  &__bottom {
+    padding: 1.5rem $gutter;
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid $line;
+
+    @include lg {
+      padding: 1.5rem $gutter-lg;
+    }
+
+    &-copy {
+      font-size: 0.75rem;
+      color: $slate;
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .back-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: $slate;
+      @include transition(color);
+
+      &:hover {
+        color: $paper;
+      }
+
+      svg {
+        width: 0.875rem;
+        height: 0.875rem;
+        transition: transform $duration-fast $ease;
+      }
+
+      &:hover svg {
+        transform: translateY(-3px);
+      }
+    }
+  }
+}

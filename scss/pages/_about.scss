@@ -1,0 +1,465 @@
+// ============================================================
+// ABOUT PAGE
+// ============================================================
+
+.page-about {
+  padding-top: 8rem;
+
+  @include lg {
+    padding-top: 10rem;
+  }
+}
+
+.about-hero {
+  padding: 0 $gutter $space-xl;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: 0 $gutter-lg $space-2xl;
+  }
+
+  &__headline {
+    font-family: $font-display;
+    font-size: clamp(2.5rem, 6.5vw, 8.5rem);
+    font-weight: 300;
+    line-height: 0.93;
+    letter-spacing: -0.025em;
+
+    em {
+      font-style: italic;
+      color: $gold;
+    }
+  }
+}
+
+.about-intro {
+  padding: $space-xl $gutter;
+  border-bottom: 1px solid $line;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+    grid-template-columns: 5fr 7fr;
+    gap: 8rem;
+    align-items: start;
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    background: $dark;
+    aspect-ratio: 3/4;
+
+    img {
+      @include fill;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 1rem;
+
+    @include lg {
+      padding-top: 3rem;
+    }
+
+    p {
+      font-size: clamp(1rem, 1.4vw, 1.1875rem);
+      color: $muted;
+      line-height: 1.8;
+    }
+  }
+}
+
+.about-values {
+  padding: $space-xl $gutter;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: $space-lg;
+    border-top: 1px solid $line;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid $line;
+
+    @include md {
+      padding: 2.5rem 3rem 2.5rem 0;
+
+      &:nth-child(even) {
+        padding-left: 3rem;
+        padding-right: 0;
+        border-left: 1px solid $line;
+      }
+    }
+
+    &-num {
+      font-family: $font-mono;
+      font-size: 0.6875rem;
+      color: $gold;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+    }
+
+    &-title {
+      font-family: $font-display;
+      font-size: 1.625rem;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    &-body {
+      font-size: 0.875rem;
+      color: $slate;
+      line-height: 1.75;
+    }
+  }
+}
+
+.about-timeline {
+  padding: $space-xl $gutter;
+  border-bottom: 1px solid $line;
+  background: $dark;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+
+  &__list {
+    margin-top: $space-lg;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid $line;
+
+    &-year {
+      font-family: $font-mono;
+      font-size: 0.75rem;
+      color: $slate;
+      letter-spacing: 0.06em;
+      padding-top: 0.25rem;
+      width: 4rem;
+    }
+
+    &-content {
+      h3 {
+        font-family: $font-display;
+        font-size: 1.375rem;
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+        color: $slate;
+        line-height: 1.7;
+      }
+    }
+  }
+}
+
+.about-tools {
+  padding: $space-xl $gutter;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: $space-lg;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+// ============================================================
+// SERVICES PAGE
+// ============================================================
+
+.page-services {
+  padding-top: 8rem;
+
+  @include lg {
+    padding-top: 10rem;
+  }
+}
+
+.services-hero {
+  padding: 0 $gutter $space-xl;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: 0 $gutter-lg $space-2xl;
+  }
+
+  &__headline {
+    font-family: $font-display;
+    font-size: clamp(2.5rem, 6.5vw, 8rem);
+    font-weight: 300;
+    line-height: 0.93;
+    letter-spacing: -0.025em;
+  }
+
+  &__sub {
+    max-width: 36rem;
+    margin-top: 3rem;
+    font-size: clamp(0.9375rem, 1.25vw, 1.125rem);
+    color: $muted;
+    line-height: 1.7;
+  }
+}
+
+.services-full-list {
+  padding: $space-xl $gutter;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+}
+
+.service-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    grid-template-columns: 1fr 3fr;
+    gap: 6rem;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__num {
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    color: $gold;
+    letter-spacing: 0.08em;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__desc {
+    font-size: 1rem;
+    color: $muted;
+    line-height: 1.75;
+    max-width: 40rem;
+  }
+
+  &__deliverables {
+    h4 {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: $slate;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+  }
+}
+
+// ============================================================
+// CONTACT PAGE
+// ============================================================
+
+.page-contact {
+  padding-top: 8rem;
+
+  @include lg {
+    padding-top: 10rem;
+  }
+}
+
+.contact-hero {
+  padding: 0 $gutter $space-xl;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: 0 $gutter-lg $space-2xl;
+  }
+
+  &__headline {
+    font-family: $font-display;
+    font-size: clamp(2.5rem, 7vw, 9rem);
+    font-weight: 300;
+    line-height: 0.93;
+    letter-spacing: -0.025em;
+
+    em {
+      font-style: italic;
+      color: $gold;
+    }
+  }
+}
+
+.contact-main {
+  padding: $space-xl $gutter;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+
+  @include lg {
+    grid-template-columns: 5fr 7fr;
+    gap: 10rem;
+    align-items: start;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: sticky;
+  top: 7rem;
+
+  &__section {
+    &-label {
+      @extend .eyebrow;
+      margin-bottom: 1.25rem;
+    }
+
+    &-email {
+      font-family: $font-display;
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: $paper;
+      @include hover-line;
+
+      &:hover { color: $gold; }
+    }
+
+    &-note {
+      font-size: 0.875rem;
+      color: $slate;
+      line-height: 1.65;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8125rem;
+      color: $muted;
+      @include transition(color);
+
+      &:hover { color: $paper; }
+
+      svg { width: 1rem; height: 1rem; }
+    }
+  }
+
+  &__avail {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.75rem;
+    color: $slate;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 6px rgba(74, 222, 128, 0.5);
+      animation: pulse-green 2s infinite;
+    }
+  }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 4px rgba(74, 222, 128, 0.5); }
+  50%       { box-shadow: 0 0 10px rgba(74, 222, 128, 0.9); }
+}
+
+.contact-form-wrap {
+  &__heading {
+    font-family: $font-display;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: -0.015em;
+    margin-bottom: 3rem;
+  }
+
+  &__submit {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__note {
+    font-size: 0.8125rem;
+    color: $slate;
+  }
+}

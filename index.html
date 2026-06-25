@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Craft — Premium Web Designer & Frontend Developer</title>
+  <meta name="description" content="Independent web designer and frontend developer building premium digital experiences for real estate brands, agencies and growing businesses." />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://yourdomain.com/" />
+  <meta property="og:title"       content="Studio Craft — Premium Web Designer & Frontend Developer" />
+  <meta property="og:description" content="High-end websites for real estate brands, agencies and growing businesses." />
+  <meta property="og:image"       content="assets/images/og-image.jpg" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "jobTitle": "Web Designer & Frontend Developer",
+    "url": "https://yourdomain.com",
+    "sameAs": [
+      "https://twitter.com/yourhandle",
+      "https://linkedin.com/in/yourhandle"
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+</head>
+<body>
+
+<!-- ============================================================
+     LOADER
+============================================================ -->
+<div class="loader" aria-hidden="true" role="presentation">
+  <div class="loader__inner">
+    <div class="loader__wordmark">Studio<span>.</span></div>
+    <div class="loader__bar"></div>
+  </div>
+</div>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- Custom cursor -->
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-label" aria-hidden="true"><span>View</span></div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="header" role="banner">
+  <a href="index.html" class="header__logo" aria-label="Studio Craft — Home">
+    Studio<span>.</span>
+  </a>
+
+  <div class="header__right">
+    <!-- Desktop nav -->
+    <nav class="header__nav-desktop" aria-label="Primary navigation">
+      <a href="index.html"   class="is-active">Home</a>
+      <a href="websites.html">Websites</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="contact.html" class="btn btn--primary btn--sm header__cta" data-magnetic="0.25">
+      Start a Project
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="header__toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     MOBILE NAVIGATION OVERLAY
+============================================================ -->
+<nav class="nav-overlay" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="nav-overlay__links">
+    <a href="index.html"    class="nav-overlay__link">Home</a>
+    <a href="websites.html" class="nav-overlay__link">Websites</a>
+    <a href="about.html"    class="nav-overlay__link">About</a>
+    <a href="services.html" class="nav-overlay__link">Services</a>
+    <a href="contact.html"  class="nav-overlay__link">Contact</a>
+  </div>
+
+  <div class="nav-overlay__bottom">
+    <p>&copy; 2024 Studio Craft</p>
+    <div class="nav-overlay__social">
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Dribbble</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero__bg" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <div class="hero__label">
+      <span class="eyebrow">Web Designer &amp; Frontend Developer</span>
+    </div>
+
+    <h1 class="hero__headline" data-reveal>
+      Independent designer building<br>
+      <em>premium</em> digital&nbsp;experiences.
+    </h1>
+
+    <div class="hero__bottom">
+      <p class="hero__sub" data-reveal data-reveal-delay="2">
+        I design and develop high-end websites for real estate brands, agencies
+        and growing businesses that need more than a basic template.
+      </p>
+
+      <div class="hero__cta" data-reveal data-reveal-delay="3">
+        <a href="websites.html" class="btn btn--ghost" data-magnetic="0.3">
+          View Websites
+          <span class="btn__arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </span>
+        </a>
+        <a href="contact.html" class="btn btn--primary" data-magnetic="0.3">
+          Start a Project
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero__scroll" aria-hidden="true">
+    <div class="hero__scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     MARQUEE
+============================================================ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <!-- Items duplicated for seamless loop -->
+    <span class="marquee__item">Real Estate Websites</span>
+    <span class="marquee__item">Custom WordPress</span>
+    <span class="marquee__item">AgentFire Development</span>
+    <span class="marquee__item">Next.js Projects</span>
+    <span class="marquee__item">UI / UX Design</span>
+    <span class="marquee__item">Frontend Development</span>
+    <span class="marquee__item">Premium Landing Pages</span>
+    <span class="marquee__item">Real Estate Websites</span>
+    <span class="marquee__item">Custom WordPress</span>
+    <span class="marquee__item">AgentFire Development</span>
+    <span class="marquee__item">Next.js Projects</span>
+    <span class="marquee__item">UI / UX Design</span>
+    <span class="marquee__item">Frontend Development</span>
+    <span class="marquee__item">Premium Landing Pages</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     FEATURED PROJECT
+============================================================ -->
+<section class="section-featured" aria-label="Featured project">
+  <div class="section-featured__header">
+    <span class="eyebrow">Featured Work</span>
+    <a href="websites.html" class="btn btn--text btn--sm">All Projects →</a>
+  </div>
+
+  <!-- Featured card -->
+  <article class="project-card project-card--featured" data-reveal>
+    <div class="project-card__img-wrap img-reveal">
+      <!-- Replace src with real project screenshot -->
+      <img
+        src="assets/images/projects/project-01.jpg"
+        alt="Meridian Luxury Real Estate Website — full-page screenshot"
+        loading="lazy"
+        width="900"
+        height="1200"
+      />
+    </div>
+
+    <div class="project-card__info">
+      <div class="project-card__tags">
+        <span class="tag tag--gold">Real Estate</span>
+        <span class="tag">Next.js</span>
+        <span class="tag">UI Design</span>
+      </div>
+      <h2 class="project-card__title">Meridian Luxury Properties</h2>
+      <p class="project-card__desc">
+        A bespoke real estate platform for a luxury brokerage in Miami. Full custom design,
+        Next.js build, IDX integration, and animated property search experience.
+      </p>
+      <a href="website-single.html" class="project-card__link" data-magnetic="0.2">
+        View Case Study
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </a>
+    </div>
+  </article>
+</section>
+
+<!-- ============================================================
+     SELECTED WEBSITES PREVIEW (masonry, 6 items)
+============================================================ -->
+<section class="section-works" aria-label="Selected websites">
+  <div class="section-intro">
+    <div class="section-intro__text">
+      <span class="eyebrow">Selected Websites</span>
+      <h2 class="t-headline" style="margin-top:1.5rem;" data-reveal>
+        Built with precision.<br>
+        Designed with intention.
+      </h2>
+    </div>
+    <div class="section-intro__action" data-reveal data-reveal-delay="2">
+      <a href="websites.html" class="btn btn--ghost">View All Websites</a>
+    </div>
+  </div>
+
+  <!-- 6-item masonry preview -->
+  <div class="masonry">
+
+    <!-- ---- Card 1 ---- -->
+    <div class="masonry__item" data-categories="real-estate,next-js">
+      <article class="project-card" data-cursor="view" data-cursor-label="View Project">
+        <a href="website-single.html" aria-label="View Coastal Homes Group project">
+          <div class="project-card__img-wrap" style="aspect-ratio:3/4">
+            <span class="project-card__num">01</span>
+            <img src="assets/images/projects/project-02.jpg" alt="Coastal Homes Group website screenshot" loading="lazy" width="900" height="1200" />
+          </div>
+          <div class="project-card__meta">
+            <div class="project-card__tags">
+              <span class="tag">Real Estate</span>
+              <span class="tag">Next.js</span>
+            </div>
+            <h3 class="project-card__title">Coastal Homes Group</h3>
+            <p class="project-card__client">Miami, FL · 2024</p>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <!-- ---- Card 2 ---- -->
+    <div class="masonry__item" data-categories="wordpress,agentfire">
+      <article class="project-card" data-cursor="view" data-cursor-label="View Project">
+        <a href="website-single.html" aria-label="View Premier Real Estate project">
+          <div class="project-card__img-wrap" style="aspect-ratio:3/5">
+            <span class="project-card__num">02</span>
+            <img src="assets/images/projects/project-03.jpg" alt="Premier Real Estate website screenshot" loading="lazy" width="900" height="1500" />
+          </div>
+          <div class="project-card__meta">
+            <div class="project-card__tags">
+              <span class="tag">AgentFire</span>
+              <span class="tag">WordPress</span>
+            </div>
+            <h3 class="project-card__title">Premier Real Estate</h3>
+            <p class="project-card__client">Dallas, TX · 2024</p>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <!-- ---- Card 3 ---- -->
+    <div class="masonry__item" data-categories="landing-pages">
+      <article class="project-card" data-cursor="view" data-cursor-label="View Project">
+        <a href="website-single.html" aria-label="View Vanguard Properties project">
+          <div class="project-card__img-wrap" style="aspect-ratio:2/3">
+            <span class="project-card__num">03</span>
+            <img src="assets/images/projects/project-04.jpg" alt="Vanguard Properties website screenshot" loading="lazy" width="900" height="1350" />
+          </div>
+          <div class="project-card__meta">
+            <div class="project-card__tags">
+              <span class="tag">Landing Page</span>
+              <span class="tag">Design</span>
+            </div>
+            <h3 class="project-card__title">Vanguard Properties</h3>
+            <p class="project-card__client">Los Angeles, CA · 2023</p>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <!-- ---- Card 4 ---- -->
+    <div class="masonry__item" data-categories="real-estate,wordpress">
+      <article class="project-card" data-cursor="view" data-cursor-label="View Project">
+        <a href="website-single.html" aria-label="View Harborview Realty project">
+          <div class="project-card__img-wrap" style="aspect-ratio:3/4">
+            <span class="project-card__num">04</span>
+            <img src="assets/images/projects/project-05.jpg" alt="Harborview Realty website screenshot" loading="lazy" width="900" height="1200" />
+          </div>
+          <div class="project-card__meta">
+            <div class="project-card__tags">
+              <span class="tag">Real Estate</span>
+              <span class="tag">WordPress</span>
+            </div>
+            <h3 class="project-card__title">Harborview Realty</h3>
+            <p class="project-card__client">Seattle, WA · 2023</p>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <!-- ---- Card 5 ---- -->
+    <div class="masonry__item" data-categories="next-js">
+      <article class="project-card" data-cursor="view" data-cursor-label="View Project">
+        <a href="website-single.html" aria-label="View Apex Living project">
+          <div class="project-card__img-wrap" style="aspect-ratio:3/5">
+            <span class="project-card__num">05</span>
+            <img src="assets/images/projects/project-06.jpg" alt="Apex Living website screenshot" loading="lazy" width="900" height="1500" />
+          </div>
+          <div class="project-card__meta">
+            <div class="project-card__tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">Marketplace</span>
+            </div>
+            <h3 class="project-card__title">Apex Living</h3>
+            <p class="project-card__client">New York, NY · 2024</p>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <!-- ---- Card 6 ---- -->
+    <div class="masonry__item" data-categories="agentfire,real-estate">
+      <article class="project-card" data-cursor="view" data-cursor-label="View Project">
+        <a href="website-single.html" aria-label="View Sterling Group project">
+          <div class="project-card__img-wrap" style="aspect-ratio:2/3">
+            <span class="project-card__num">06</span>
+            <img src="assets/images/projects/project-07.jpg" alt="Sterling Group website screenshot" loading="lazy" width="900" height="1350" />
+          </div>
+          <div class="project-card__meta">
+            <div class="project-card__tags">
+              <span class="tag">AgentFire</span>
+              <span class="tag">Real Estate</span>
+            </div>
+            <h3 class="project-card__title">Sterling Group</h3>
+            <p class="project-card__client">Chicago, IL · 2023</p>
+          </div>
+        </a>
+      </article>
+    </div>
+
+  </div><!-- /masonry -->
+
+  <!-- View all CTA -->
+  <div style="text-align:center; padding: 4rem 0 6rem; border-top: 1px solid rgba(249,244,237,.12);">
+    <a href="websites.html" class="btn btn--ghost" data-magnetic="0.3">
+      View All 20 Projects
+      <span class="btn__arrow">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT PREVIEW
+============================================================ -->
+<section class="section-about-preview" aria-label="About">
+  <div class="section-about-preview__img img-reveal">
+    <img
+      src="assets/images/about/portrait.jpg"
+      alt="Portrait photo"
+      loading="lazy"
+      width="600"
+      height="800"
+    />
+  </div>
+
+  <div class="section-about-preview__text">
+    <span class="eyebrow" data-reveal>About</span>
+
+    <h2 class="t-headline" data-reveal data-reveal-delay="1">
+      Precision craft,<br>
+      <em style="font-style:italic;color:#A48442;">every detail.</em>
+    </h2>
+
+    <p class="section-about-preview__body" data-reveal data-reveal-delay="2">
+      With over eight years of experience designing and building premium websites,
+      I work with real estate brands, agencies, and growth-stage businesses that
+      know the difference a serious website makes. Every project is custom —
+      no page builders, no shortcuts.
+    </p>
+
+    <p class="section-about-preview__body" data-reveal data-reveal-delay="3">
+      Specializing in Next.js, WordPress, and AgentFire custom development,
+      I bring together thoughtful design and clean, performant code.
+    </p>
+
+    <div data-reveal data-reveal-delay="4">
+      <a href="about.html" class="btn btn--ghost" data-magnetic="0.3">
+        Learn More About Me
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES PREVIEW
+============================================================ -->
+<section class="section-services-preview" aria-label="Services">
+  <div class="section-intro">
+    <div class="section-intro__text">
+      <span class="eyebrow">What I Do</span>
+      <h2 class="t-headline" style="margin-top:1.5rem" data-reveal>Services</h2>
+    </div>
+    <div class="section-intro__action" data-reveal data-reveal-delay="2">
+      <a href="services.html" class="btn btn--ghost">All Services</a>
+    </div>
+  </div>
+
+  <nav class="services-list" aria-label="Service list">
+
+    <div class="service-item" data-reveal>
+      <span class="service-item__num">01</span>
+      <span class="service-item__name">Custom Website Design</span>
+      <span class="service-item__arrow" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+    </div>
+
+    <div class="service-item" data-reveal data-reveal-delay="1">
+      <span class="service-item__num">02</span>
+      <span class="service-item__name">Frontend Development</span>
+      <span class="service-item__arrow" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+    </div>
+
+    <div class="service-item" data-reveal data-reveal-delay="2">
+      <span class="service-item__num">03</span>
+      <span class="service-item__name">WordPress &amp; AgentFire Development</span>
+      <span class="service-item__arrow" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+    </div>
+
+    <div class="service-item" data-reveal data-reveal-delay="3">
+      <span class="service-item__num">04</span>
+      <span class="service-item__name">Real Estate Websites</span>
+      <span class="service-item__arrow" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+    </div>
+
+    <div class="service-item" data-reveal data-reveal-delay="4">
+      <span class="service-item__num">05</span>
+      <span class="service-item__name">Next.js Development</span>
+      <span class="service-item__arrow" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+    </div>
+
+    <div class="service-item" data-reveal data-reveal-delay="5">
+      <span class="service-item__num">06</span>
+      <span class="service-item__name">Motion &amp; Interaction Design</span>
+      <span class="service-item__arrow" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+    </div>
+
+  </nav>
+</section>
+
+<!-- ============================================================
+     PROCESS
+============================================================ -->
+<section class="section-process" aria-label="Process">
+  <div class="container">
+    <span class="eyebrow" data-reveal>How I Work</span>
+
+    <div class="process-steps">
+
+      <div class="process-step" data-reveal data-reveal-delay="1">
+        <div class="process-step__num">01</div>
+        <h3 class="process-step__title">Discovery</h3>
+        <p class="process-step__body">
+          Understanding your brand, goals, audience, and competitive landscape
+          before a single pixel is placed.
+        </p>
+      </div>
+
+      <div class="process-step" data-reveal data-reveal-delay="2">
+        <div class="process-step__num">02</div>
+        <h3 class="process-step__title">Design</h3>
+        <p class="process-step__body">
+          Custom design direction, wireframes, and high-fidelity mockups.
+          Refined until it's exactly right.
+        </p>
+      </div>
+
+      <div class="process-step" data-reveal data-reveal-delay="3">
+        <div class="process-step__num">03</div>
+        <h3 class="process-step__title">Development</h3>
+        <p class="process-step__body">
+          Clean, semantic, performant code. No page builders.
+          Built to last and easy for your team to manage.
+        </p>
+      </div>
+
+      <div class="process-step" data-reveal data-reveal-delay="4">
+        <div class="process-step__num">04</div>
+        <h3 class="process-step__title">Launch</h3>
+        <p class="process-step__body">
+          Thorough QA, speed optimization, SEO setup,
+          and a smooth handoff with full documentation.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS
+============================================================ -->
+<section class="section-stats" aria-label="Statistics">
+  <div class="container">
+    <span class="eyebrow" data-reveal>By the Numbers</span>
+  </div>
+
+  <div class="stats-grid" style="margin-top:3rem;">
+
+    <div class="stat-item" data-reveal>
+      <div class="stat-item__num">
+        <span data-counter="80" data-suffix="+">80+</span>
+      </div>
+      <div class="stat-item__label">Projects Delivered</div>
+    </div>
+
+    <div class="stat-item" data-reveal data-reveal-delay="1">
+      <div class="stat-item__num">
+        <span data-counter="8" data-suffix="">8</span><span style="color:#A48442">+</span>
+      </div>
+      <div class="stat-item__label">Years Experience</div>
+    </div>
+
+    <div class="stat-item" data-reveal data-reveal-delay="2">
+      <div class="stat-item__num">
+        <span data-counter="98" data-suffix="%">98%</span>
+      </div>
+      <div class="stat-item__label">Client Satisfaction</div>
+    </div>
+
+    <div class="stat-item" data-reveal data-reveal-delay="3">
+      <div class="stat-item__num">
+        <span data-counter="40" data-suffix="+">40+</span>
+      </div>
+      <div class="stat-item__label">Real Estate Clients</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section class="section-testimonials" aria-label="Client testimonials">
+  <div class="container">
+    <span class="eyebrow" data-reveal>What Clients Say</span>
+    <h2 class="t-title" style="margin-top:1.5rem" data-reveal data-reveal-delay="1">
+      Trusted by leading brands.
+    </h2>
+  </div>
+
+  <div class="testimonials-grid" style="margin-left:4rem;margin-right:4rem;margin-top:3rem;">
+
+    <div class="testimonial-item" data-reveal>
+      <blockquote class="testimonial-item__quote">
+        The website completely transformed how buyers perceive our brand.
+        Within three months we saw a 60% increase in qualified leads.
+      </blockquote>
+      <div class="testimonial-item__author">
+        <div class="testimonial-item__author-name">Sarah Mitchell</div>
+        <div class="testimonial-item__author-role">Principal Broker, Coastal Homes Group</div>
+      </div>
+    </div>
+
+    <div class="testimonial-item" data-reveal data-reveal-delay="1">
+      <blockquote class="testimonial-item__quote">
+        Best investment we made this year. The AgentFire customization
+        exceeded every expectation. Fast, beautiful, and our agents love it.
+      </blockquote>
+      <div class="testimonial-item__author">
+        <div class="testimonial-item__author-name">James Keller</div>
+        <div class="testimonial-item__author-role">CEO, Premier Real Estate</div>
+      </div>
+    </div>
+
+    <div class="testimonial-item" data-reveal data-reveal-delay="2">
+      <blockquote class="testimonial-item__quote">
+        Working with Studio Craft was different. They thought like a business
+        partner, not just a vendor. The results speak for themselves.
+      </blockquote>
+      <div class="testimonial-item__author">
+        <div class="testimonial-item__author-name">Rachel Torres</div>
+        <div class="testimonial-item__author-role">Founder, Vanguard Properties</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     TECHNOLOGY STACK
+============================================================ -->
+<section class="section-tech" aria-label="Technology stack">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Technology</span>
+    <h2 class="t-title" style="margin-top:1.5rem" data-reveal data-reveal-delay="1">
+      Tools I build with.
+    </h2>
+  </div>
+
+  <div class="tech-grid" style="margin:3rem 4rem 0;">
+
+    <div class="tech-item" data-reveal>
+      <div class="tech-item__icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="11" font-family="DM Mono">N</text>
+        </svg>
+      </div>
+      <span class="tech-item__name">Next.js</span>
+    </div>
+
+    <div class="tech-item" data-reveal data-reveal-delay="1">
+      <div class="tech-item__icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="11" font-family="DM Mono">WP</text>
+        </svg>
+      </div>
+      <span class="tech-item__name">WordPress</span>
+    </div>
+
+    <div class="tech-item" data-reveal data-reveal-delay="2">
+      <div class="tech-item__icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="11" font-family="DM Mono">AF</text>
+        </svg>
+      </div>
+      <span class="tech-item__name">AgentFire</span>
+    </div>
+
+    <div class="tech-item" data-reveal data-reveal-delay="3">
+      <div class="tech-item__icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="10" font-family="DM Mono">TS</text>
+        </svg>
+      </div>
+      <span class="tech-item__name">TypeScript</span>
+    </div>
+
+    <div class="tech-item" data-reveal data-reveal-delay="4">
+      <div class="tech-item__icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="10" font-family="DM Mono">GSAP</text>
+        </svg>
+      </div>
+      <span class="tech-item__name">GSAP</span>
+    </div>
+
+    <div class="tech-item" data-reveal data-reveal-delay="5">
+      <div class="tech-item__icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="10" font-family="DM Mono">Fig</text>
+        </svg>
+      </div>
+      <span class="tech-item__name">Figma</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+<section class="section-final-cta" aria-label="Start a project">
+  <span class="eyebrow" data-reveal style="justify-content:center;">
+    Ready to build something exceptional?
+  </span>
+
+  <h2 class="section-final-cta__headline" data-reveal data-reveal-delay="1">
+    Let's create your<br>
+    <em>next website.</em>
+  </h2>
+
+  <div class="btn-group" style="justify-content:center;" data-reveal data-reveal-delay="2">
+    <a href="contact.html" class="btn btn--primary" data-magnetic="0.3">
+      Start a Project
+      <span class="btn__arrow">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </span>
+    </a>
+    <a href="websites.html" class="btn btn--ghost" data-magnetic="0.3">View Portfolio</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer" role="contentinfo">
+
+  <!-- Footer CTA band -->
+  <div class="footer__cta">
+    <div class="footer__cta-label">Get in touch</div>
+    <div class="footer__cta-headline" data-reveal>
+      Have a project<br>in mind? <em>Let's talk.</em>
+    </div>
+    <a href="mailto:hello@yourdomain.com" class="footer__cta-email">
+      hello@yourdomain.com
+    </a>
+  </div>
+
+  <!-- Main footer -->
+  <div class="footer__main">
+
+    <div class="footer__brand">
+      <a href="index.html" class="footer__logo">Studio<span>.</span></a>
+      <p>
+        Premium web design and frontend development for brands that
+        take their digital presence seriously.
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__col-title">Navigation</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="websites.html">Websites</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__col-title">Services</div>
+      <ul>
+        <li><a href="services.html">Website Design</a></li>
+        <li><a href="services.html">Frontend Dev</a></li>
+        <li><a href="services.html">WordPress</a></li>
+        <li><a href="services.html">AgentFire</a></li>
+        <li><a href="services.html">Next.js</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__col-title">Connect</div>
+      <ul>
+        <li><a href="#" target="_blank" rel="noopener">Twitter / X</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Dribbble</a></li>
+        <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer__bottom">
+    <p class="footer__bottom-copy">
+      &copy; 2024 Studio Craft. All rights reserved.
+    </p>
+    <div class="footer__bottom-right">
+      <a href="#top" class="back-top" aria-label="Back to top">
+        <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M7 12V2M2 7l5-5 5 5" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        Top
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="js/utils.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/counters.js"></script>
+<script src="js/masonry.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

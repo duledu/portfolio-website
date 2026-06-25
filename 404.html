@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Studio Craft</title>
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+</head>
+<body>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-label" aria-hidden="true"><span>View</span></div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="header" role="banner">
+  <a href="index.html" class="header__logo" aria-label="Studio Craft — Home">Studio<span>.</span></a>
+  <div class="header__right">
+    <nav class="header__nav-desktop" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="websites.html">Websites</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn--primary btn--sm header__cta" data-magnetic="0.25">Start a Project</a>
+    <button class="header__toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="nav-overlay" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="nav-overlay__links">
+    <a href="index.html"    class="nav-overlay__link">Home</a>
+    <a href="websites.html" class="nav-overlay__link">Websites</a>
+    <a href="about.html"    class="nav-overlay__link">About</a>
+    <a href="services.html" class="nav-overlay__link">Services</a>
+    <a href="contact.html"  class="nav-overlay__link">Contact</a>
+  </div>
+  <div class="nav-overlay__bottom">
+    <p>&copy; 2024 Studio Craft</p>
+    <div class="nav-overlay__social">
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Dribbble</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     404 CONTENT
+============================================================ -->
+<main class="page-404" id="main" aria-label="Page not found">
+  <div class="page-404__num" aria-hidden="true">404</div>
+  <h1 class="page-404__title" data-reveal>Page not found.</h1>
+  <p class="page-404__body" data-reveal data-reveal-delay="1">
+    The page you're looking for doesn't exist or has been moved.
+    Let's get you back on track.
+  </p>
+  <div class="btn-group" style="justify-content:center;" data-reveal data-reveal-delay="2">
+    <a href="index.html"    class="btn btn--primary"  data-magnetic="0.3">Go Home</a>
+    <a href="websites.html" class="btn btn--ghost"    data-magnetic="0.3">View Work</a>
+  </div>
+</main>
+
+<!-- ============================================================
+     FOOTER — minimal
+============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__bottom" style="border-top:1px solid rgba(249,244,237,.12);">
+    <p class="footer__bottom-copy">&copy; 2024 Studio Craft. All rights reserved.</p>
+    <div class="footer__bottom-right">
+      <a href="contact.html" class="btn btn--text btn--sm">Start a Project →</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="js/utils.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+// ============================================================
+// MIXINS
+// ============================================================
+
+// Breakpoints
+@mixin sm  { @media (min-width: #{$bp-sm})  { @content; } }
+@mixin md  { @media (min-width: #{$bp-md})  { @content; } }
+@mixin lg  { @media (min-width: #{$bp-lg})  { @content; } }
+@mixin xl  { @media (min-width: #{$bp-xl})  { @content; } }
+@mixin xxl { @media (min-width: #{$bp-2xl}) { @content; } }
+
+@mixin max-sm  { @media (max-width: #{$bp-sm - 1px})  { @content; } }
+@mixin max-md  { @media (max-width: #{$bp-md - 1px})  { @content; } }
+@mixin max-lg  { @media (max-width: #{$bp-lg - 1px})  { @content; } }
+
+// Container
+@mixin container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $gutter;
+
+  @include lg {
+    padding: 0 $gutter-lg;
+  }
+}
+
+// Flex center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flex between
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Position absolute fill
+@mixin fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Aspect ratio
+@mixin aspect($ratio) {
+  aspect-ratio: $ratio;
+}
+
+// Image cover
+@mixin img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Transition
+@mixin transition($props...) {
+  $transitions: ();
+  @each $prop in $props {
+    $transitions: append($transitions, $prop $duration $ease, comma);
+  }
+  transition: $transitions;
+}
+
+// Hover underline
+@mixin hover-line {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width $duration $ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// Text reveal (for JS animation)
+@mixin text-reveal {
+  overflow: hidden;
+
+  .reveal-inner {
+    display: block;
+    transform: translateY(100%);
+    transition: transform $duration $ease-out;
+  }
+
+  &.is-visible .reveal-inner {
+    transform: translateY(0);
+  }
+}
+
+// Clip reveal
+@mixin clip-reveal {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path $duration $ease-out;
+
+  &.is-visible {
+    clip-path: inset(0% 0 0 0);
+  }
+}
+
+// Fade up
+@mixin fade-up {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity $duration $ease-out, transform $duration $ease-out;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Horizontal rule
+@mixin hr {
+  border: none;
+  border-top: 1px solid $line;
+}

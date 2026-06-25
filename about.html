@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Studio Craft</title>
+  <meta name="description" content="Senior web designer and frontend developer with 8+ years building premium digital experiences for real estate brands and growing businesses." />
+
+  <meta property="og:title"       content="About — Studio Craft" />
+  <meta property="og:description" content="8+ years building premium websites. Real estate, WordPress, AgentFire, Next.js." />
+  <meta property="og:image"       content="assets/images/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-label" aria-hidden="true"><span>View</span></div>
+
+
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="header" role="banner">
+  <a href="index.html" class="header__logo" aria-label="Studio Craft — Home">Studio<span>.</span></a>
+  <div class="header__right">
+    <nav class="header__nav-desktop" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="websites.html">Websites</a>
+      <a href="about.html" class="is-active">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn--primary btn--sm header__cta" data-magnetic="0.25">Start a Project</a>
+    <button class="header__toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="nav-overlay" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="nav-overlay__links">
+    <a href="index.html"    class="nav-overlay__link">Home</a>
+    <a href="websites.html" class="nav-overlay__link">Websites</a>
+    <a href="about.html"    class="nav-overlay__link">About</a>
+    <a href="services.html" class="nav-overlay__link">Services</a>
+    <a href="contact.html"  class="nav-overlay__link">Contact</a>
+  </div>
+  <div class="nav-overlay__bottom">
+    <p>&copy; 2024 Studio Craft</p>
+    <div class="nav-overlay__social">
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Dribbble</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main class="page-about" id="main">
+
+  <!-- ---- Page Hero ---- -->
+  <section class="about-hero" aria-label="About introduction">
+    <span class="eyebrow" data-reveal>About</span>
+    <h1 class="about-hero__headline" data-reveal data-reveal-delay="1">
+      Design with<br>
+      <em>conviction.</em><br>
+      Code with care.
+    </h1>
+  </section>
+
+  <!-- ---- Intro + Portrait ---- -->
+  <section class="about-intro" aria-label="Developer introduction">
+
+    <div class="about-intro__image img-reveal">
+      <!-- Replace with your actual portrait photo -->
+      <img
+        src="assets/images/about/portrait.jpg"
+        alt="Portrait of the designer"
+        loading="lazy"
+        width="600"
+        height="800"
+      />
+    </div>
+
+    <div class="about-intro__content">
+      <span class="eyebrow" data-reveal>The Developer</span>
+
+      <div data-reveal data-reveal-delay="1">
+        <p>
+          I'm a senior web designer and frontend developer based in [Your City],
+          with eight years of experience building premium websites for real estate brands,
+          independent agencies, and growth-stage businesses.
+        </p>
+      </div>
+
+      <div data-reveal data-reveal-delay="2">
+        <p>
+          My work sits at the intersection of thoughtful design and clean engineering.
+          Every website I build starts from scratch — no page builders, no recycled templates,
+          no shortcuts. The result is a site that performs, converts, and actually represents
+          your brand at the level it deserves.
+        </p>
+      </div>
+
+      <div data-reveal data-reveal-delay="3">
+        <p>
+          I specialize in custom WordPress and AgentFire development for real estate teams,
+          and complex Next.js builds for businesses that need speed, flexibility, and scale.
+          I work with a small number of clients at a time — which means you get my full attention.
+        </p>
+      </div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;" data-reveal data-reveal-delay="4">
+        <a href="websites.html" class="btn btn--ghost" data-magnetic="0.3">View My Work</a>
+        <a href="contact.html"  class="btn btn--primary" data-magnetic="0.3">Start a Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Stats ---- -->
+  <section style="border-top:1px solid rgba(249,244,237,.12);" aria-label="Career statistics">
+    <div class="stats-grid">
+      <div class="stat-item" data-reveal>
+        <div class="stat-item__num"><span data-counter="80" data-suffix="+">80+</span></div>
+        <div class="stat-item__label">Projects Delivered</div>
+      </div>
+      <div class="stat-item" data-reveal data-reveal-delay="1">
+        <div class="stat-item__num"><span data-counter="8" data-suffix="">8</span><span style="color:#A48442">+</span></div>
+        <div class="stat-item__label">Years Experience</div>
+      </div>
+      <div class="stat-item" data-reveal data-reveal-delay="2">
+        <div class="stat-item__num"><span data-counter="40" data-suffix="+">40+</span></div>
+        <div class="stat-item__label">Real Estate Clients</div>
+      </div>
+      <div class="stat-item" data-reveal data-reveal-delay="3">
+        <div class="stat-item__num"><span data-counter="3" data-suffix="">3</span></div>
+        <div class="stat-item__label">Active Projects at a Time</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Values ---- -->
+  <section class="about-values" aria-label="Core values">
+    <div style="padding:0 4rem;">
+      <span class="eyebrow" data-reveal>How I Think</span>
+      <h2 class="t-headline" style="margin-top:1.5rem" data-reveal data-reveal-delay="1">
+        Principles I build by.
+      </h2>
+    </div>
+
+    <div class="about-values__grid" style="margin:0 4rem;">
+
+      <div class="about-values__item" data-reveal>
+        <div class="about-values__item-num">01</div>
+        <h3 class="about-values__item-title">Craft over speed</h3>
+        <p class="about-values__item-body">
+          I'd rather take the time to get it right than ship something I'm not proud of.
+          Fast and cheap projects aren't what I do — precise, considered work is.
+        </p>
+      </div>
+
+      <div class="about-values__item" data-reveal data-reveal-delay="1">
+        <div class="about-values__item-num">02</div>
+        <h3 class="about-values__item-title">Design earns its place</h3>
+        <p class="about-values__item-body">
+          Every design decision should serve a purpose: communicate, guide, convert.
+          Decoration without function is just noise.
+        </p>
+      </div>
+
+      <div class="about-values__item" data-reveal>
+        <div class="about-values__item-num">03</div>
+        <h3 class="about-values__item-title">Code is the product</h3>
+        <p class="about-values__item-body">
+          Clean, semantic, maintainable code isn't optional — it's the foundation
+          everything else depends on. Messy code creates messy outcomes.
+        </p>
+      </div>
+
+      <div class="about-values__item" data-reveal data-reveal-delay="1">
+        <div class="about-values__item-num">04</div>
+        <h3 class="about-values__item-title">Honest partnership</h3>
+        <p class="about-values__item-body">
+          I'll tell you when an idea won't work. I'll push back when needed.
+          Good projects come from honest collaboration, not just order-taking.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ---- Experience Timeline ---- -->
+  <section class="about-timeline" aria-label="Experience timeline">
+    <div style="padding:0 4rem;">
+      <span class="eyebrow" data-reveal>Experience</span>
+      <h2 class="t-headline" style="margin-top:1.5rem" data-reveal data-reveal-delay="1">Career path.</h2>
+    </div>
+
+    <div class="about-timeline__list" style="padding:0 4rem;">
+
+      <div class="about-timeline__item" data-reveal>
+        <div class="about-timeline__item-year">2022 –<br>Now</div>
+        <div class="about-timeline__item-content">
+          <h3>Independent Studio — Freelance</h3>
+          <p>
+            Running Studio Craft as an independent practice. Focused exclusively on
+            premium web projects for real estate brands and growth-stage businesses.
+            Averaging 12–15 projects per year.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-timeline__item" data-reveal>
+        <div class="about-timeline__item-year">2019 –<br>2022</div>
+        <div class="about-timeline__item-content">
+          <h3>Senior Frontend Developer — [Agency Name]</h3>
+          <p>
+            Led frontend development for a mid-size digital agency. Responsible for
+            technical direction on 30+ client projects including national real estate brands,
+            hospitality groups, and e-commerce platforms.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-timeline__item" data-reveal>
+        <div class="about-timeline__item-year">2016 –<br>2019</div>
+        <div class="about-timeline__item-content">
+          <h3>Web Designer & Developer — [Studio Name]</h3>
+          <p>
+            Designed and built websites for local and regional brands. Developed a focus
+            on real estate and property technology after landing my first brokerage client.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-timeline__item" data-reveal>
+        <div class="about-timeline__item-year">2014 –<br>2016</div>
+        <div class="about-timeline__item-content">
+          <h3>Junior Designer — [First Job]</h3>
+          <p>
+            Started as a UI designer before transitioning into full-stack frontend work.
+            Learned the fundamentals of production web development under senior mentors.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ---- Tools ---- -->
+  <section class="about-tools" aria-label="Tools and technology">
+    <div style="padding:0 4rem;">
+      <span class="eyebrow" data-reveal>Tools &amp; Technology</span>
+      <h2 class="t-headline" style="margin-top:1.5rem" data-reveal data-reveal-delay="1">
+        What I build with.
+      </h2>
+    </div>
+
+    <div class="about-tools__grid" style="padding:0 4rem;" data-reveal data-reveal-delay="2">
+      <span class="tag">Next.js</span>
+      <span class="tag">React</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">WordPress</span>
+      <span class="tag">AgentFire</span>
+      <span class="tag">PHP</span>
+      <span class="tag">SCSS / Sass</span>
+      <span class="tag">Vanilla JS</span>
+      <span class="tag">jQuery</span>
+      <span class="tag">Figma</span>
+      <span class="tag">Framer Motion</span>
+      <span class="tag">GSAP</span>
+      <span class="tag">Sanity CMS</span>
+      <span class="tag">Vercel</span>
+      <span class="tag">Git / GitHub</span>
+      <span class="tag">Mapbox GL</span>
+      <span class="tag">IDX Broker</span>
+      <span class="tag">Webflow</span>
+    </div>
+  </section>
+
+  <!-- ---- Final CTA ---- -->
+  <section class="section-final-cta" aria-label="Contact CTA">
+    <span class="eyebrow" data-reveal style="justify-content:center;">Ready when you are</span>
+    <h2 class="section-final-cta__headline" data-reveal data-reveal-delay="1">
+      Let's build<br>
+      something <em>great.</em>
+    </h2>
+    <div class="btn-group" style="justify-content:center;" data-reveal data-reveal-delay="2">
+      <a href="contact.html"  class="btn btn--primary" data-magnetic="0.3">Start a Project</a>
+      <a href="websites.html" class="btn btn--ghost"   data-magnetic="0.3">View Work</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__cta">
+    <div class="footer__cta-label">Let's talk</div>
+    <div class="footer__cta-headline" data-reveal>
+      Serious about<br>your <em>website?</em>
+    </div>
+    <a href="mailto:hello@yourdomain.com" class="footer__cta-email">hello@yourdomain.com</a>
+  </div>
+
+  <div class="footer__main">
+    <div class="footer__brand">
+      <a href="index.html" class="footer__logo">Studio<span>.</span></a>
+      <p>Premium web design and frontend development for brands that take their digital presence seriously.</p>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Navigation</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="websites.html">Websites</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Services</div>
+      <ul>
+        <li><a href="services.html">Website Design</a></li>
+        <li><a href="services.html">Frontend Dev</a></li>
+        <li><a href="services.html">WordPress</a></li>
+        <li><a href="services.html">AgentFire</a></li>
+        <li><a href="services.html">Next.js</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Connect</div>
+      <ul>
+        <li><a href="#" target="_blank" rel="noopener">Twitter / X</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Dribbble</a></li>
+        <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__bottom-copy">&copy; 2024 Studio Craft. All rights reserved.</p>
+    <div class="footer__bottom-right">
+      <a href="#top" class="back-top" aria-label="Back to top">
+        <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 12V2M2 7l5-5 5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Top
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="js/utils.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/counters.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

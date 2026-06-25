@@ -1,0 +1,101 @@
+// ============================================================
+// MAIN.SCSS — Entry point
+// Import order matters: base → layout → components → pages
+// ============================================================
+
+// ---- Base ----
+@import 'base/variables';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/mixins';
+@import 'base/helpers';
+
+// ---- Layout ----
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+
+// ---- Components ----
+@import 'components/buttons';
+@import 'components/cursor';
+@import 'components/project-card';
+@import 'components/masonry';
+@import 'components/forms';
+
+// ---- Pages ----
+@import 'pages/home';
+@import 'pages/websites';
+@import 'pages/website-single';
+@import 'pages/about';
+@import 'pages/services';
+@import 'pages/contact';
+
+// ============================================================
+// SCROLL PROGRESS BAR
+// ============================================================
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: $gold;
+  z-index: $z-cursor + 1;
+  width: 0%;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+// ============================================================
+// 404 PAGE
+// ============================================================
+.page-404 {
+  min-height: 100svh;
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  padding: $space-xl $gutter;
+
+  &__num {
+    font-family: $font-display;
+    font-size: clamp(8rem, 20vw, 18rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: rgba($paper, 0.05);
+    margin-bottom: -2rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  &__body {
+    font-size: 0.9375rem;
+    color: $muted;
+    margin-bottom: 3rem;
+    max-width: 28rem;
+  }
+}
+
+// ============================================================
+// NAVIGATION (legacy stub)
+// ============================================================
+// All navigation styles are in layout/_header.scss
+
+// ============================================================
+// PRINT BASIC RESET
+// ============================================================
+@media print {
+  .header, .footer, .cursor, .loader, .scroll-progress {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}

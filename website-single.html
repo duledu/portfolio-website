@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meridian Luxury Properties — Studio Craft</title>
+  <meta name="description" content="Case study: Bespoke luxury real estate website built with Next.js for Meridian Properties, Miami." />
+
+  <meta property="og:title"       content="Meridian Luxury Properties — Studio Craft" />
+  <meta property="og:description" content="Full case study: luxury real estate website, Next.js, IDX integration." />
+  <meta property="og:image"       content="assets/images/projects/project-01.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-label" aria-hidden="true"><span>View</span></div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="header" role="banner">
+  <a href="index.html" class="header__logo" aria-label="Studio Craft — Home">Studio<span>.</span></a>
+  <div class="header__right">
+    <nav class="header__nav-desktop" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="websites.html" class="is-active">Websites</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn--primary btn--sm header__cta" data-magnetic="0.25">Start a Project</a>
+    <button class="header__toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="nav-overlay" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="nav-overlay__links">
+    <a href="index.html"    class="nav-overlay__link">Home</a>
+    <a href="websites.html" class="nav-overlay__link">Websites</a>
+    <a href="about.html"    class="nav-overlay__link">About</a>
+    <a href="services.html" class="nav-overlay__link">Services</a>
+    <a href="contact.html"  class="nav-overlay__link">Contact</a>
+  </div>
+  <div class="nav-overlay__bottom">
+    <p>&copy; 2024 Studio Craft</p>
+    <div class="nav-overlay__social">
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Dribbble</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main class="page-single" id="main">
+
+  <!-- ---- Project Hero ---- -->
+  <section class="project-hero" aria-label="Project introduction">
+    <div class="project-hero__label">
+      <span class="eyebrow" data-reveal>Case Study — 01</span>
+    </div>
+
+    <h1 class="project-hero__title" data-reveal data-reveal-delay="1">
+      Meridian Luxury<br>Properties
+    </h1>
+
+    <div class="project-hero__image img-reveal">
+      <!-- Replace with real full-page screenshot -->
+      <img
+        src="assets/images/projects/project-01.jpg"
+        alt="Meridian Luxury Properties website — full-page screenshot"
+        loading="eager"
+        width="1440"
+        height="900"
+      />
+    </div>
+  </section>
+
+  <!-- ---- Project Overview ---- -->
+  <section class="project-overview" aria-label="Project details">
+
+    <div class="project-overview__info">
+
+      <div class="project-overview__field">
+        <div class="project-overview__field-label">
+          <span class="eyebrow">Client</span>
+        </div>
+        <div class="project-overview__field-value">Meridian Luxury Properties</div>
+      </div>
+
+      <div class="project-overview__field">
+        <div class="project-overview__field-label">
+          <span class="eyebrow">Industry</span>
+        </div>
+        <div class="project-overview__field-value">Luxury Real Estate</div>
+      </div>
+
+      <div class="project-overview__field">
+        <div class="project-overview__field-label">
+          <span class="eyebrow">Location</span>
+        </div>
+        <div class="project-overview__field-value">Miami, FL</div>
+      </div>
+
+      <div class="project-overview__field">
+        <div class="project-overview__field-label">
+          <span class="eyebrow">Year</span>
+        </div>
+        <div class="project-overview__field-value">2024</div>
+      </div>
+
+      <div class="project-overview__field" style="grid-column:1/-1;">
+        <div class="project-overview__field-label">
+          <span class="eyebrow">Services</span>
+        </div>
+        <div class="project-overview__field-tags">
+          <span class="tag tag--gold">UI Design</span>
+          <span class="tag">Frontend Development</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">IDX Integration</span>
+          <span class="tag">SEO</span>
+          <span class="tag">Performance</span>
+        </div>
+      </div>
+
+      <div class="project-overview__live" style="grid-column:1/-1;">
+        <a href="#" target="_blank" rel="noopener" class="btn btn--ghost btn--sm" data-magnetic="0.2">
+          Visit Live Website ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="project-overview__description" data-reveal>
+      A bespoke luxury real estate platform that elevated the Meridian brand from
+      outdated WordPress template to a polished, conversion-optimized digital presence —
+      resulting in a 60% increase in qualified leads within 90 days of launch.
+    </div>
+  </section>
+
+  <!-- ---- Challenge ---- -->
+  <section class="case-section" aria-label="The challenge">
+    <div class="case-section__inner">
+      <span class="eyebrow" data-reveal>The Challenge</span>
+      <h2 class="case-section__heading" data-reveal data-reveal-delay="1">
+        A brand demanding more than a template could offer.
+      </h2>
+      <div class="case-section__body" data-reveal data-reveal-delay="2">
+        <p>
+          Meridian Luxury Properties was operating on a stock real estate theme that
+          undermined the premium nature of their listings. The old site loaded slowly,
+          felt generic, and failed to communicate the level of service their clients expected.
+          Leads were bouncing before they ever saw a property.
+        </p>
+        <p>
+          The challenge was to build something that felt as exclusive as the properties
+          themselves — while integrating a complex MLS/IDX property search and remaining
+          editable by their in-house team without developer support.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Solution ---- -->
+  <section class="case-section case-section--dark" aria-label="The solution">
+    <div class="case-section__inner">
+      <span class="eyebrow" data-reveal>The Solution</span>
+      <h2 class="case-section__heading" data-reveal data-reveal-delay="1">
+        Custom from the ground up. No shortcuts.
+      </h2>
+      <div class="case-section__body" data-reveal data-reveal-delay="2">
+        <p>
+          I designed and built the entire site from scratch — starting with a custom design
+          system in Figma, then developing in Next.js for performance and flexibility.
+          Every element, from property card layouts to search filters, was purpose-built.
+        </p>
+      </div>
+      <ul class="case-section__list" data-reveal data-reveal-delay="3">
+        <li>Custom property search with map-based IDX integration</li>
+        <li>Animated hero with video background and noise overlay</li>
+        <li>Agent profile system with CMS-editable bios</li>
+        <li>Neighborhood guide pages with local statistics</li>
+        <li>Sub-100ms server response time on all pages</li>
+        <li>99 PageSpeed score on desktop and 95 on mobile</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ---- Design Direction ---- -->
+  <section class="case-section" aria-label="Design direction">
+    <div class="case-section__inner">
+      <span class="eyebrow" data-reveal>Design Direction</span>
+      <h2 class="case-section__heading" data-reveal data-reveal-delay="1">
+        Quiet luxury. Confident space.
+      </h2>
+      <div class="case-section__body" data-reveal data-reveal-delay="2">
+        <p>
+          The palette is built on deep charcoal, warm cream, and a single gold accent —
+          echoing materials found in the properties themselves. Typography pairs a refined
+          serif display face with a clean geometric sans for body copy.
+        </p>
+        <p>
+          Generous whitespace and large imagery let the properties speak. Subtle scroll-based
+          animations create a sense of depth without distraction.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Development Details ---- -->
+  <section class="case-section case-section--dark" aria-label="Development details">
+    <div class="case-section__inner">
+      <span class="eyebrow" data-reveal>Development</span>
+      <h2 class="case-section__heading" data-reveal data-reveal-delay="1">
+        Clean code. Lasting performance.
+      </h2>
+      <div class="case-section__body" data-reveal data-reveal-delay="2">
+        <p>
+          Built in Next.js 14 with the App Router, using React Server Components for
+          fast initial loads. Property data is fetched server-side from the IDX API
+          and cached at the edge for near-instant page loads.
+        </p>
+      </div>
+
+      <!-- Tech stack tags -->
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem;" data-reveal data-reveal-delay="3">
+        <span class="tag tag--gold">Next.js 14</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">Framer Motion</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">IDX Broker API</span>
+        <span class="tag">Sanity CMS</span>
+        <span class="tag">Mapbox GL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Screenshot Gallery ---- -->
+  <div class="project-gallery" aria-label="Project screenshots">
+
+    <div class="project-gallery__header">
+      <span class="eyebrow" data-reveal>Gallery</span>
+      <h2 class="t-title" style="margin-top:1rem" data-reveal data-reveal-delay="1">Full-page views</h2>
+    </div>
+
+    <div class="project-gallery__grid">
+
+      <div class="project-gallery__img project-gallery__img--full img-reveal">
+        <img src="assets/images/projects/project-01.jpg" alt="Meridian homepage screenshot" loading="lazy" width="1440" height="900" />
+      </div>
+
+      <div class="project-gallery__img img-reveal">
+        <img src="assets/images/projects/project-01.jpg" alt="Meridian property listing page" loading="lazy" width="900" height="1200" />
+      </div>
+
+      <div class="project-gallery__img img-reveal">
+        <img src="assets/images/projects/project-01.jpg" alt="Meridian property search page" loading="lazy" width="900" height="1200" />
+      </div>
+
+      <div class="project-gallery__img project-gallery__img--full img-reveal">
+        <img src="assets/images/projects/project-01.jpg" alt="Meridian mobile view" loading="lazy" width="390" height="844" style="max-width:390px;margin:0 auto;" />
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ---- Results ---- -->
+  <section class="project-results" aria-label="Project results">
+    <div style="padding:0 4rem;">
+      <span class="eyebrow" data-reveal>Results</span>
+      <h2 class="t-title" style="margin-top:1rem" data-reveal data-reveal-delay="1">Numbers that matter.</h2>
+    </div>
+    <div class="project-results__stats" style="padding:0 4rem;">
+      <div class="project-results__stat" data-reveal>
+        <div class="project-results__stat-num"><span data-counter="60" data-suffix="%">60%</span></div>
+        <div class="project-results__stat-label">Increase in qualified leads</div>
+      </div>
+      <div class="project-results__stat" data-reveal data-reveal-delay="1">
+        <div class="project-results__stat-num"><span data-counter="99" data-suffix="">99</span><span style="color:#A48442">/100</span></div>
+        <div class="project-results__stat-label">PageSpeed Score (Desktop)</div>
+      </div>
+      <div class="project-results__stat" data-reveal data-reveal-delay="2">
+        <div class="project-results__stat-num"><span data-counter="42" data-suffix="%">42%</span></div>
+        <div class="project-results__stat-label">Reduction in bounce rate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Testimonial ---- -->
+  <section class="project-testimonial" aria-label="Client testimonial">
+    <blockquote class="project-testimonial__quote" data-reveal>
+      Working with Studio Craft was unlike any agency experience I've had.
+      They understood our brand at a level I didn't expect, and the final site
+      reflects exactly who we are. It's not just beautiful — it converts.
+    </blockquote>
+    <div class="project-testimonial__author" data-reveal data-reveal-delay="1">
+      <div class="project-testimonial__author-name">Daniel Merritt</div>
+      <div class="project-testimonial__author-role">Managing Partner, Meridian Luxury Properties</div>
+    </div>
+  </section>
+
+  <!-- ---- Next Project ---- -->
+  <a href="website-single.html" class="next-project" aria-label="Next project: Premier Real Estate">
+    <div class="next-project__bg" aria-hidden="true">
+      <img src="assets/images/projects/project-02.jpg" alt="" />
+    </div>
+    <div class="next-project__content">
+      <div class="next-project__label">
+        <span class="eyebrow">Next Project</span>
+      </div>
+      <h2 class="next-project__title">Premier Real Estate</h2>
+    </div>
+  </a>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__cta">
+    <div class="footer__cta-label">Start a project</div>
+    <div class="footer__cta-headline" data-reveal>
+      Ready to build<br>something <em>exceptional?</em>
+    </div>
+    <a href="mailto:hello@yourdomain.com" class="footer__cta-email">hello@yourdomain.com</a>
+  </div>
+
+  <div class="footer__main">
+    <div class="footer__brand">
+      <a href="index.html" class="footer__logo">Studio<span>.</span></a>
+      <p>Premium web design and frontend development for brands that take their digital presence seriously.</p>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Navigation</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="websites.html">Websites</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Services</div>
+      <ul>
+        <li><a href="services.html">Website Design</a></li>
+        <li><a href="services.html">Frontend Dev</a></li>
+        <li><a href="services.html">WordPress</a></li>
+        <li><a href="services.html">AgentFire</a></li>
+        <li><a href="services.html">Next.js</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Connect</div>
+      <ul>
+        <li><a href="#" target="_blank" rel="noopener">Twitter / X</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Dribbble</a></li>
+        <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__bottom-copy">&copy; 2024 Studio Craft. All rights reserved.</p>
+    <div class="footer__bottom-right">
+      <a href="#top" class="back-top" aria-label="Back to top">
+        <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 12V2M2 7l5-5 5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Top
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="js/utils.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/counters.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
