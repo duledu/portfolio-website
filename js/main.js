@@ -18,7 +18,9 @@ $(document).ready(function () {
   Animations.init();
 
   // ---- Animated counters ----
-  Counters.init();
+  if (typeof Counters !== 'undefined') {
+    Counters.init();
+  }
 
   // ---- Marquee (pause on hover is handled in CSS) ----
 
@@ -30,5 +32,10 @@ $(document).ready(function () {
 
   // ---- Lazy-load images (native) ----
   Utils.lazyImages();
+
+  // ---- Project screenshot scroll preview (hover) ----
+  if (typeof ProjectPreview !== 'undefined') {
+    ProjectPreview.init();
+  }
 
 });

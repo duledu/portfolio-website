@@ -9,10 +9,20 @@
   will-change: transform;
 
   // ---- Image wrap ----
+  // Real screenshots are full-page captures, much taller than the card.
+  // The wrap is a fixed-height "preview window"; the image keeps its
+  // natural proportions and is cropped by overflow, starting at the top.
   &__img-wrap {
     position: relative;
     overflow: hidden;
     background: $dark;
+    height: 440px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     &::after {
       content: '';
@@ -28,18 +38,30 @@
     opacity: 1;
   }
 
-  &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    transform: scale(1);
-    transition: transform 0.85s $ease-out;
-    display: block;
+  // ---- Editorial size variants (Pinterest-style rhythm) ----
+  // Applied within .masonry grids; the featured card sets its own height.
+  &__img-wrap--sm {
+    height: 360px;
+    @include md { height: 400px; }
+    @include xl { height: 420px; }
   }
 
-  &:hover &__img {
-    transform: scale(1.04);
+  &__img-wrap--md {
+    height: 440px;
+    @include md { height: 480px; }
+    @include xl { height: 520px; }
+  }
+
+  &__img-wrap--lg {
+    height: 520px;
+    @include md { height: 560px; }
+    @include xl { height: 620px; }
+  }
+
+  &__img-wrap--xl {
+    height: 600px;
+    @include md { height: 640px; }
+    @include xl { height: 720px; }
   }
 
   // ---- Hover reveal overlay ----
@@ -186,5 +208,34 @@
     &:hover svg {
       transform: translate(4px, -2px);
     }
+  }
+}
+
+// ============================================================
+// PREMIUM HOVER — WEBSITE SCROLL PREVIEW
+// Desktop-only. On hover, the tall screenshot glides upward inside
+// its fixed-height window, revealing lower sections of the site,
+// then eases back to the top when the pointer leaves.
+// Distance/duration are computed per-image by js/project-preview.js
+// and exposed as --scroll-distance / --scroll-duration custom
+// properties on the .project-card__img-wrap element.
+// ============================================================
+@media (hover: hover) and (pointer: fine) {
+  .masonry .project-card__img-wrap img {
+    transition: transform var(--scroll-duration, 3.2s) $ease-out;
+  }
+
+  .masonry .project-card:hover .project-card__img-wrap img {
+    transform: translateY(var(--scroll-distance, 0px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masonry .project-card__img-wrap img {
+    transition: none;
+  }
+
+  .masonry .project-card:hover .project-card__img-wrap img {
+    transform: none;
   }
 }

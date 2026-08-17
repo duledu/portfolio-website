@@ -36,6 +36,7 @@
     width: 100%;
     overflow: hidden;
     background: $dark;
+    height: clamp(320px, 48vw, 680px);
 
     img {
       width: 100%;
@@ -188,6 +189,7 @@
   &__img {
     overflow: hidden;
     background: $dark;
+    height: clamp(300px, 34vw, 460px);
 
     img {
       width: 100%;
@@ -202,6 +204,7 @@
 
     &--full {
       grid-column: 1 / -1;
+      height: clamp(340px, 40vw, 560px);
     }
   }
 }
