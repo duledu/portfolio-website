@@ -1,0 +1,89 @@
+// ============================================================
+// VIDEOS PAGE
+// Selected Video Work archive — a featured video plus a scalable
+// library grid designed to hold many more entries over time.
+// Reuses .video-card / .video-modal / .filter-bar as-is; only the
+// page-level wrappers and the scalable grid live here.
+// ============================================================
+
+.page-videos {
+  padding-top: 8rem;
+
+  @include lg {
+    padding-top: 10rem;
+  }
+}
+
+// ---- Hero ----
+// Compact by design — smaller bottom padding than the other page
+// heroes (which run $space-xl–$space-2xl); content itself is just
+// .section-intro + .eyebrow + .t-headline + .t-lead, all reused.
+.videos-hero {
+  padding: 0 $gutter $space-lg;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: 0 $gutter-lg $space-xl;
+  }
+}
+
+// ---- Featured video ----
+.videos-featured {
+  padding: $space-lg $gutter;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: $space-xl $gutter-lg;
+  }
+
+  // Centered, generously wide — reads as more important than the
+  // library cards below without needing the homepage's --featured
+  // modifier (which assumes a fixed-height grid area it won't have
+  // here as a standalone section).
+  &__card {
+    max-width: 64rem;
+    margin: 0 auto;
+
+    .video-card__title {
+      font-size: clamp(1.75rem, 3vw, 2.75rem);
+    }
+  }
+}
+
+// ---- Library ----
+.videos-library {
+  padding: $space-lg $gutter;
+
+  @include lg {
+    padding: $space-xl $gutter-lg;
+  }
+}
+
+// Scalable grid — unlike the homepage's 4-item .video-grid (fixed
+// grid-template-areas), this holds any number of cards two-up from
+// tablet width. .video-library__item--full lets a card (e.g. a
+// .video-card--wide testimonial) break out to the full row.
+.video-library {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    gap: 2.5rem;
+  }
+
+  &__item--full {
+    @include md {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+// ---- Category filtering (see js/video-filters.js) ----
+.video-card.is-filtered-out {
+  display: none;
+}

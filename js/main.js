@@ -43,4 +43,9 @@ $(document).ready(function () {
     VideoModal.init();
   }
 
+  // ---- Video library category filter (videos.html) ----
+  if (typeof VideoFilters !== 'undefined') {
+    VideoFilters.init();
+  }
+
 });

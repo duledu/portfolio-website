@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Work | Studio Craft</title>
+  <meta name="description" content="Explore selected website walkthroughs, client testimonials, and digital project videos from Studio Craft." />
+  <meta name="author" content="Dusan Stevanovic" />
+
+  <meta property="og:title"       content="Video Work | Studio Craft" />
+  <meta property="og:description" content="Explore selected website walkthroughs, client testimonials, and digital project videos from Studio Craft." />
+  <meta property="og:image"       content="assets/images/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- Custom cursor -->
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-label" aria-hidden="true"><span>View</span></div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="header" role="banner">
+  <a href="index.html" class="header__logo" aria-label="Studio Craft — Home">
+    Studio<span>.</span>
+  </a>
+  <div class="header__right">
+    <nav class="header__nav-desktop" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="websites.html">Websites</a>
+      <a href="videos.html" class="is-active">Videos</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn--primary btn--sm header__cta" data-magnetic="0.25">Start a Project</a>
+    <button class="header__toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<nav class="nav-overlay" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="nav-overlay__links">
+    <a href="index.html"    class="nav-overlay__link">Home</a>
+    <a href="websites.html" class="nav-overlay__link">Websites</a>
+    <a href="videos.html"   class="nav-overlay__link">Videos</a>
+    <a href="about.html"    class="nav-overlay__link">About</a>
+    <a href="services.html" class="nav-overlay__link">Services</a>
+    <a href="contact.html"  class="nav-overlay__link">Contact</a>
+  </div>
+  <div class="nav-overlay__bottom">
+    <p>&copy; 2024 Studio Craft</p>
+    <div class="nav-overlay__social">
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Dribbble</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     VIDEO MODAL
+     Shared lightbox — identical markup to index.html. js/video-modal.js
+     fills .video-modal__frame with a native <video> (R2 MP4 source)
+     only once a video card is opened, and empties it again on close.
+============================================================ -->
+<div class="video-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="video-modal__backdrop"></div>
+  <div class="video-modal__dialog">
+    <button type="button" class="video-modal__close" aria-label="Close video">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </button>
+    <div class="video-modal__frame"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE
+============================================================ -->
+<main class="page-videos" id="main">
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="videos-hero" aria-label="Video work introduction">
+    <div class="section-intro">
+      <div class="section-intro__text">
+        <span class="eyebrow" data-reveal>Selected Video Work</span>
+        <h1 class="t-headline" data-reveal data-reveal-delay="1">Projects in Motion.</h1>
+        <p class="t-lead" data-reveal data-reveal-delay="2">
+          A collection of website walkthroughs, client experiences, and selected digital
+          projects — showing not just how the work looks, but how it comes together.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURED VIDEO
+       One larger, more prominent entry above the library grid.
+       Uses the base .video-card component (not --featured, which
+       is tuned for the homepage's fixed grid-area layout) so it's
+       safe as a standalone, full-width section.
+  ============================================================ -->
+  <section class="videos-featured" aria-label="Featured video">
+    <article class="video-card videos-featured__card" data-reveal>
+      <button
+        type="button"
+        class="video-card__media"
+        data-cursor="view"
+        data-cursor-label="Play"
+        data-video-src="https://pub-305c96ca93cb4dc5b075e51fd57c0e2e.r2.dev/Home%20-%20Alex%20Pinck%20Real%20Estate%20-%20Google%20Chrome%202024-10-23%2011-06-02%20(1).mp4"
+        data-video-title="Alex Pinck Real Estate — Full Walkthrough"
+        aria-label="Play video: Alex Pinck Real Estate — Full Walkthrough"
+      >
+        <img
+          class="video-card__thumb"
+          src="assets/images/videos/Home _alex_pinck.jpg"
+          alt="Alex Pinck Real Estate website walkthrough"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1903"
+          height="836"
+        />
+        <span class="video-card__play" aria-hidden="true">
+          <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 1.5L12 7L3 12.5V1.5Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </button>
+      <div class="video-card__meta">
+        <span class="tag">Website Walkthrough</span>
+        <h2 class="video-card__title">Alex Pinck Real Estate</h2>
+        <p class="video-card__subtitle">Custom Real Estate Website</p>
+        <p class="video-card__description">
+          A full walkthrough of the custom-built Alex Pinck Real Estate website —
+          from homepage hero through property search and lead capture.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============================================================
+       VIDEO LIBRARY
+       Scalable archive grid — built to hold many more entries over
+       time. Each card carries data-category so the filter bar above
+       can show/hide it (see js/video-filters.js); new categories can
+       be added the same way without touching the filtering logic.
+
+       To add another video: duplicate one <article class="video-card">
+       block and edit:
+         - data-video-src / data-video-title → the R2 MP4 URL + title
+         - data-category                      → project | testimonial | case-study
+         - .video-card__thumb                 → poster image (src/alt/width/height)
+         - .tag                                → category label (tag--gold for
+                                                  testimonials, plain tag otherwise)
+         - title / subtitle                   → .video-card__title / __subtitle
+       For a horizontal "wide" card, also add the classes
+       "video-card--wide video-library__item--full".
+  ============================================================ -->
+  <section class="videos-library" aria-label="Video library">
+
+    <div class="filter-bar" role="group" aria-label="Filter videos by category">
+      <button class="filter-btn is-active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="project">Projects</button>
+      <button class="filter-btn" data-filter="testimonial">Testimonials</button>
+      <button class="filter-btn" data-filter="case-study">Case Studies</button>
+    </div>
+
+    <div class="video-library">
+
+      <!-- ---- Project video ---- -->
+      <article class="video-card" data-category="project" data-reveal>
+        <button
+          type="button"
+          class="video-card__media"
+          data-cursor="view"
+          data-cursor-label="Play"
+          data-video-src="https://pub-305c96ca93cb4dc5b075e51fd57c0e2e.r2.dev/aspen_homepage_video.mp4"
+          data-video-title="Boutique Brokerage Platform — Project Video"
+          aria-label="Play video: Boutique Brokerage Platform — Project Video"
+        >
+          <img
+            class="video-card__thumb"
+            src="assets/images/videos/aspen_homepage_video_poster_new.jpg"
+            alt="Boutique real estate brokerage website homepage"
+            loading="lazy"
+            decoding="async"
+            width="1920"
+            height="970"
+          />
+          <span class="video-card__play" aria-hidden="true">
+            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 1.5L12 7L3 12.5V1.5Z" fill="currentColor"/>
+            </svg>
+          </span>
+        </button>
+        <div class="video-card__meta">
+          <span class="tag">Project Video</span>
+          <h3 class="video-card__title">Luxury Real Estate Platform</h3>
+          <p class="video-card__subtitle">Custom WordPress Design &amp; Development</p>
+        </div>
+      </article>
+
+      <!-- ---- Client testimonial ---- -->
+      <article class="video-card" data-category="testimonial" data-reveal data-reveal-delay="1">
+        <button
+          type="button"
+          class="video-card__media"
+          data-cursor="view"
+          data-cursor-label="Play"
+          data-video-src="https://pub-305c96ca93cb4dc5b075e51fd57c0e2e.r2.dev/sure_homepage_video.mp4"
+          data-video-title="Client Experience — Video Testimonial"
+          aria-label="Play video: Client Experience — Video Testimonial"
+        >
+          <img
+            class="video-card__thumb"
+            src="assets/images/videos/sure_poster_video_new.jpg"
+            alt="SURE Group Real Estate client testimonial"
+            loading="lazy"
+            decoding="async"
+            width="1920"
+            height="1539"
+          />
+          <span class="video-card__play" aria-hidden="true">
+            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 1.5L12 7L3 12.5V1.5Z" fill="currentColor"/>
+            </svg>
+          </span>
+        </button>
+        <div class="video-card__meta">
+          <span class="tag tag--gold">Client Testimonial</span>
+          <h3 class="video-card__title">SURE Group Real Estate</h3>
+          <p class="video-card__subtitle">Custom Real Estate Website</p>
+        </div>
+      </article>
+
+      <!-- ---- Client testimonial (wide) ---- -->
+      <article class="video-card video-card--wide video-library__item--full" data-category="testimonial" data-reveal data-reveal-delay="2">
+        <button
+          type="button"
+          class="video-card__media"
+          data-cursor="view"
+          data-cursor-label="Play"
+          data-video-src="https://pub-305c96ca93cb4dc5b075e51fd57c0e2e.r2.dev/video_review_new.mp4"
+          data-video-title="Working With Drake Stevanovic — Client Review"
+          aria-label="Play video: Working With Drake Stevanovic — Client Review"
+        >
+          <img
+            class="video-card__thumb"
+            src="assets/images/videos/reviews_new.jpg"
+            alt="Client review — working with Drake Stevanovic"
+            loading="lazy"
+            decoding="async"
+            width="4224"
+            height="1528"
+          />
+          <span class="video-card__play" aria-hidden="true">
+            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 1.5L12 7L3 12.5V1.5Z" fill="currentColor"/>
+            </svg>
+          </span>
+        </button>
+        <div class="video-card__meta">
+          <span class="tag tag--gold">Client Testimonial</span>
+          <h3 class="video-card__title">Working With Drake Stevanovic</h3>
+          <p class="video-card__subtitle">Video Review · 2024</p>
+        </div>
+      </article>
+
+    </div><!-- /video-library -->
+  </section>
+
+</main><!-- /page-videos -->
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__cta">
+    <div class="footer__cta-label">Start a project</div>
+    <div class="footer__cta-headline" data-reveal>
+      Your next website<br>starts <em>here.</em>
+    </div>
+    <a href="mailto:hello@yourdomain.com" class="footer__cta-email">hello@yourdomain.com</a>
+  </div>
+
+  <div class="footer__main">
+    <div class="footer__brand">
+      <a href="index.html" class="footer__logo">Studio<span>.</span></a>
+      <p>The independent practice of Dusan "Drake" Stevanovic — senior web designer &amp; front-end developer. 11+ years, 500+ websites delivered.</p>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Navigation</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="websites.html">Websites</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Services</div>
+      <ul>
+        <li><a href="services.html">Website Design</a></li>
+        <li><a href="services.html">Frontend Dev</a></li>
+        <li><a href="services.html">WordPress</a></li>
+        <li><a href="services.html">AgentFire</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Connect</div>
+      <ul>
+        <li><a href="#" target="_blank" rel="noopener">Twitter / X</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Dribbble</a></li>
+        <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__bottom-copy">&copy; 2024 Studio Craft. All rights reserved.</p>
+    <div class="footer__bottom-right">
+      <a href="#top" class="back-top" aria-label="Back to top">
+        <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 12V2M2 7l5-5 5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Top
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="js/utils.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/video-modal.js"></script>
+<script src="js/video-filters.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
