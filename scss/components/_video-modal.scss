@@ -1,0 +1,117 @@
+// ============================================================
+// VIDEO MODAL
+// Shared lightbox for the homepage Video Showcase section.
+// Videos are hosted on Cloudflare R2 as direct MP4 files — the
+// <video> element is injected by JS only when opened, and removed
+// again on close, so nothing plays or loads in the background.
+//
+// The frame has no fixed aspect ratio: it sizes to the video's own
+// intrinsic dimensions (via max-width/max-height + object-fit) so
+// both 16:9 walkthroughs and 9:16 portrait testimonials play at
+// their natural shape instead of being stretched or cropped.
+// ============================================================
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: $z-nav + 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $gutter;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  @include transition(opacity);
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba($black, 0.92);
+  }
+
+  &__dialog {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 64rem;
+    transform: scale(0.98);
+    transition: transform $duration $ease-out;
+  }
+
+  &.is-open &__dialog {
+    transform: scale(1);
+  }
+
+  &__close {
+    align-self: flex-end;
+    margin-bottom: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border: 1px solid rgba($paper, 0.3);
+    border-radius: 50%;
+    color: $paper;
+    cursor: none;
+    @include flex-center;
+    @include transition(border-color, background);
+
+    svg { width: 0.875rem; height: 0.875rem; }
+
+    &:hover {
+      border-color: $paper;
+      background: rgba($paper, 0.06);
+    }
+  }
+
+  &__frame {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__video {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    // Leave room for the close button + surrounding padding above/below.
+    max-height: min(80vh, 44rem);
+    background: $black;
+    border: 1px solid $line;
+  }
+
+  // No intrinsic size to size against yet, so the empty state gets
+  // its own fixed-ratio box rather than collapsing to nothing.
+  &__empty {
+    width: 100%;
+    @include aspect(16/9);
+    @include flex-center;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 2rem;
+    color: $slate;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    background: $dark;
+    border: 1px solid $line;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-modal,
+  .video-modal__dialog {
+    transition: none;
+  }
+}

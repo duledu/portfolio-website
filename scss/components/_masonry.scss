@@ -5,9 +5,17 @@
 .masonry {
   column-count: 1;
   column-gap: 1.5rem;
+  // Breathing room between the last row of card content and the
+  // divider that follows the grid (e.g. the Selected Websites CTA).
+  margin-bottom: 2.25rem; // 36px — mobile
 
   @include md {
     column-count: 2;
+    margin-bottom: 3rem; // 48px — tablet
+  }
+
+  @include lg {
+    margin-bottom: 3.5rem; // 56px — desktop
   }
 
   @include xl {

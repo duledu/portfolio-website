@@ -115,6 +115,25 @@
 </nav>
 
 <!-- ============================================================
+     VIDEO MODAL
+     Shared lightbox for the Video Showcase section further down
+     the page. Empty by default — js/video-modal.js fills
+     .video-modal__frame with a native <video> (R2 MP4 source) only
+     once a video card is opened, and empties it again on close.
+============================================================ -->
+<div class="video-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="video-modal__backdrop"></div>
+  <div class="video-modal__dialog">
+    <button type="button" class="video-modal__close" aria-label="Close video">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </button>
+    <div class="video-modal__frame"></div>
+  </div>
+</div>
+
+<!-- ============================================================
      HERO
 ============================================================ -->
 <section class="hero" aria-label="Introduction">
@@ -365,9 +384,191 @@
   </div><!-- /masonry -->
 
   <!-- View all CTA -->
-  <div style="text-align:center; padding: 4rem 0 6rem; border-top: 1px solid rgba(249,244,237,.12);">
+  <div class="section-works__cta">
     <a href="websites.html" class="btn btn--ghost" data-magnetic="0.3">
       View All 20 Projects
+      <span class="btn__arrow">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     VIDEO SHOWCASE
+     Videos are hosted on Cloudflare R2 as direct public MP4 URLs —
+     no embed providers involved.
+
+     To add another video: duplicate one <article class="video-card">
+     block inside .video-grid and edit:
+       - data-video-src     → the public R2 MP4 URL
+       - data-video-title   → used as the player's title and the
+                               play button's aria-label
+       - .video-card__thumb → poster image (swap the src/alt)
+       - .tag                → category label (use tag--gold for
+                               testimonials, plain tag for project
+                               videos, matching the rest of the grid)
+       - title / subtitle   → .video-card__title / __subtitle
+
+     No R2 URL yet? Leave data-video-src as a placeholder (or empty)
+     — the modal shows a small "not set yet" message instead of
+     attempting to load an invalid URL.
+============================================================ -->
+<section class="section-videos" aria-label="Video showcase">
+  <div class="section-intro">
+    <div class="section-intro__text">
+      <span class="eyebrow" data-reveal>Video Showcase</span>
+      <h2 class="t-headline" data-reveal data-reveal-delay="1">Selected Video Work</h2>
+      <p class="section-videos__lead" data-reveal data-reveal-delay="2">
+        A selection of website walkthroughs, project presentations, and client
+        testimonials — highlighting both the work and the experience behind it.
+      </p>
+    </div>
+  </div>
+
+  <div class="video-grid">
+
+    <!-- ---- Featured: website walkthrough ---- -->
+    <article class="video-card video-card--featured video-grid__item--featured" data-reveal>
+      <button
+        type="button"
+        class="video-card__media"
+        data-cursor="view"
+        data-cursor-label="Play"
+        data-video-src="R2_VIDEO_URL_PROJECT_01"
+        data-video-title="Luxury Real Estate Website — Full Walkthrough"
+        aria-label="Play video: Luxury Real Estate Website — Full Walkthrough"
+      >
+        <img
+          class="video-card__thumb"
+          src="assets/images/projects/screencapture-3-realty-east-coast-agentfire3-2024-05-13-09_04_31.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          width="480"
+          height="1690"
+        />
+        <span class="video-card__play" aria-hidden="true">
+          <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 1.5L12 7L3 12.5V1.5Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </button>
+      <div class="video-card__meta">
+        <span class="tag">Website Walkthrough</span>
+        <h3 class="video-card__title">Luxury Real Estate Website</h3>
+        <p class="video-card__subtitle">AgentFire · Custom Design</p>
+      </div>
+    </article>
+
+    <!-- ---- Secondary: project video ---- -->
+    <article class="video-card video-grid__item--a" data-reveal data-reveal-delay="1">
+      <button
+        type="button"
+        class="video-card__media"
+        data-cursor="view"
+        data-cursor-label="Play"
+        data-video-src="R2_VIDEO_URL_PROJECT_02"
+        data-video-title="Boutique Brokerage Platform — Project Video"
+        aria-label="Play video: Boutique Brokerage Platform — Project Video"
+      >
+        <img
+          class="video-card__thumb"
+          src="assets/images/projects/screencapture-foxx-group-agentfire3-2024-12-26-20_43_43.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          width="512"
+          height="1915"
+        />
+        <span class="video-card__play" aria-hidden="true">
+          <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 1.5L12 7L3 12.5V1.5Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </button>
+      <div class="video-card__meta">
+        <span class="tag">Project Video</span>
+        <h3 class="video-card__title">Boutique Brokerage Platform</h3>
+        <p class="video-card__subtitle">Custom WordPress Build</p>
+      </div>
+    </article>
+
+    <!-- ---- Secondary: client testimonial ---- -->
+    <article class="video-card video-grid__item--b" data-reveal data-reveal-delay="2">
+      <button
+        type="button"
+        class="video-card__media"
+        data-cursor="view"
+        data-cursor-label="Play"
+        data-video-src="R2_VIDEO_URL_PROJECT_03"
+        data-video-title="Client Experience — Video Testimonial"
+        aria-label="Play video: Client Experience — Video Testimonial"
+      >
+        <img
+          class="video-card__thumb"
+          src="assets/images/projects/screencapture-gbarrett-agentfire3-2022-03-24-07_11_53.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          width="480"
+          height="1383"
+        />
+        <span class="video-card__play" aria-hidden="true">
+          <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 1.5L12 7L3 12.5V1.5Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </button>
+      <div class="video-card__meta">
+        <span class="tag tag--gold">Client Testimonial</span>
+        <h3 class="video-card__title">Client Experience</h3>
+        <p class="video-card__subtitle">Custom Website Project</p>
+      </div>
+    </article>
+
+    <!-- ---- Wide: client testimonial ---- -->
+    <article class="video-card video-card--wide video-grid__item--wide" data-reveal data-reveal-delay="3">
+      <button
+        type="button"
+        class="video-card__media"
+        data-cursor="view"
+        data-cursor-label="Play"
+        data-video-src="R2_VIDEO_URL_PROJECT_04"
+        data-video-title="Working With Studio Craft — Client Review"
+        aria-label="Play video: Working With Studio Craft — Client Review"
+      >
+        <img
+          class="video-card__thumb"
+          src="assets/images/projects/screencapture-holmesrealtygroup-2023-06-15-23_27_22.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          width="480"
+          height="1786"
+        />
+        <span class="video-card__play" aria-hidden="true">
+          <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 1.5L12 7L3 12.5V1.5Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </button>
+      <div class="video-card__meta">
+        <span class="tag tag--gold">Client Testimonial</span>
+        <h3 class="video-card__title">Working With Studio Craft</h3>
+        <p class="video-card__subtitle">Video Review · 2024</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- More video work CTA -->
+  <div class="section-videos__cta">
+    <!-- TODO: point this at a dedicated videos page once one exists -->
+    <a href="#" class="btn btn--ghost" data-magnetic="0.3">
+      More Video Work
       <span class="btn__arrow">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/>
@@ -794,6 +995,7 @@
 <script src="js/masonry.js"></script>
 <script src="js/project-preview.js"></script>
 <script src="js/filters.js"></script>
+<script src="js/video-modal.js"></script>
 <script src="js/main.js"></script>
 
 </body>

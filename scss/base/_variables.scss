@@ -25,6 +25,11 @@ $space-xl:  8rem;
 $space-2xl: 12rem;
 $space-3xl: 16rem;
 
+// Desktop top/bottom padding for major homepage sections. Adjacent
+// sections share a border, so two sections each padded by this value
+// produce ~120px of visual space between them.
+$space-section: 3.75rem; // 60px
+
 // Grid
 $max-width: 1440px;
 $gutter:    2rem;

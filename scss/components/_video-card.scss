@@ -1,0 +1,174 @@
+// ============================================================
+// VIDEO CARD
+// Used by the homepage Video Showcase section. Thumbnail-first —
+// the actual embed is only requested by JS after the card is
+// clicked (see js/video-modal.js).
+// ============================================================
+
+.video-card {
+  display: block;
+
+  // ---- Media / thumbnail ----
+  &__media {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background: $dark;
+    cursor: none;
+    @include aspect(16/9);
+
+    // Constant subtle wash so the play affordance reads immediately —
+    // videos need to look clickable without relying on hover.
+    &::after {
+      content: '';
+      @include fill;
+      background: rgba($black, 0.28);
+      transition: background $duration $ease;
+      z-index: 1;
+    }
+  }
+
+  &__media:hover::after {
+    background: rgba($black, 0.4);
+  }
+
+  &__thumb {
+    @include fill;
+    object-fit: cover;
+    object-position: 50% 0%;
+    @include transition(transform);
+  }
+
+  // ---- Play button ----
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba($paper, 0.45);
+    background: rgba($black, 0.3);
+    @include flex-center;
+    @include transition(border-color, background);
+
+    svg {
+      width: 0.8125rem;
+      height: 0.8125rem;
+      margin-left: 2px; // optical centering for the triangle
+      color: $paper;
+    }
+  }
+
+  &__media:hover &__play {
+    border-color: $paper;
+    background: rgba($black, 0.45);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &__media:hover &__thumb {
+      transform: scale(1.045);
+    }
+
+    &__media:hover &__play {
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__thumb,
+    &__play {
+      transition: none;
+    }
+
+    &__media:hover &__thumb {
+      transform: none;
+    }
+
+    &__media:hover &__play {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // ---- Meta ----
+  &__meta {
+    padding: 1.5rem 0 0;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+    font-weight: 300;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: $paper;
+    margin: 0.75rem 0 0.375rem;
+  }
+
+  &__subtitle {
+    font-size: 0.8125rem;
+    color: $slate;
+    letter-spacing: 0.02em;
+  }
+}
+
+// ============================================================
+// FEATURED VARIANT — the larger, lead video in the showcase grid
+// ============================================================
+
+.video-card--featured {
+  @include lg {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .video-card__media {
+    @include lg {
+      aspect-ratio: auto;
+      flex: 1;
+      min-height: 0;
+    }
+  }
+
+  .video-card__title {
+    @include lg {
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+    }
+  }
+}
+
+// ============================================================
+// WIDE VARIANT — horizontal layout, used for the testimonial
+// callout so the two content types read distinctly without
+// splitting into separate sections
+// ============================================================
+
+.video-card--wide {
+  @include lg {
+    display: flex;
+    align-items: stretch;
+    gap: 2.5rem;
+  }
+
+  .video-card__media {
+    @include lg {
+      width: 42%;
+      flex-shrink: 0;
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  .video-card__meta {
+    @include lg {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+    }
+  }
+}

@@ -185,7 +185,7 @@
   border-top: 1px solid $line;
 
   @include lg {
-    padding: $space-xl $gutter-lg;
+    padding: $space-section $gutter-lg;
   }
 
   &__header {
@@ -206,6 +206,86 @@
   }
 }
 
+// ---- Selected works CTA (bottom of masonry preview) ----
+// Self-contained: owns the divider above it, equal padding on both
+// sides of the button, and relies on the next section's own
+// border-top as the divider below it (.section-works has no bottom
+// padding, so nothing else sits between the CTA and that line).
+.section-works__cta {
+  text-align: center;
+  padding: $space-lg 0;
+  border-top: 1px solid $line;
+}
+
+// ---- Video showcase ----
+.section-videos {
+  padding: $space-lg $gutter 0;
+  border-top: 1px solid $line;
+
+  @include lg {
+    padding: $space-section $gutter-lg 0;
+  }
+
+  &__lead {
+    font-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
+    color: $muted;
+    line-height: 1.75;
+    margin-top: 1.25rem;
+    max-width: 34rem;
+  }
+}
+
+// Grid: single column on mobile, 2-up on tablet, an editorial
+// bento (tall featured item + stacked pair + a wide testimonial
+// strip) on desktop.
+.video-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2.25rem; // 36px — breathing room before the CTA divider (mobile)
+
+  @include md {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem; // 48px — tablet
+  }
+
+  @include lg {
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem; // 56px — desktop
+    grid-template-areas:
+      'featured secondary-a'
+      'featured secondary-b'
+      'wide     wide';
+  }
+
+  &__item--featured {
+    @include md { grid-column: 1 / -1; }
+    @include lg { grid-area: featured; }
+  }
+
+  &__item--a { @include lg { grid-area: secondary-a; } }
+  &__item--b { @include lg { grid-area: secondary-b; } }
+
+  &__item--wide {
+    @include md { grid-column: 1 / -1; }
+    @include lg { grid-area: wide; }
+  }
+}
+
+// ---- Video showcase CTA ----
+// Same self-contained pattern as .section-works__cta: divider above,
+// equal padding on both sides of the button, and the next section's
+// own border-top serves as the divider below.
+.section-videos__cta {
+  text-align: center;
+  padding: $space-lg 0;
+  border-top: 1px solid $line;
+}
+
 // ---- About preview ----
 .section-about-preview {
   padding: $space-xl $gutter;
@@ -215,10 +295,10 @@
   gap: 4rem;
 
   @include lg {
-    padding: $space-2xl $gutter-lg;
+    padding: $space-section $gutter-lg;
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
-    align-items: center;
+    align-items: flex-end;
   }
 
   &__img {
@@ -253,7 +333,7 @@
   border-top: 1px solid $line;
 
   @include lg {
-    padding: $space-2xl $gutter-lg;
+    padding: $space-section $gutter-lg;
   }
 }
 
@@ -324,7 +404,7 @@
   background: $dark;
 
   @include lg {
-    padding: $space-2xl $gutter-lg;
+    padding: $space-section $gutter-lg;
   }
 }
 
@@ -376,7 +456,7 @@
   border-top: 1px solid $line;
 
   @include lg {
-    padding: $space-2xl $gutter-lg;
+    padding: $space-section $gutter-lg;
   }
 }
 
@@ -447,7 +527,7 @@
   background: $dark;
 
   @include lg {
-    padding: $space-2xl $gutter-lg;
+    padding: $space-section $gutter-lg;
   }
 }
 
@@ -515,7 +595,7 @@
   border-top: 1px solid $line;
 
   @include lg {
-    padding: $space-2xl $gutter-lg;
+    padding: $space-section $gutter-lg;
   }
 }
 
@@ -577,7 +657,7 @@
   text-align: center;
 
   @include lg {
-    padding: $space-2xl $gutter-lg;
+    padding: $space-section $gutter-lg;
   }
 
   &__headline {

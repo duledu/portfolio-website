@@ -38,4 +38,9 @@ $(document).ready(function () {
     ProjectPreview.init();
   }
 
+  // ---- Video showcase lightbox ----
+  if (typeof VideoModal !== 'undefined') {
+    VideoModal.init();
+  }
+
 });
