@@ -50,7 +50,7 @@ import { next } from '@vercel/functions';
 
 // ---- Fixed config (not secret — safe to keep in code) ----
 const COOKIE_NAME = '__drake_session';
-const SESSION_MAX_AGE = 60 * 60 * 24 * 7; // 7 days — "a reasonable browsing session"
+const SESSION_MAX_AGE = 60 * 60 * 4; // 4 hours
 const UNLOCK_PATH = '/__unlock';
 
 // Paths that are always reachable, even when locked — nothing sensitive
@@ -133,7 +133,15 @@ export default async function middleware(request) {
   const authenticated = await verifySessionToken(cookieToken, secret);
 
   if (authenticated) {
-    return next({ headers: { 'X-Robots-Tag': 'noindex, nofollow, noarchive' } });
+    const headers = { 'X-Robots-Tag': 'noindex, nofollow, noarchive' };
+    // Only the HTML pages themselves — never CSS/JS/images/fonts, which
+    // should keep their normal caching so performance doesn't regress.
+    // This keeps the browser (and bfcache) from redisplaying a protected
+    // page once the session cookie has expired or been cleared.
+    if (isHtmlPageRequest(pathname)) {
+      headers['Cache-Control'] = 'no-store';
+    }
+    return next({ headers });
   }
 
   return htmlResponse(renderLockPage(), {
@@ -180,6 +188,16 @@ function buildCookie(token, hostname) {
   // would silently never be set. Only relax this for local dev.
   if (!isLocal) attrs.push('Secure');
   return attrs.join('; ');
+}
+
+// True for page navigations (.html files and extension-less routes like
+// "/"), false for static assets (css/js/images/fonts/etc.) — so
+// Cache-Control: no-store only ever lands on the pages, not the assets.
+function isHtmlPageRequest(pathname) {
+  const lastSegment = pathname.slice(pathname.lastIndexOf('/') + 1);
+  const dotIndex = lastSegment.lastIndexOf('.');
+  const ext = dotIndex === -1 ? '' : lastSegment.slice(dotIndex);
+  return ext === '' || ext === '.html';
 }
 
 function getCookie(request, name) {
