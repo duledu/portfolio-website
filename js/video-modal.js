@@ -53,7 +53,7 @@ const VideoModal = (function () {
 
     if (!isPlayableSrc(src)) {
       return $('<div class="video-modal__empty"></div>').append(
-        $('<p></p>').text('Video source not set yet — add an R2 video URL to this card’s data-video-src attribute.')
+        $('<p></p>').text('Video source not set yet. Add an R2 video URL to this card’s data-video-src attribute.')
       );
     }
 
@@ -76,12 +76,14 @@ const VideoModal = (function () {
     $modal.attr('aria-hidden', 'false').addClass('is-open');
     $('body').addClass('no-scroll');
     $close.trigger('focus');
+    FocusTrap.activate($modal);
   }
 
   function close() {
     if (!isOpen) return;
     isOpen = false;
 
+    FocusTrap.deactivate();
     $modal.attr('aria-hidden', 'true').removeClass('is-open');
     $('body').removeClass('no-scroll');
 

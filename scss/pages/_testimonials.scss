@@ -1,0 +1,201 @@
+// ============================================================
+// TESTIMONIALS PAGE
+// Client Feedback — a dedicated, scalable archive of real client
+// reviews (see js/testimonials-data.js), presented as editorial
+// entries in a masonry column layout so varying quote lengths sit
+// naturally instead of forcing an equal-height card grid.
+// ============================================================
+
+.page-testimonials {
+  padding-top: 8rem;
+
+  @include lg {
+    padding-top: 10rem;
+  }
+}
+
+// ---- Hero ----
+.testimonials-hero {
+  padding: 0 $gutter $space-lg;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: 0 $gutter-lg $space-xl;
+  }
+
+  &__note {
+    max-width: 40rem;
+    margin-top: 1.25rem;
+    color: $slate;
+    font-size: 0.8125rem;
+    line-height: 1.7;
+  }
+}
+
+// ---- Grid wrapper ----
+.testimonials-list {
+  padding: $space-lg $gutter;
+
+  @include lg {
+    padding: $space-xl $gutter-lg;
+  }
+}
+
+// ---- Individual entry ----
+.testimonial-entry {
+  padding: 0 0 2rem;
+
+  &__quote {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: $paper;
+    margin: 0 0 1.5rem;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    color: $paper;
+  }
+
+  &__context {
+    font-size: 0.75rem;
+    color: $slate;
+    letter-spacing: 0.02em;
+  }
+
+  &__original {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: $font-body;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $gold;
+    cursor: none;
+    @include hover-line;
+
+    svg {
+      width: 0.75rem;
+      height: 0.75rem;
+      transition: transform $duration-fast $ease;
+    }
+
+    &:hover svg {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+// Each masonry item gets its own divider so the column layout still
+// reads as a series of distinct entries rather than one long column
+// of text.
+.testimonials-list .masonry__item {
+  border-bottom: 1px solid $line;
+  padding-bottom: 2rem;
+}
+
+// ============================================================
+// IMAGE MODAL (original review screenshot lightbox)
+// Same visual language and interaction pattern as .video-modal —
+// backdrop + centered dialog + close button — sized for a static
+// image instead of a video.
+// ============================================================
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: $z-nav + 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $gutter;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  @include transition(opacity);
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba($black, 0.92);
+  }
+
+  &__dialog {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 40rem;
+    transform: scale(0.98);
+    transition: transform $duration $ease-out;
+  }
+
+  &.is-open &__dialog {
+    transform: scale(1);
+  }
+
+  &__close {
+    align-self: flex-end;
+    margin-bottom: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border: 1px solid rgba($paper, 0.3);
+    border-radius: 50%;
+    color: $paper;
+    cursor: none;
+    @include flex-center;
+    @include transition(border-color, background);
+
+    svg { width: 0.875rem; height: 0.875rem; }
+
+    &:hover {
+      border-color: $paper;
+      background: rgba($paper, 0.06);
+    }
+  }
+
+  &__frame {
+    position: relative;
+    width: 100%;
+    max-height: min(80vh, 44rem);
+    overflow: auto;
+    background: $dark;
+    border: 1px solid $line;
+    @include flex-center;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-modal,
+  .image-modal__dialog {
+    transition: none;
+  }
+}

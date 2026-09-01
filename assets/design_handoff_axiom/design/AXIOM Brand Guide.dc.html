@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AXIOM — Brand Guide (Internal)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Bellefair&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,200;1,6..72,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin:0; padding:0; background:#0A0A0B; }
+  * { box-sizing:border-box; }
+  ::selection { background:#C8B79A; color:#0A0A0B; }
+  a { color:#C8B79A; text-decoration:none; border-bottom:1px solid rgba(200,183,154,.3); }
+  a:hover { color:#F2EEE6; border-bottom-color:#F2EEE6; }
+</style>
+</helmet>
+
+<div style="background:#0A0A0B;color:#F2EEE6;font-family:Archivo,sans-serif;-webkit-font-smoothing:antialiased">
+  <svg viewBox="0 0 265.632 273.116" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs><g id="ax-oct" fill="currentColor" fill-rule="nonzero"><path d="M0,0C7.427,6.123 12.736,13.229 14,23C15.012,36.154 12.385,47.263 6.816,59.121C3.927,65.772 4.233,74.08 6.188,80.988C9.046,88.067 14.215,92.742 21,96C28.456,98.423 36.022,97.209 43,94C48.712,90.887 52.498,87.007 55.148,81.039C57.409,72.97 57.377,63.937 53.875,56.25C50.591,50.768 46.733,48.344 40.625,46.75C39.429,46.503 38.233,46.255 37,46L37,45C43.935,44.488 49.282,44.792 55,49C61.447,54.722 65.32,61.486 66.379,70.07C66.796,81.229 64.237,91.547 56.832,100.074C56.227,100.71 55.623,101.345 55,102C54.488,102.563 53.976,103.127 53.449,103.707C46.575,110.445 37.462,113.219 28.021,113.338C24.674,113.301 21.343,113.18 18,113C25.55,124.666 36.238,129.318 49.508,132.625C60.623,134.298 73.796,134.03 83.281,127.422C88.34,123.237 91.518,118.579 92.406,111.984C92.607,105.059 92.089,100.324 87.801,94.746C85.077,92.105 82.616,91.085 79,90L79,89C85.282,89.112 88.69,90.468 93.234,94.852C97.965,100.608 99.667,107.187 99.32,114.555C98.252,122.709 95.167,129.67 88.688,134.848C73.572,145.196 56.21,146.117 38.563,142.938C27.744,140.191 18.444,134.933 9.988,127.699C7.906,125.851 7.906,125.851 5,124C7.562,136.175 12.764,148.392 23,156C35.523,163.436 48.362,165.115 62.485,161.565C63.191,161.379 63.898,161.192 64.625,161C74.537,158.409 84.737,156.808 94.172,161.805C99.034,164.984 103.252,169.382 105,175C105.809,182.334 106.257,189.941 102.27,196.422C98.992,200.496 95.139,203.685 90,205C86.991,205.147 84.009,205.118 81,205L81,204C82.176,203.794 83.351,203.588 84.563,203.375C90.594,201.856 94.257,198.306 97.938,193.438C99.981,186.825 100.27,179.783 97.375,173.438C92.653,168.592 89.581,166.741 82.75,166.5C76.396,166.702 71.675,168.295 66,171C64.214,171.742 62.422,172.471 60.625,173.188C59.438,173.673 59.438,173.673 58.227,174.168C47.423,178.205 35.31,176.684 25,172C9.027,164.215 -1.92,151.109 -8.246,134.574C-8.901,132.794 -8.901,132.794 -11,132C-9.713,152.619 -2.673,167.833 7.992,185.254C15.354,197.372 18.945,208.506 16.527,222.793C13.712,233.667 7.112,240.766 -2,247C-3.61,247.922 -5.235,248.82 -6.875,249.688C-11.827,252.308 -14.251,255.014 -16.25,260.313C-16.498,261.199 -16.745,262.086 -17,263L-19,263C-19.576,258.391 -19.279,255.832 -16.563,252C-13.534,248.278 -10.015,245.623 -6.18,242.781C-0.506,238.144 4.13,231.369 5.318,224.038C6.581,207.141 -0.508,195.855 -9.059,181.828C-17.604,167.81 -23.301,154.264 -25.543,137.906C-25.694,137.277 -25.845,136.648 -26,136C-26.66,135.67 -27.32,135.34 -28,135C-28.155,136.856 -28.155,136.856 -28.313,138.75C-30.437,156.995 -38.197,172.434 -47.937,187.718C-55.962,200.378 -60.296,210.89 -59,226C-56.293,236.096 -47.745,242.927 -40,249.375C-37.285,251.751 -36.287,252.802 -35,256C-34.875,259.25 -34.875,259.25 -35,262C-37,260 -37,260 -38.25,257.688C-41.594,252.553 -46.311,249.776 -51.438,246.625C-60.431,240.934 -66.845,234.448 -70,224C-72.603,204.67 -65.22,190.717 -55.835,174.518C-47.5,160.112 -43.987,148.579 -43,132L-45,132C-45.095,132.69 -45.191,133.379 -45.289,134.09C-48.462,147.076 -59.988,160.187 -70.766,167.691C-82.551,174.594 -95.306,178.444 -109,176C-114.988,173.976 -120.562,171.012 -126.072,167.94C-130.775,165.648 -135.863,165.258 -141,166C-146.461,168.227 -150.544,171.576 -153,177C-154.182,184.106 -152.773,190.877 -149,197C-144.973,201.224 -140.945,203.703 -135,204L-135,205C-141.403,205.523 -145.92,205.12 -151,201C-157.403,195.173 -158.961,189.445 -159.375,181C-159.204,174.813 -157.388,170.481 -153.094,166.02C-148.624,161.975 -144.862,158.753 -138.629,158.734C-137.807,158.732 -136.985,158.729 -136.139,158.727C-134.863,158.738 -134.863,158.738 -133.563,158.75C-132.716,158.742 -131.87,158.735 -130.998,158.727C-126.504,158.741 -123.102,159.002 -119,161C-113.909,163.048 -109.528,163.304 -104.125,163.25C-103.361,163.258 -102.596,163.265 -101.809,163.273C-90.404,163.235 -80.328,159.242 -71.813,151.563C-64.694,143.945 -60.208,134.082 -58,124C-61.301,126.146 -64.431,128.346 -67.5,130.813C-83.59,142.911 -101.312,145.577 -121,144C-131.457,142.509 -141.142,137.303 -147.715,128.973C-152.16,122.149 -154.21,115.106 -153,107C-151.137,99.233 -147.472,94.581 -141,90C-138.291,88.646 -135.991,88.935 -133,89C-136,91 -136,91 -138.938,92.625C-143.435,96.113 -145.548,99.8 -146.348,105.461C-146.637,113.641 -144.531,119.932 -139,126C-133.159,129.724 -126.995,132.75 -120,133C-119.085,133.037 -118.17,133.075 -117.227,133.113C-110.829,133.266 -105.135,132.792 -99,131C-97.579,130.615 -97.579,130.615 -96.129,130.223C-86.204,127.277 -78.106,122.469 -72,114C-71.67,113.34 -71.34,112.68 -71,112C-71.921,112.039 -71.921,112.039 -72.861,112.079C-95.42,112.916 -95.42,112.916 -103,107C-104.046,106.29 -104.046,106.29 -105.113,105.566C-111.797,100.519 -116.439,92.617 -118.672,84.582C-120.065,73.621 -119.966,63.399 -113.645,53.98C-110.531,50.015 -106.918,46.478 -102,45C-97.975,44.692 -94.027,44.762 -90,45L-90,46C-90.652,46.159 -91.305,46.317 -91.977,46.48C-97.709,48.011 -101.936,49.453 -106,54C-110.503,62.035 -111.122,69.248 -108.875,78.063C-106.301,85.748 -101.601,91.655 -94.688,95.93C-87.787,98.678 -79.755,98.078 -72.938,95.313C-66.334,91.827 -61.369,86.108 -59,79C-57.792,67.771 -59.651,59.685 -64.371,49.547C-68.674,40.178 -68.37,27.66 -66.316,17.676C-65.401,15.255 -64.374,13.19 -63,11C-62.588,10.301 -62.175,9.603 -61.75,8.883C-56.214,0.547 -47.737,-4.509 -38.281,-7.348C-24.358,-10.116 -11.707,-7.822 0,0Z" transform="translate(159.375,10.116)"></path><path d="M0,0C3.163,2.875 4.756,5.397 5.406,9.664C5.658,17.602 4.104,22.847 -1,29C-7.153,34.127 -13.185,35.521 -21,35C-21.66,34.34 -22.32,33.68 -23,33C-21.845,32.752 -20.69,32.505 -19.5,32.25C-15.607,31.289 -12.285,29.796 -8.762,27.902C-7,27 -7,27 -4,26C-2.916,24.251 -2.916,24.251 -2,22C-1.196,20.732 -1.196,20.732 -0.375,19.438C2.134,13.165 1.458,6.504 0,0Z" transform="translate(197.429,211.898)"></path><path d="M0,0C0.66,0.33 1.32,0.66 2,1C1.67,1.66 1.34,2.32 1,3C0.451,9.863 0.128,17.039 4,23C9.959,29.513 15.273,31.973 24,33L24,34C16.505,34.45 10.173,34.698 4,30C-1.349,25.068 -3.658,20.48 -4.375,13.188C-4.28,8.292 -2.219,4.279 0,0Z" transform="translate(66.431,211.898)"></path></g></defs></svg>
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(24px,5vw,72px)">
+
+    <header style="padding:clamp(56px,8vw,112px) 0 clamp(56px,7vw,100px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#7E7970;margin-bottom:clamp(64px,10vw,140px);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
+        <span>Internal reference · <span style="color:#C8B79A">brand.html</span> · not in public navigation</span>
+        <span>AXIOM v1.0 draft</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(26px,3.4vw,40px)">
+        <svg viewBox="0 0 265.632 273.116" style="width:clamp(96px,11vw,138px);height:auto;display:block;fill:#F2EEE6"><use href="#ax-oct"></use></svg>
+        <div>
+          <div style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-weight:400;font-size:clamp(46px,9vw,110px);line-height:.9;letter-spacing:.16em;text-indent:.16em">AXIOM</div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-top:clamp(22px,2.6vw,32px)">
+            <span style="width:40px;height:1px;background:#242428;display:block"></span>
+            <span style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(16px,1.9vw,23px);color:#C8B79A">Dušan “Drake” Stevanović</span>
+            <span style="width:40px;height:1px;background:#242428;display:block"></span>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7E7970;margin-top:18px">Senior Web Designer · Front-End Developer · Technical Lead</div>
+        </div>
+      </div>
+    </header>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">01–03<br /><span style="color:#F2EEE6">Meaning, origin, philosophy</span></div>
+      <div>
+        <h1 style="font-family:Newsreader,serif;font-weight:200;font-size:clamp(34px,5.6vw,70px);line-height:1.04;margin:0 0 36px;letter-spacing:-.015em;text-wrap:pretty;max-width:17ch">The principle everything else is <span style="font-style:italic;color:#C8B79A">built on.</span></h1>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,4vw,56px);max-width:1000px">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:16px">Origin</div>
+            <p style="font-family:Newsreader,serif;font-weight:300;font-size:17.5px;line-height:1.62;color:#C4BFB4;margin:0">From the Greek <span style="font-style:italic">axiōma</span> (ἀξίωμα) — something held worthy, accepted as self-evident — which entered modern international usage through Latin. In mathematics, logic and systems thinking an axiom is the foundational statement from which the rest of a system follows.</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:16px">Interpretation</div>
+            <p style="font-family:Newsreader,serif;font-weight:300;font-size:17.5px;line-height:1.62;color:#C4BFB4;margin:0">The foundation has to be right for anything above it to hold. That is the working method: structure before interface, logic before code, foundation before scale. It is what separates eleven years of shipped production work from decoration.</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:16px">The tension</div>
+            <p style="font-family:Newsreader,serif;font-weight:300;font-size:17.5px;line-height:1.62;color:#C4BFB4;margin:0">AXIOM is absolute; the octopus is adaptive. The identity lives in that contradiction — a rigid architectural system with one intelligent organism inside it. Rigid × fluid. System × adaptation. Logic × instinct.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#242428;border:1px solid #242428;margin-top:clamp(44px,6vw,76px)">
+          <div style="background:#0A0A0B;padding:26px 24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:12px">Foundation</div><div style="font-family:Newsreader,serif;font-weight:300;font-size:19px;color:#F2EEE6">AXIOM provides the structure</div></div>
+          <div style="background:#0A0A0B;padding:26px 24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:12px">Intelligence</div><div style="font-family:Newsreader,serif;font-weight:300;font-size:19px;color:#F2EEE6">The octopus provides adaptability</div></div>
+          <div style="background:#0A0A0B;padding:26px 24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:12px">Execution</div><div style="font-family:Newsreader,serif;font-weight:300;font-size:19px;color:#F2EEE6">Dušan provides the experience behind both</div></div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">04<br /><span style="color:#F2EEE6">AXIOM × Dušan “Drake” Stevanović</span></div>
+      <div>
+        <div style="border:1px solid #242428;padding:clamp(32px,4.5vw,56px);margin-bottom:32px">
+          <div style="display:grid;gap:0">
+            <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;align-items:center;padding-bottom:26px;border-bottom:1px solid #242428"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase">Primary brand</span><span style="font-family:Archivo,sans-serif;font-variation-settings:'wdth' 112;font-size:clamp(26px,3.4vw,40px);letter-spacing:.16em">AXIOM</span></div>
+            <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid #242428"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase">Symbol</span><span style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(20px,2.4vw,28px);color:#C4BFB4">The octopus</span></div>
+            <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid #242428"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase">Person</span><span style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(20px,2.4vw,28px);color:#F2EEE6">Dušan Stevanović</span></div>
+            <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid #242428"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase">Professional name</span><span style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(20px,2.4vw,28px);color:#C8B79A">“Drake”</span></div>
+            <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;align-items:center;padding-top:26px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase">Title</span><span style="font-size:clamp(13px,1.4vw,15px);color:#C4BFB4;letter-spacing:.02em">Senior Web Designer · Front-End Developer · Technical Lead</span></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:1px;background:#242428;border:1px solid #242428">
+          <div style="background:#121215;padding:clamp(26px,3vw,36px) 28px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:20px">Where AXIOM leads</div><div style="font-size:14px;line-height:2.05;color:#C4BFB4">Header · favicon · preloader<br />Password screen · page transitions<br />Open Graph · social avatar<br />Domain and email identity</div></div>
+          <div style="background:#121215;padding:clamp(26px,3vw,36px) 28px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:20px">Where the person leads</div><div style="font-size:14px;line-height:2.05;color:#C4BFB4">Hero and About · Experience / CV<br />Résumé and applications<br />Contact and email signature<br />Person schema · page titles</div></div>
+          <div style="background:#121215;padding:clamp(26px,3vw,36px) 28px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:20px">Rules</div><div style="font-size:14px;line-height:2.05;color:#7E7970">Never “we” — AXIOM is one person<br />Never Organization schema<br />Drake always in quotes, never alone<br />Never AXIOM Studio / Agency</div></div>
+        </div>
+        <p style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(17px,1.5vw,21px);line-height:1.6;color:#C4BFB4;margin:36px 0 0;max-width:64ch;text-wrap:pretty">Drake stays in the identity because it is how clients already refer to him — several genuine Google reviews name Drake or Drake Stevanovic. Written in full as <span style="color:#F2EEE6">Dušan “Drake” Stevanović</span>, the reviews connect to the person without a word of explanation.</p>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">05<br /><span style="color:#F2EEE6">The octopus</span></div>
+      <div>
+        <div style="display:grid;grid-template-columns:minmax(240px,360px) minmax(0,1fr);gap:1px;background:#242428;border:1px solid #242428">
+          <div style="background:#121215;padding:clamp(40px,5vw,64px);display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 265.632 273.116" style="width:100%;max-width:176px;height:auto;display:block;color:#F2EEE6"><use href="#ax-oct"></use></svg>
+          </div>
+          <div style="background:#121215;padding:clamp(28px,4vw,46px)">
+            <p style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:#C4BFB4;margin:0 0 30px;max-width:56ch;text-wrap:pretty">Eight arms, one nervous system. The octopus is the most credible animal metaphor available for multidisciplinary work: design, UX, front-end, technology, product, systems, leadership and communication running in parallel, coordinated from a single centre.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px 28px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C8B79A;line-height:1.9;padding-top:28px;border-top:1px solid #242428">
+              <span>Intelligence</span><span>Adaptability</span><span>System thinking</span><span>Control</span><span>Problem solving</span><span>Precision</span>
+            </div>
+            <p style="font-size:13.5px;line-height:1.75;color:#7E7970;margin:30px 0 0;max-width:58ch">This is conceptual meaning, never an infographic — the arms are never labelled. The surrounding language keeps it intellectual: no waves, anchors, ropes, compasses, ocean texture or Kraken references anywhere in the system. The octopus appears against grids and architecture, never against the sea.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <svg viewBox="0 0 100 100" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs><g id="ax-micro" fill="currentColor"><path d="M50 5c11.5 0 19 10.5 19 26 0 12-6.5 20-19 20S31 43 31 31C31 15.5 38.5 5 50 5Z"></path><path d="M45.5 49h9l-1.5 45h-6z"></path><path d="M38 47c-1 15-7.5 26-17.5 35l-5-5.5C24 68.5 29.5 59 30.5 46Z"></path><path d="M62 47c1 15 7.5 26 17.5 35l5-5.5C76 68.5 70.5 59 69.5 46Z"></path><path d="M32 38c-3.5 13-13 21.5-26 24.5l-2-7.5C15 52.5 22.5 45.5 25 35Z"></path><path d="M68 38c3.5 13 13 21.5 26 24.5l2-7.5C85 52.5 77.5 45.5 75 35Z"></path></g></defs></svg>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">06–08<br /><span style="color:#F2EEE6">Logo system</span></div>
+      <div>
+        <p style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(17px,1.5vw,21px);line-height:1.6;color:#C4BFB4;margin:0 0 clamp(40px,5vw,60px);max-width:62ch;text-wrap:pretty">Five configurations, one construction rule: the wordmark's cap height sets the module, the symbol stands at four modules, and the gap between symbol and word is always one module. Nothing in the lockup is positioned by eye.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;background:#242428;border:1px solid #242428">
+
+          <div style="background:#121215;padding:clamp(34px,4vw,52px) clamp(26px,3.4vw,42px);display:flex;flex-direction:column">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:44px">07 · Primary — stacked</div>
+            <div style="margin:auto 0;text-align:center">
+              <svg viewBox="0 0 265.632 273.116" style="width:66px;height:auto;display:block;margin:0 auto 24px;color:#F2EEE6"><use href="#ax-oct"></use></svg>
+              <div style="font-variation-settings:'wdth' 112;font-weight:400;font-size:36px;letter-spacing:.16em;text-indent:.16em;line-height:1">AXIOM</div>
+            </div>
+          </div>
+
+          <div style="background:#121215;padding:clamp(34px,4vw,52px) clamp(26px,3.4vw,42px);display:flex;flex-direction:column">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:44px">08 · Professional lockup</div>
+            <div style="margin:auto 0;text-align:center">
+              <svg viewBox="0 0 265.632 273.116" style="width:56px;height:auto;display:block;margin:0 auto 22px;color:#F2EEE6"><use href="#ax-oct"></use></svg>
+              <div style="font-variation-settings:'wdth' 112;font-weight:400;font-size:30px;letter-spacing:.16em;text-indent:.16em;line-height:1;margin-bottom:16px">AXIOM</div>
+              <div style="width:28px;height:1px;background:#C8B79A;margin:0 auto 16px"></div>
+              <div style="font-family:Newsreader,serif;font-weight:300;font-size:15px;color:#C8B79A;margin-bottom:9px">Dušan “Drake” Stevanović</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#7E7970;line-height:1.9">Senior Web Designer · Front-End<br />Developer · Technical Lead</div>
+            </div>
+          </div>
+
+          <div style="background:#121215;padding:clamp(34px,4vw,52px) clamp(26px,3.4vw,42px);display:flex;flex-direction:column">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:44px">Horizontal — header</div>
+            <div style="margin:auto 0;display:flex;align-items:center;justify-content:center;gap:16px">
+              <svg viewBox="0 0 265.632 273.116" style="width:36px;height:auto;display:block;color:#F2EEE6"><use href="#ax-oct"></use></svg>
+              <div style="font-variation-settings:'wdth' 112;font-weight:400;font-size:22px;letter-spacing:.18em;text-indent:.18em;line-height:1">AXIOM</div>
+            </div>
+          </div>
+
+          <div style="background:#121215;padding:clamp(34px,4vw,52px) clamp(26px,3.4vw,42px);display:flex;flex-direction:column">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:44px">10 · Symbol only</div>
+            <div style="margin:auto 0;display:flex;justify-content:center"><svg viewBox="0 0 265.632 273.116" style="width:76px;height:auto;display:block;color:#F2EEE6"><use href="#ax-oct"></use></svg></div>
+          </div>
+
+          <div style="background:#121215;padding:clamp(34px,4vw,52px) clamp(26px,3.4vw,42px);display:flex;flex-direction:column">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:44px">Inverse — light ground</div>
+            <div style="margin:auto 0;background:#F2EEE6;padding:26px;display:flex;align-items:center;justify-content:center;gap:14px">
+              <svg viewBox="0 0 265.632 273.116" style="width:32px;height:auto;display:block;color:#0A0A0B"><use href="#ax-oct"></use></svg>
+              <div style="font-variation-settings:'wdth' 112;font-weight:400;font-size:20px;letter-spacing:.18em;text-indent:.18em;line-height:1;color:#0A0A0B">AXIOM</div>
+            </div>
+          </div>
+
+          <div style="background:#121215;padding:clamp(34px,4vw,52px) clamp(26px,3.4vw,42px);display:flex;flex-direction:column">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:44px">Accent — single-colour</div>
+            <div style="margin:auto 0;display:flex;align-items:center;justify-content:center;gap:14px">
+              <svg viewBox="0 0 265.632 273.116" style="width:32px;height:auto;display:block;color:#C8B79A"><use href="#ax-oct"></use></svg>
+              <div style="font-variation-settings:'wdth' 112;font-weight:400;font-size:20px;letter-spacing:.18em;text-indent:.18em;line-height:1;color:#C8B79A">AXIOM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">09<br /><span style="color:#F2EEE6">Wordmark</span><br /><span style="color:#C8B79A">decision open</span></div>
+      <div>
+        <p style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(17px,1.5vw,21px);line-height:1.6;color:#C4BFB4;margin:0 0 clamp(40px,5vw,60px);max-width:62ch;text-wrap:pretty">The supplied reference sets AXIOM in Bellefair, a light didone-adjacent serif. It is elegant but fragile: the hairlines break up below 20px, and it pulls the brand towards fashion rather than systems. Three candidates, all tracked to 0.16em so the X sits at the optical centre of the word. Pick one.</p>
+        <div style="display:grid;gap:1px;background:#242428;border:1px solid #242428">
+
+          <div style="background:#121215;padding:clamp(32px,4vw,52px) clamp(26px,3.4vw,44px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:clamp(24px,4vw,48px);align-items:center">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:28px">Option A · Archivo — one voice with the UI</div>
+              <div style="font-variation-settings:'wdth' 100;font-weight:500;font-size:clamp(38px,6vw,74px);letter-spacing:.16em;text-indent:.16em;line-height:1">AXIOM</div>
+            </div>
+            <div style="font-size:13.5px;line-height:1.75;color:#C4BFB4">The wordmark and the interface are cut from the same family, so the brand never announces itself as a separate object. Squared terminals, closed apertures, unambiguous at 12px. The most systematic and the least distinctive.</div>
+          </div>
+
+          <div style="background:#121215;padding:clamp(32px,4vw,52px) clamp(26px,3.4vw,44px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:clamp(24px,4vw,48px);align-items:center">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:28px">Option B · Archivo Expanded — monumental</div>
+              <div style="font-variation-settings:'wdth' 125;font-weight:400;font-size:clamp(34px,5.4vw,66px);letter-spacing:.18em;text-indent:.18em;line-height:1">AXIOM</div>
+            </div>
+            <div style="font-size:13.5px;line-height:1.75;color:#C4BFB4">The same family opened to its widest width axis. Reads as engraved rather than typed — architectural, international, and still one type family in the build. Needs horizontal room, so the header uses the symbol alone below 900px.</div>
+          </div>
+
+          <div style="background:#121215;padding:clamp(32px,4vw,52px) clamp(26px,3.4vw,44px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:clamp(24px,4vw,48px);align-items:center">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:28px">Option C · Bellefair — as supplied</div>
+              <div style="font-family:Bellefair,serif;font-size:clamp(44px,7vw,86px);letter-spacing:.14em;text-indent:.14em;line-height:1">AXIOM</div>
+            </div>
+            <div style="font-size:13.5px;line-height:1.75;color:#C4BFB4">The reference as drawn. Intellectual and quiet, and it pairs naturally with the editorial serif already on the site. Hairline strokes are the risk: it needs a minimum of 22px on screen and disappears against photography.</div>
+          </div>
+        </div>
+        <div style="border-left:2px solid #C8B79A;padding:20px 0 20px 26px;margin-top:36px;max-width:68ch">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:12px">Recommendation</div>
+          <p style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#F2EEE6;margin:0;text-wrap:pretty">Option B. The expanded width gives AXIOM the monumentality the organic symbol needs to sit against, it holds at every size the serif fails at, and it costs nothing extra in the build — one variable family covers wordmark, navigation and UI.</p>
+        </div>
+        <p style="font-size:13px;line-height:1.7;color:#7E7970;margin:28px 0 0;max-width:66ch">On the X: no intervention. It is already the optical centre and the only diagonal in the word — tracking is doing the work. Any cut, gap or overlap added to it would read as a gimmick against an organic symbol that is doing the expressive work already.</p>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">10–11<br /><span style="color:#F2EEE6">Symbol audit &amp; micro mark</span></div>
+      <div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:#242428;border:1px solid #242428;margin-bottom:32px">
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:30px">Audit — supplied artwork</div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:11px 16px;font-size:13.5px;line-height:1.6;color:#C4BFB4">
+              <span style="color:#C8B79A">✓</span><span>Bilaterally symmetrical to within 0.4 units on a 266-unit width</span>
+              <span style="color:#C8B79A">✓</span><span>Silhouette is distinctive at medium and large sizes</span>
+              <span style="color:#C8B79A">✓</span><span>Single colour, no strokes, works in ivory, obsidian and champagne</span>
+              <span style="color:#8C4A3F">△</span><span>Tentacle strokes vary in weight; the outer curls thin to roughly one third of the inner arms</span>
+              <span style="color:#8C4A3F">△</span><span>Terminal curls close to near-hairline and will fill in below 40px</span>
+              <span style="color:#8C4A3F">△</span><span>Head-to-arm mass is arm-heavy; the mantle loses presence at small sizes</span>
+            </div>
+            <p style="font-size:13px;line-height:1.7;color:#7E7970;margin:26px 0 0">Production master normalised to a tight 265.632 × 273.116 viewBox with the origin at the artwork's own bounding box, single fill, currentColor. No outline was redrawn — the character is unchanged.</p>
+          </div>
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:30px">11 · Micro mark — proposal</div>
+            <div style="display:flex;align-items:flex-end;gap:28px;margin-bottom:30px;flex-wrap:wrap">
+              <div style="text-align:center"><svg viewBox="0 0 265.632 273.116" style="width:56px;height:auto;display:block;color:#F2EEE6"><use href="#ax-oct"></use></svg><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#7E7970;margin-top:12px">FULL</div></div>
+              <div style="text-align:center"><svg viewBox="0 0 100 100" style="width:56px;height:56px;display:block;color:#C8B79A"><use href="#ax-micro"></use></svg><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#7E7970;margin-top:12px">MICRO</div></div>
+            </div>
+            <p style="font-size:13.5px;line-height:1.7;color:#C4BFB4;margin:0">Six arms instead of eight, curls removed, mantle enlarged and every stroke brought to one weight. It keeps the frontal stance and the silhouette rhythm of the original but survives 16px. This is the one piece of new drawing in the system and it needs your approval before it becomes the favicon.</p>
+          </div>
+        </div>
+        <div style="border:1px solid #242428;background:#121215;padding:clamp(30px,3.6vw,44px);display:flex;align-items:flex-end;gap:clamp(26px,4vw,56px);flex-wrap:wrap">
+          <div style="text-align:center"><svg viewBox="0 0 100 100" style="width:48px;height:48px;display:block;color:#F2EEE6"><use href="#ax-micro"></use></svg><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#7E7970;margin-top:14px">48</div></div>
+          <div style="text-align:center"><svg viewBox="0 0 100 100" style="width:32px;height:32px;display:block;color:#F2EEE6"><use href="#ax-micro"></use></svg><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#7E7970;margin-top:14px">32</div></div>
+          <div style="text-align:center"><svg viewBox="0 0 100 100" style="width:24px;height:24px;display:block;color:#F2EEE6"><use href="#ax-micro"></use></svg><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#7E7970;margin-top:14px">24</div></div>
+          <div style="text-align:center"><svg viewBox="0 0 100 100" style="width:16px;height:16px;display:block;color:#F2EEE6"><use href="#ax-micro"></use></svg><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#7E7970;margin-top:14px">16</div></div>
+          <div style="text-align:center"><div style="width:64px;height:64px;background:#F2EEE6;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 100 100" style="width:38px;height:38px;display:block;color:#0A0A0B"><use href="#ax-micro"></use></svg></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#7E7970;margin-top:14px">TOUCH ICON</div></div>
+          <div style="text-align:center"><div style="width:64px;height:64px;background:#0A0A0B;border:1px solid #242428;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 100 100" style="width:38px;height:38px;display:block;color:#C8B79A"><use href="#ax-micro"></use></svg></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#7E7970;margin-top:14px">AVATAR</div></div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">12–14<br /><span style="color:#F2EEE6">Clear space, minimum size, misuse</span></div>
+      <div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#242428;border:1px solid #242428">
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:28px">12 · Clear space</div>
+            <div style="position:relative;padding:44px;border:1px dashed #C8B79A;display:flex;justify-content:center;margin-bottom:24px">
+              <svg viewBox="0 0 265.632 273.116" style="width:88px;height:auto;display:block;color:#F2EEE6"><use href="#ax-oct"></use></svg>
+            </div>
+            <div style="font-size:13.5px;line-height:1.7;color:#C4BFB4">Clear space equals half the symbol's height on every side, measured from the artwork bounding box — not from the arm tips' visual centre. In the lockup the measure is taken from the widest element, usually the wordmark.</div>
+          </div>
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:28px">13 · Minimum size</div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:12px 20px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C4BFB4;margin-bottom:22px">
+              <span style="color:#C8B79A">40px</span><span>Full symbol, screen</span>
+              <span style="color:#C8B79A">16px</span><span>Micro mark, screen</span>
+              <span style="color:#C8B79A">18mm</span><span>Full symbol, print</span>
+              <span style="color:#C8B79A">120px</span><span>Horizontal lockup, min width</span>
+              <span style="color:#C8B79A">180px</span><span>Professional lockup, min width</span>
+            </div>
+            <div style="font-size:13.5px;line-height:1.7;color:#C4BFB4">Below 40px the full symbol is always replaced by the micro mark — never scaled down and never simplified on the fly.</div>
+          </div>
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:28px">14 · Incorrect usage</div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:11px 16px;font-size:13.5px;line-height:1.55;color:#C4BFB4">
+              <span style="color:#8C4A3F">✕</span><span>Any gradient, glow, bevel or drop shadow</span>
+              <span style="color:#8C4A3F">✕</span><span>Outlined or stroke-only versions of the symbol</span>
+              <span style="color:#8C4A3F">✕</span><span>Rotating, mirroring or tilting the octopus</span>
+              <span style="color:#8C4A3F">✕</span><span>Waves, anchors, ropes, bubbles or water anywhere near it</span>
+              <span style="color:#8C4A3F">✕</span><span>Adding eyes, expression or character detail</span>
+              <span style="color:#8C4A3F">✕</span><span>Placing it over busy photography without a masked plane</span>
+              <span style="color:#8C4A3F">✕</span><span>Setting AXIOM in any typeface other than the chosen master</span>
+              <span style="color:#8C4A3F">✕</span><span>“AXIOM Studio”, “AXIOM Agency” or any suffix</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">15<br /><span style="color:#F2EEE6">Typography</span></div>
+      <div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:#242428;border:1px solid #242428;margin-bottom:clamp(36px,4.5vw,56px)">
+          <div style="background:#121215;padding:32px 28px"><div style="font-family:Newsreader,serif;font-weight:200;font-size:50px;line-height:1;margin-bottom:20px">Newsreader</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#C8B79A;text-transform:uppercase;margin-bottom:12px">Thought · vision · editorial</div><div style="font-size:13px;line-height:1.7;color:#C4BFB4">Display, headings, body, pull quotes. Weights 200 and 300 only. Italic reserved for one phrase per screen.</div></div>
+          <div style="background:#121215;padding:32px 28px"><div style="font-variation-settings:'wdth' 112;font-weight:500;font-size:42px;line-height:1.1;margin-bottom:26px">Archivo</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#C8B79A;text-transform:uppercase;margin-bottom:12px">System · technology · precision</div><div style="font-size:13px;line-height:1.7;color:#C4BFB4">Wordmark, navigation, buttons, UI, small body. Variable width axis 62–125: 100 for interface, 125 for the wordmark.</div></div>
+          <div style="background:#121215;padding:32px 28px"><div style="font-family:'IBM Plex Mono',monospace;font-size:32px;line-height:1.2;margin-bottom:28px">IBM Plex<br />Mono</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#C8B79A;text-transform:uppercase;margin-bottom:12px">Instrumentation</div><div style="font-size:13px;line-height:1.7;color:#C4BFB4">Eyebrows, section numbers, coordinates, project metadata, technical labels. Never above 13px, never for reading.</div></div>
+        </div>
+        <div style="border:1px solid #242428">
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);border-bottom:1px solid #242428;align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">Display<br /><span style="color:#5C5852;letter-spacing:.04em">Newsreader 200 · 48–120 · 0.96</span></div><div style="font-family:Newsreader,serif;font-weight:200;font-size:clamp(36px,4.8vw,62px);line-height:.96;letter-spacing:-.02em">Structure, then intelligence</div></div>
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);border-bottom:1px solid #242428;align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">H1<br /><span style="color:#5C5852;letter-spacing:.04em">Newsreader 200 · 38–72 · 1.04</span></div><div style="font-family:Newsreader,serif;font-weight:200;font-size:clamp(30px,3.6vw,46px);line-height:1.04;letter-spacing:-.015em">Built with precision</div></div>
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);border-bottom:1px solid #242428;align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">H2<br /><span style="color:#5C5852;letter-spacing:.04em">Newsreader 300 · 30–52 · 1.1</span></div><div style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(24px,2.8vw,36px);line-height:1.1">Selected video work</div></div>
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);border-bottom:1px solid #242428;align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">H3<br /><span style="color:#5C5852;letter-spacing:.04em">Archivo 600 · 20–24 · 1.3</span></div><div style="font-weight:600;font-size:21px;line-height:1.3;letter-spacing:.01em">Front-end development</div></div>
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);border-bottom:1px solid #242428;align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">Body<br /><span style="color:#5C5852;letter-spacing:.04em">Newsreader 300 · 18–21 · 1.6 · 64ch</span></div><div style="font-family:Newsreader,serif;font-weight:300;font-size:19px;line-height:1.6;color:#C4BFB4;max-width:56ch">Eleven years of production work across five hundred sites, most shipped under real deadlines with a client on the other side of the call.</div></div>
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);border-bottom:1px solid #242428;align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">Eyebrow<br /><span style="color:#5C5852;letter-spacing:.04em">Plex Mono 500 · 11 · +0.2 · caps</span></div><div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#C8B79A">02 — Selected work</div></div>
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);border-bottom:1px solid #242428;align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">Navigation<br /><span style="color:#5C5852;letter-spacing:.04em">Archivo 500 · 13 · +0.12 · caps</span></div><div style="display:flex;gap:28px;flex-wrap:wrap;font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase"><span style="color:#F2EEE6">Work</span><span style="color:#7E7970">About</span><span style="color:#7E7970">Videos</span><span style="color:#7E7970">Testimonials</span></div></div>
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);border-bottom:1px solid #242428;align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">Button<br /><span style="color:#5C5852;letter-spacing:.04em">Archivo 600 · 12 · +0.16 · caps</span></div><div style="font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase">Enter portfolio</div></div>
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);border-bottom:1px solid #242428;align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">Project metadata<br /><span style="color:#5C5852;letter-spacing:.04em">Plex Mono 400 · 11 · +0.16 · caps</span></div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#7E7970;display:flex;gap:22px;flex-wrap:wrap"><span>2024</span><span>Design · Front-end</span><span>WordPress</span></div></div>
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);border-bottom:1px solid #242428;align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">Testimonial<br /><span style="color:#5C5852;letter-spacing:.04em">Newsreader 300 italic + attribution</span></div><div><div style="font-family:Newsreader,serif;font-weight:300;font-style:italic;font-size:19px;line-height:1.55;color:#F2EEE6;max-width:48ch">Client wording is never edited, including the name they used.</div><div style="margin-top:16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font-weight:500;font-size:14px">Client name</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7E7970">Google review · 2024</span></div></div></div>
+          <div style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;padding:26px clamp(22px,3vw,36px);align-items:baseline"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase">Technical label<br /><span style="color:#5C5852;letter-spacing:.04em">Plex Mono 400 · 10 · +0.22 · caps</span></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#C8B79A">Fig. 04 — symbol 265.6 × 273.1</div></div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">16<br /><span style="color:#F2EEE6">Colour</span></div>
+      <div>
+        <p style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(17px,1.5vw,21px);line-height:1.6;color:#C4BFB4;margin:0 0 clamp(36px,4.5vw,56px);max-width:62ch;text-wrap:pretty">Seven values, no gradients. Champagne is a material, not a decoration: once per viewport, on the element that carries meaning. Two champagne moments on one screen means one of them is wrong.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:1px;background:#242428;border:1px solid #242428">
+          <div style="background:#121215"><div style="height:104px;background:#0A0A0B;border-bottom:1px solid #242428"></div><div style="padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#F2EEE6;text-transform:uppercase">Obsidian</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7E7970;margin-top:8px">#0A0A0B</div><div style="font-size:12px;color:#7E7970;margin-top:10px;line-height:1.5">Primary background</div></div></div>
+          <div style="background:#121215"><div style="height:104px;background:#121215;border-bottom:1px solid #242428"></div><div style="padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#F2EEE6;text-transform:uppercase">Carbon</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7E7970;margin-top:8px">#121215</div><div style="font-size:12px;color:#7E7970;margin-top:10px;line-height:1.5">Secondary surface</div></div></div>
+          <div style="background:#121215"><div style="height:104px;background:#242428;border-bottom:1px solid #242428"></div><div style="padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#F2EEE6;text-transform:uppercase">Line</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7E7970;margin-top:8px">#242428</div><div style="font-size:12px;color:#7E7970;margin-top:10px;line-height:1.5">Borders, construction</div></div></div>
+          <div style="background:#121215"><div style="height:104px;background:#7E7970;border-bottom:1px solid #242428"></div><div style="padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#F2EEE6;text-transform:uppercase">Stone</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7E7970;margin-top:8px">#7E7970</div><div style="font-size:12px;color:#7E7970;margin-top:10px;line-height:1.5">Secondary text · 4.9:1</div></div></div>
+          <div style="background:#121215"><div style="height:104px;background:#C4BFB4;border-bottom:1px solid #242428"></div><div style="padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#F2EEE6;text-transform:uppercase">Bone</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7E7970;margin-top:8px">#C4BFB4</div><div style="font-size:12px;color:#7E7970;margin-top:10px;line-height:1.5">Body copy · 11.5:1</div></div></div>
+          <div style="background:#121215"><div style="height:104px;background:#F2EEE6;border-bottom:1px solid #242428"></div><div style="padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#F2EEE6;text-transform:uppercase">Warm ivory</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7E7970;margin-top:8px">#F2EEE6</div><div style="font-size:12px;color:#7E7970;margin-top:10px;line-height:1.5">Primary text, symbol · 17.6:1</div></div></div>
+          <div style="background:#121215"><div style="height:104px;background:#C8B79A;border-bottom:1px solid #242428"></div><div style="padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#C8B79A;text-transform:uppercase">Champagne</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7E7970;margin-top:8px">#C8B79A</div><div style="font-size:12px;color:#7E7970;margin-top:10px;line-height:1.5">Sole accent · 10.3:1</div></div></div>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:2;color:#7E7970;margin-top:32px;border-left:1px solid #242428;padding-left:24px">
+          $ax-obsidian: #0A0A0B;<br />$ax-carbon: #121215;<br />$ax-line: #242428;<br />$ax-stone: #7E7970;<br />$ax-bone: #C4BFB4;<br />$ax-ivory: #F2EEE6;<br />$ax-champagne: #C8B79A;<br />$ax-champagne-deep: <span style="color:#9A8A6E">#9A8A6E</span>; <span style="color:#5C5852">// press / visited only</span>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">17–20<br /><span style="color:#F2EEE6">Grid, rigid × organic, photography, surrealism</span></div>
+      <div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:1px;background:#242428;border:1px solid #242428">
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:28px">17 · Grid</div>
+            <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:4px;height:110px;margin-bottom:24px">
+              <div style="background:#1F1F24"></div><div style="background:#1F1F24"></div><div style="background:#1F1F24"></div><div style="background:#C8B79A;opacity:.22"></div><div style="background:#C8B79A;opacity:.22"></div><div style="background:#C8B79A;opacity:.22"></div><div style="background:#C8B79A;opacity:.22"></div><div style="background:#C8B79A;opacity:.22"></div><div style="background:#C8B79A;opacity:.22"></div><div style="background:#1F1F24"></div><div style="background:#1F1F24"></div><div style="background:#1F1F24"></div>
+            </div>
+            <div style="font-size:13.5px;line-height:1.7;color:#C4BFB4">12 columns, 24px gutter, 1320 max. Editorial content sits in 4–9, section numbers hang in column 1, technical labels align right in column 12. Asymmetry comes from which columns are left empty.</div>
+          </div>
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:28px">18 · Rigid × organic</div>
+            <div style="position:relative;height:110px;margin-bottom:24px;overflow:hidden;border:1px solid #242428">
+              <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(8,1fr)"><div style="border-right:1px solid #1F1F24"></div><div style="border-right:1px solid #1F1F24"></div><div style="border-right:1px solid #1F1F24"></div><div style="border-right:1px solid #1F1F24"></div><div style="border-right:1px solid #1F1F24"></div><div style="border-right:1px solid #1F1F24"></div><div style="border-right:1px solid #1F1F24"></div><div></div></div>
+              <svg viewBox="0 0 265.632 273.116" style="position:absolute;left:56%;top:-38%;width:120px;height:auto;color:#C8B79A;opacity:.85"><use href="#ax-oct"></use></svg>
+            </div>
+            <div style="font-size:13.5px;line-height:1.7;color:#C4BFB4">The whole system is one idea: a perfect grid, entered by one organism. The grid is never distorted to accommodate it and the symbol is never geometricised to fit. They simply occupy the same frame, and the symbol is allowed to crop.</div>
+          </div>
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:28px">19–20 · Photography &amp; surrealism</div>
+            <div style="font-size:13.5px;line-height:1.8;color:#C4BFB4"><span style="color:#F2EEE6">Use —</span> contemporary architecture, glass, concrete, steel, structural shadow, dark interiors, dramatic natural light, unusual perspective.<br /><br /><span style="color:#7E7970">Avoid —</span> stock teams, handshakes, laptops, colourful startup photography, code screens, 3D blobs, anything maritime.<br /><br /><span style="color:#C8B79A">Surrealism —</span> one organic presence inside one rational frame, at most once per page: a single arm crossing a grid line, the symbol half-masked behind a building edge, a curve derived from the mark cutting an otherwise orthogonal layout. Monochrome, no filters, never illustrated.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">21<br /><span style="color:#F2EEE6">Motion</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px 40px;font-size:13.5px;line-height:1.7;color:#C4BFB4">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase;margin-bottom:8px">Easing</div>cubic-bezier(0.16, 1, 0.3, 1) for reveals; cubic-bezier(0.4, 0, 0.2, 1) for state. No overshoot, no elastic, no bounce.</div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase;margin-bottom:8px">Duration</div>120ms state · 320ms element · 520ms section · 640ms page transition. Preloader capped at 900ms and skipped on repeat visits.</div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase;margin-bottom:8px">Structural vocabulary</div>Clip-path wipes along a grid axis, line draws, mask reveals, opacity, translate under 24px. Interface motion runs on the grid, never diagonally.</div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#C8B79A;text-transform:uppercase;margin-bottom:8px">Organic exception</div>The symbol alone may move off-axis: a slow mask reveal from the mantle outward, arms resolving last. Never swimming, never looping, never a cartoon. One occurrence per session.</div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase;margin-bottom:8px">Reduced motion</div>prefers-reduced-motion collapses every duration to 0ms and replaces reveals with a 120ms opacity fade. The preloader is bypassed.</div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase;margin-bottom:8px">Rule</div>Motion never delays access to the work. If an animation blocks reading for more than half a second, cut it.</div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">22<br /><span style="color:#F2EEE6">Password experience</span></div>
+      <div>
+        <div style="border:1px solid #242428;background:#0A0A0B;position:relative;overflow:hidden;min-height:560px;display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,84px)">
+          <div style="position:absolute;top:0;bottom:0;left:22%;width:1px;background:#1A1A1E"></div>
+          <div style="position:absolute;top:0;bottom:0;right:22%;width:1px;background:#1A1A1E"></div>
+          <div style="position:absolute;top:clamp(24px,4vw,44px);left:clamp(24px,4vw,44px);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7E7970">Private portfolio</div>
+          <div style="position:absolute;top:clamp(24px,4vw,44px);right:clamp(24px,4vw,44px);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#C8B79A">Access required</div>
+          <div style="position:relative;max-width:440px;margin:0 auto;width:100%;text-align:center">
+            <svg viewBox="0 0 265.632 273.116" style="width:72px;height:auto;display:block;margin:0 auto 34px;color:#F2EEE6"><use href="#ax-oct"></use></svg>
+            <div style="font-variation-settings:'wdth' 125;font-weight:400;font-size:clamp(28px,4vw,40px);letter-spacing:.2em;text-indent:.2em;line-height:1;margin-bottom:26px">AXIOM</div>
+            <div style="width:36px;height:1px;background:#C8B79A;margin:0 auto 26px"></div>
+            <div style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(17px,1.8vw,21px);color:#F2EEE6;margin-bottom:12px">Dušan “Drake” Stevanović</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7E7970;line-height:2;margin-bottom:46px">Senior Web Designer · Front-End Developer<br />Technical Lead</div>
+            <div style="display:flex;gap:0;border:1px solid #242428;background:#121215">
+              <div style="flex:1;padding:17px 20px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;color:#5C5852;text-align:left">••••••••</div>
+              <div style="background:#F2EEE6;color:#0A0A0B;padding:17px 26px;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap">Enter</div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#5C5852;margin-top:20px">Access by request</div>
+          </div>
+          <div style="position:absolute;bottom:clamp(24px,4vw,44px);left:clamp(24px,4vw,44px);right:clamp(24px,4vw,44px);display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#5C5852"><span>Belgrade</span><span>11+ years · 500+ projects</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px 40px;margin-top:36px;font-size:13.5px;line-height:1.7;color:#C4BFB4">
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase;margin-bottom:8px">Idle</div>Symbol, brand, person, title — the full hierarchy is stated before any input is asked for. Two vertical construction lines hold the field.</div>
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase;margin-bottom:8px">Unlock — 640ms</div>AXIOM → access → system → work. The symbol mask-reveals outward from the mantle, the two construction lines sweep to the viewport edges, the wordmark resolves, and the interface opens behind them.</div>
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase;margin-bottom:8px">Fail</div>No shake, no red. The field border goes champagne for 200ms and the label changes. Nothing else moves.</div>
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7E7970;text-transform:uppercase;margin-bottom:8px">Preloader</div>The same symbol reveal at 60% scale, no wordmark. Once per session, capped at 900ms.</div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">23–25<br /><span style="color:#F2EEE6">Website application</span></div>
+      <div>
+        <div style="border:1px solid #242428;margin-bottom:28px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;padding:20px clamp(22px,3vw,32px);border-bottom:1px solid #242428">Header</div>
+          <div style="background:#0A0A0B;padding:20px clamp(22px,3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <div style="display:flex;align-items:center;gap:13px">
+              <svg viewBox="0 0 265.632 273.116" style="width:26px;height:auto;display:block;color:#F2EEE6"><use href="#ax-oct"></use></svg>
+              <span style="font-variation-settings:'wdth' 125;font-weight:400;font-size:15px;letter-spacing:.2em;text-indent:.2em">AXIOM</span>
+            </div>
+            <div style="display:flex;gap:26px;flex-wrap:wrap;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#7E7970"><span style="color:#F2EEE6">Work</span><span>Videos</span><span>About</span><span>Testimonials</span><span>Contact</span></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:1px;background:#242428;border:1px solid #242428">
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:28px">Hero</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#C8B79A;text-transform:uppercase;margin-bottom:16px">Dušan “Drake” Stevanović</div>
+            <div style="font-family:Newsreader,serif;font-weight:200;font-size:clamp(24px,2.6vw,34px);line-height:1.08;letter-spacing:-.015em;margin-bottom:18px">I design and build digital experiences that <span style="font-style:italic;color:#C8B79A">move businesses forward.</span></div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7E7970;line-height:1.9">Senior Web Designer · Front-End Developer · Technical Lead</div>
+            <p style="font-size:13px;line-height:1.7;color:#7E7970;margin:26px 0 0">The existing headline is unchanged. The name moves above it as the eyebrow, so the person is established in the first line a recruiter reads and AXIOM stays in the header where it belongs.</p>
+          </div>
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:28px">About — opening</div>
+            <p style="font-family:Newsreader,serif;font-weight:300;font-size:17px;line-height:1.6;color:#F2EEE6;margin:0 0 18px">AXIOM is the personal portfolio and professional identity of Dušan “Drake” Stevanović — Senior Web Designer, Front-End Developer and Technical Lead.</p>
+            <p style="font-size:13.5px;line-height:1.75;color:#C4BFB4;margin:0">One sentence, then straight into first person. Never “we”, never a company voice, never a second paragraph explaining the nickname or the octopus. The etymology stays in this document.</p>
+          </div>
+          <div style="background:#121215;padding:clamp(30px,3.6vw,44px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:28px">24–25 · Work &amp; testimonials</div>
+            <div style="font-size:13.5px;line-height:1.8;color:#C4BFB4">Selected Work, Video Walkthroughs and Testimonials stay as they are — they are the evidence. AXIOM frames the work; it never competes with it, so no symbol appears inside a project card.<br /><br />Google review screenshots stay unedited, including reviews addressed to Drake or Drake Stevanovic. The page header carries the full name in quotes once, which is all the connection a reader needs.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <section style="padding:clamp(64px,9vw,124px) 0;display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(24px,5vw,72px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7E7970;line-height:1.9">26–31<br /><span style="color:#F2EEE6">Applications &amp; assets</span></div>
+      <div>
+        <div style="border:1px solid #242428;margin-bottom:28px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;padding:20px clamp(22px,3vw,32px);border-bottom:1px solid #242428">29 · Open Graph — 1200 × 630</div>
+          <div style="background:#0A0A0B;padding:clamp(36px,5vw,60px);display:flex;flex-direction:column;justify-content:space-between;min-height:320px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(6,1fr)"><div style="border-right:1px solid #141418"></div><div style="border-right:1px solid #141418"></div><div style="border-right:1px solid #141418"></div><div style="border-right:1px solid #141418"></div><div style="border-right:1px solid #141418"></div><div></div></div>
+            <svg viewBox="0 0 265.632 273.116" style="position:absolute;right:6%;top:-14%;width:min(230px,34%);height:auto;color:#C8B79A;opacity:.9"><use href="#ax-oct"></use></svg>
+            <div style="position:relative;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7E7970">Private portfolio</div>
+            <div style="position:relative;margin-top:auto">
+              <div style="font-variation-settings:'wdth' 125;font-weight:400;font-size:clamp(28px,3.8vw,46px);letter-spacing:.2em;text-indent:.2em;line-height:1;margin-bottom:22px">AXIOM</div>
+              <div style="font-family:Newsreader,serif;font-weight:300;font-size:clamp(17px,1.9vw,23px);color:#F2EEE6;margin-bottom:12px">Dušan “Drake” Stevanović</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7E7970">Senior Web Designer · Front-End Developer · Technical Lead</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:1px;background:#242428;border:1px solid #242428">
+          <div style="background:#121215;padding:clamp(28px,3.4vw,40px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:26px">26 · Résumé</div>
+            <div style="font-size:13.5px;line-height:1.8;color:#C4BFB4">Symbol top-right at 18mm. Primary name DUŠAN STEVANOVIĆ in Archivo 600 at 24pt, with “Drake” on the line below in Newsreader italic at 12pt. AXIOM appears once, small, beside the portfolio URL. Section headings in Plex Mono caps over the champagne rule; body in Newsreader 300 at 10.5pt. Accent twice per page, maximum.</div>
+          </div>
+          <div style="background:#121215;padding:clamp(28px,3.4vw,40px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:26px">27 · Email signature</div>
+            <div style="border-left:2px solid #C8B79A;padding-left:20px;margin-bottom:22px">
+              <div style="font-weight:600;font-size:15px;margin-bottom:6px">Dušan “Drake” Stevanović</div>
+              <div style="font-size:12.5px;color:#C4BFB4;line-height:1.6;margin-bottom:10px">Senior Web Designer · Front-End Developer · Technical Lead</div>
+              <div style="font-variation-settings:'wdth' 125;font-size:11px;letter-spacing:.2em;color:#7E7970;margin-bottom:10px">AXIOM</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7E7970;line-height:1.9">[email]<br />[portfolio]</div>
+            </div>
+            <div style="font-size:13px;line-height:1.7;color:#C4BFB4">Four lines, one rule, no image. The symbol may sit at 24px left of the name, monochrome, or not at all. No banners, no social icons, no phone list.</div>
+          </div>
+          <div style="background:#121215;padding:clamp(28px,3.4vw,40px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:26px">28 · LinkedIn</div>
+            <div style="font-size:13.5px;line-height:1.8;color:#C4BFB4">Profile photo stays the portrait — the avatar mark is for platforms where a person is not expected. Cover: obsidian, the grid, the symbol cropped at the right edge in champagne, AXIOM small at lower left. Headline leads with the titles, not the brand: “Senior Web Designer · Front-End Developer · Technical Lead — AXIOM”.</div>
+          </div>
+          <div style="background:#121215;padding:clamp(28px,3.4vw,40px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:26px">30 · SEO &amp; schema</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.9;color:#C4BFB4;margin-bottom:18px">&lt;title&gt; Dušan Stevanović (Drake) —<br />Senior Web Designer &amp; Front-End Developer</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.8;color:#7E7970;border-left:1px solid #242428;padding-left:18px">"@type": "Person",<br />"name": "Dušan Stevanović",<br />"alternateName": ["Dusan Stevanovic",<br />&nbsp;&nbsp;"Drake", "Drake Stevanovic"],<br />"brand": { "@type": "Brand", "name": "AXIOM" }</div>
+            <div style="font-size:13px;line-height:1.7;color:#C4BFB4;margin-top:18px">Person only. AXIOM is a Brand on the Person, never an Organization. The person stays the searchable entity.</div>
+          </div>
+          <div style="background:#121215;padding:clamp(28px,3.4vw,40px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:26px">31 · Asset index</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:2;color:#C4BFB4">assets/brand/<br /><span style="color:#C8B79A">axiom-symbol.svg</span> <span style="color:#5C5852">master</span><br /><span style="color:#C8B79A">axiom-symbol-micro.svg</span> <span style="color:#5C5852">favicon source</span><br /><span style="color:#7E7970">octopus-raw.svg</span> <span style="color:#5C5852">supplied original, kept</span></div>
+            <div style="font-size:13px;line-height:1.7;color:#7E7970;margin-top:20px">Still to produce once the wordmark is chosen: axiom-wordmark.svg, axiom-logo.svg, axiom-logo-horizontal.svg — all with the type converted to outlines, so no font dependency ships with the logo.</div>
+          </div>
+          <div style="background:#121215;padding:clamp(28px,3.4vw,40px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#7E7970;text-transform:uppercase;margin-bottom:26px">Domain readiness</div>
+            <div style="font-size:13.5px;line-height:1.8;color:#C4BFB4">No domain or email is assumed anywhere in this system. Canonical URL, OG URL, schema url and the signature address are all single tokens, set once in SCSS and the head partial, so an AXIOM domain can be adopted later without touching a template.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height:1px;background:#242428"></div>
+
+    <footer style="padding:clamp(56px,7vw,96px) 0 clamp(64px,8vw,110px);display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 265.632 273.116" style="width:24px;height:auto;display:block;color:#7E7970"><use href="#ax-oct"></use></svg>
+        <span style="font-variation-settings:'wdth' 125;font-size:14px;letter-spacing:.2em;color:#7E7970">AXIOM</span>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#5C5852;text-align:right;line-height:2">Internal brand reference<br />Not for public navigation</div>
+    </footer>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1320}}"></script>
+</body>
+</html>

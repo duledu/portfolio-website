@@ -3,14 +3,6 @@
 // ============================================================
 
 // Display sizes
-.t-display {
-  font-family: $font-display;
-  font-size: clamp(3.5rem, 8vw, 9rem);
-  font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-}
-
 .t-headline {
   font-family: $font-display;
   font-size: clamp(2.5rem, 5vw, 6rem);
@@ -56,7 +48,7 @@
 }
 
 .t-label {
-  font-family: $font-body;
+  font-family: $font-mono; // AXIOM: labels read as instrumentation, not UI text
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.15em;
@@ -78,16 +70,38 @@
 .t-center  { text-align: center; }
 
 // Eyebrow label
+//
+// AXIOM spacing rule: an eyebrow immediately followed by a section
+// heading always sits exactly $eyebrow-heading-gap above it. That
+// value lives here, once, as the eyebrow's own margin-bottom — never
+// as a heading's margin-top and never duplicated via a parent's flex
+// `gap`. Headings should not carry their own margin-top override for
+// this relationship; if a component wraps eyebrow+heading in a flex
+// container with `gap`, drop the gap for that pair (see
+// .section-about-preview__text) so the two rules don't stack.
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: $font-body;
+  font-family: $font-mono; // AXIOM: the technical-label + construction-line device
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: $slate;
+  margin-bottom: $eyebrow-heading-gap;
+
+  // The construction line sits before the label, but the label text —
+  // not the line — is what needs to align with the heading below it on
+  // the same content grid. Pull the whole component left by the line's
+  // own footprint (width + gap) so the line hangs in the gutter and the
+  // text lands flush with the section edge. Capped to the base gutter
+  // so the line never bleeds past the viewport on narrow screens.
+  margin-left: -$gutter;
+
+  @media (min-width: #{$bp-lg}) {
+    margin-left: -2.75rem;
+  }
 
   &::before {
     content: '';

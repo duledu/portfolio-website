@@ -23,6 +23,7 @@
 @import 'components/video-card';
 @import 'components/video-modal';
 @import 'components/forms';
+@import 'components/axiom-brand';
 
 // ---- Pages ----
 @import 'pages/home';
@@ -32,6 +33,8 @@
 @import 'pages/services';
 @import 'pages/contact';
 @import 'pages/videos';
+@import 'pages/testimonials';
+@import 'pages/brand';
 
 // ============================================================
 // SCROLL PROGRESS BAR
@@ -40,7 +43,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 2px;
+  height: 1px; // champagne (10.3:1) is brighter than the old gold — thinned per handoff §3
   background: $gold;
   z-index: $z-cursor + 1;
   width: 0%;

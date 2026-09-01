@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<script>
+(function () {
+  document.documentElement.classList.add('js-reveal');
+  window.setTimeout(function () {
+    if (!window.__axiomRevealReady) {
+      document.documentElement.classList.add('reveal-fallback');
+      // jQuery-dependent Loader.init() never ran either in this case,
+      // so the preloader would otherwise stay on screen forever,
+      // covering the now-visible content underneath it.
+      var loader = document.querySelector('.loader');
+      if (loader) loader.classList.add('is-hidden');
+      document.body.classList.add('loaded');
+    }
+  }, 2500);
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Guide | AXIOM (Internal)</title>
+  <meta name="description" content="Internal AXIOM brand reference. Not linked in site navigation." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Non-render-blocking font load: fetched with high priority via preload,
+       applied once ready. display=swap already shows fallback text
+       immediately, so this only removes the stylesheet as a paint blocker. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..400&family=Archivo:wdth,wght@62..125,400..600&family=IBM+Plex+Mono:wght@400;500&family=Bellefair&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..400&family=Archivo:wdth,wght@62..125,400..600&family=IBM+Plex+Mono:wght@400;500&family=Bellefair&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..400&family=Archivo:wdth,wght@62..125,400..600&family=IBM+Plex+Mono:wght@400;500&family=Bellefair&display=swap" rel="stylesheet" /></noscript>
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/axiom-symbol-micro.svg" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#0A0A0B" />
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- AXIOM symbol sprite — inlined once so .ax-logo__symbol / .ax-symbol
+     can use <use href="#axiom-symbol"> and inherit color via currentColor.
+     Paths are byte-identical to assets/images/brand/axiom-symbol.svg. -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="axiom-symbol" viewBox="0 0 265.632 273.116"><g><path d="M0,0C7.427,6.123 12.736,13.229 14,23C15.012,36.154 12.385,47.263 6.816,59.121C3.927,65.772 4.233,74.08 6.188,80.988C9.046,88.067 14.215,92.742 21,96C28.456,98.423 36.022,97.209 43,94C48.712,90.887 52.498,87.007 55.148,81.039C57.409,72.97 57.377,63.937 53.875,56.25C50.591,50.768 46.733,48.344 40.625,46.75C39.429,46.503 38.233,46.255 37,46L37,45C43.935,44.488 49.282,44.792 55,49C61.447,54.722 65.32,61.486 66.379,70.07C66.796,81.229 64.237,91.547 56.832,100.074C56.227,100.71 55.623,101.345 55,102C54.488,102.563 53.976,103.127 53.449,103.707C46.575,110.445 37.462,113.219 28.021,113.338C24.674,113.301 21.343,113.18 18,113C25.55,124.666 36.238,129.318 49.508,132.625C60.623,134.298 73.796,134.03 83.281,127.422C88.34,123.237 91.518,118.579 92.406,111.984C92.607,105.059 92.089,100.324 87.801,94.746C85.077,92.105 82.616,91.085 79,90L79,89C85.282,89.112 88.69,90.468 93.234,94.852C97.965,100.608 99.667,107.187 99.32,114.555C98.252,122.709 95.167,129.67 88.688,134.848C73.572,145.196 56.21,146.117 38.563,142.938C27.744,140.191 18.444,134.933 9.988,127.699C7.906,125.851 7.906,125.851 5,124C7.562,136.175 12.764,148.392 23,156C35.523,163.436 48.362,165.115 62.485,161.565C63.191,161.379 63.898,161.192 64.625,161C74.537,158.409 84.737,156.808 94.172,161.805C99.034,164.984 103.252,169.382 105,175C105.809,182.334 106.257,189.941 102.27,196.422C98.992,200.496 95.139,203.685 90,205C86.991,205.147 84.009,205.118 81,205L81,204C82.176,203.794 83.351,203.588 84.563,203.375C90.594,201.856 94.257,198.306 97.938,193.438C99.981,186.825 100.27,179.783 97.375,173.438C92.653,168.592 89.581,166.741 82.75,166.5C76.396,166.702 71.675,168.295 66,171C64.214,171.742 62.422,172.471 60.625,173.188C59.438,173.673 59.438,173.673 58.227,174.168C47.423,178.205 35.31,176.684 25,172C9.027,164.215 -1.92,151.109 -8.246,134.574C-8.901,132.794 -8.901,132.794 -11,132C-9.713,152.619 -2.673,167.833 7.992,185.254C15.354,197.372 18.945,208.506 16.527,222.793C13.712,233.667 7.112,240.766 -2,247C-3.61,247.922 -5.235,248.82 -6.875,249.688C-11.827,252.308 -14.251,255.014 -16.25,260.313C-16.498,261.199 -16.745,262.086 -17,263L-19,263C-19.576,258.391 -19.279,255.832 -16.563,252C-13.534,248.278 -10.015,245.623 -6.18,242.781C-0.506,238.144 4.13,231.369 5.318,224.038C6.581,207.141 -0.508,195.855 -9.059,181.828C-17.604,167.81 -23.301,154.264 -25.543,137.906C-25.694,137.277 -25.845,136.648 -26,136C-26.66,135.67 -27.32,135.34 -28,135C-28.155,136.856 -28.155,136.856 -28.313,138.75C-30.437,156.995 -38.197,172.434 -47.937,187.718C-55.962,200.378 -60.296,210.89 -59,226C-56.293,236.096 -47.745,242.927 -40,249.375C-37.285,251.751 -36.287,252.802 -35,256C-34.875,259.25 -34.875,259.25 -35,262C-37,260 -37,260 -38.25,257.688C-41.594,252.553 -46.311,249.776 -51.438,246.625C-60.431,240.934 -66.845,234.448 -70,224C-72.603,204.67 -65.22,190.717 -55.835,174.518C-47.5,160.112 -43.987,148.579 -43,132L-45,132C-45.095,132.69 -45.191,133.379 -45.289,134.09C-48.462,147.076 -59.988,160.187 -70.766,167.691C-82.551,174.594 -95.306,178.444 -109,176C-114.988,173.976 -120.562,171.012 -126.072,167.94C-130.775,165.648 -135.863,165.258 -141,166C-146.461,168.227 -150.544,171.576 -153,177C-154.182,184.106 -152.773,190.877 -149,197C-144.973,201.224 -140.945,203.703 -135,204L-135,205C-141.403,205.523 -145.92,205.12 -151,201C-157.403,195.173 -158.961,189.445 -159.375,181C-159.204,174.813 -157.388,170.481 -153.094,166.02C-148.624,161.975 -144.862,158.753 -138.629,158.734C-137.807,158.732 -136.985,158.729 -136.139,158.727C-134.863,158.738 -134.863,158.738 -133.563,158.75C-132.716,158.742 -131.87,158.735 -130.998,158.727C-126.504,158.741 -123.102,159.002 -119,161C-113.909,163.048 -109.528,163.304 -104.125,163.25C-103.361,163.258 -102.596,163.265 -101.809,163.273C-90.404,163.235 -80.328,159.242 -71.813,151.563C-64.694,143.945 -60.208,134.082 -58,124C-61.301,126.146 -64.431,128.346 -67.5,130.813C-83.59,142.911 -101.312,145.577 -121,144C-131.457,142.509 -141.142,137.303 -147.715,128.973C-152.16,122.149 -154.21,115.106 -153,107C-151.137,99.233 -147.472,94.581 -141,90C-138.291,88.646 -135.991,88.935 -133,89C-136,91 -136,91 -138.938,92.625C-143.435,96.113 -145.548,99.8 -146.348,105.461C-146.637,113.641 -144.531,119.932 -139,126C-133.159,129.724 -126.995,132.75 -120,133C-119.085,133.037 -118.17,133.075 -117.227,133.113C-110.829,133.266 -105.135,132.792 -99,131C-97.579,130.615 -97.579,130.615 -96.129,130.223C-86.204,127.277 -78.106,122.469 -72,114C-71.67,113.34 -71.34,112.68 -71,112C-71.921,112.039 -71.921,112.039 -72.861,112.079C-95.42,112.916 -95.42,112.916 -103,107C-104.046,106.29 -104.046,106.29 -105.113,105.566C-111.797,100.519 -116.439,92.617 -118.672,84.582C-120.065,73.621 -119.966,63.399 -113.645,53.98C-110.531,50.015 -106.918,46.478 -102,45C-97.975,44.692 -94.027,44.762 -90,45L-90,46C-90.652,46.159 -91.305,46.317 -91.977,46.48C-97.709,48.011 -101.936,49.453 -106,54C-110.503,62.035 -111.122,69.248 -108.875,78.063C-106.301,85.748 -101.601,91.655 -94.688,95.93C-87.787,98.678 -79.755,98.078 -72.938,95.313C-66.334,91.827 -61.369,86.108 -59,79C-57.792,67.771 -59.651,59.685 -64.371,49.547C-68.674,40.178 -68.37,27.66 -66.316,17.676C-65.401,15.255 -64.374,13.19 -63,11C-62.588,10.301 -62.175,9.603 -61.75,8.883C-56.214,0.547 -47.737,-4.509 -38.281,-7.348C-24.358,-10.116 -11.707,-7.822 0,0Z" transform="translate(159.375,10.116)"></path><path d="M0,0C3.163,2.875 4.756,5.397 5.406,9.664C5.658,17.602 4.104,22.847 -1,29C-7.153,34.127 -13.185,35.521 -21,35C-21.66,34.34 -22.32,33.68 -23,33C-21.845,32.752 -20.69,32.505 -19.5,32.25C-15.607,31.289 -12.285,29.796 -8.762,27.902C-7,27 -7,27 -4,26C-2.916,24.251 -2.916,24.251 -2,22C-1.196,20.732 -1.196,20.732 -0.375,19.438C2.134,13.165 1.458,6.504 0,0Z" transform="translate(197.429,211.898)"></path><path d="M0,0C0.66,0.33 1.32,0.66 2,1C1.67,1.66 1.34,2.32 1,3C0.451,9.863 0.128,17.039 4,23C9.959,29.513 15.273,31.973 24,33L24,34C16.505,34.45 10.173,34.698 4,30C-1.349,25.068 -3.658,20.48 -4.375,13.188C-4.28,8.292 -2.219,4.279 0,0Z" transform="translate(66.431,211.898)"></path></g></symbol>
+</svg>
+
+
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-label" aria-hidden="true"><span>View</span></div>
+
+<!-- ============================================================
+     HEADER
+     Intentionally not linked from any nav — reachable only by direct
+     URL (and still behind the password gate like every other page).
+============================================================ -->
+<header class="header" role="banner">
+  <a href="index.html" class="header__logo ax-logo ax-logo--header" aria-label="AXIOM, Dušan Stevanović">
+    <svg class="ax-logo__symbol" viewBox="0 0 265.632 273.116" aria-hidden="true" focusable="false"><use href="#axiom-symbol"></use></svg>
+    <span class="ax-logo__word">AXIOM</span>
+  </a>
+  <div class="header__right">
+    <nav class="header__nav-desktop" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="websites.html">Work</a>
+      <a href="videos.html">Videos</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="about.html">About</a>
+      <a href="about.html#experience">Experience</a>
+      <a href="services.html">Capabilities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn--primary btn--sm header__cta" data-magnetic="0.25">Get in Touch</a>
+    <button class="header__toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="nav-overlay" aria-label="Mobile navigation" aria-hidden="true" inert>
+  <div class="nav-overlay__links">
+    <a href="index.html"    class="nav-overlay__link">Home</a>
+    <a href="websites.html" class="nav-overlay__link">Work</a>
+    <a href="videos.html"   class="nav-overlay__link">Videos</a>
+    <a href="testimonials.html" class="nav-overlay__link">Testimonials</a>
+    <a href="about.html"    class="nav-overlay__link">About</a>
+    <a href="about.html#experience" class="nav-overlay__link">Experience</a>
+    <a href="services.html" class="nav-overlay__link">Capabilities</a>
+    <a href="contact.html"  class="nav-overlay__link">Contact</a>
+  </div>
+  <div class="nav-overlay__bottom">
+    <p>&copy; 2024 AXIOM</p>
+  </div>
+</nav>
+
+<main class="page-brand" id="main">
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="brand-hero" aria-label="Brand guide introduction">
+    <span class="eyebrow" data-reveal>Internal Reference</span>
+    <h1 class="t-headline" data-reveal data-reveal-delay="1">AXIOM Brand Guide.</h1>
+    <p class="t-lead" data-reveal data-reveal-delay="2" style="margin-top:1.25rem;max-width:40rem;">
+      The system behind the personal professional brand of Dušan "Drake" Stevanović,
+      for consistent use across the site, résumé, and any future materials.
+    </p>
+    <span class="brand-hero__note" data-reveal data-reveal-delay="3">Not linked in site navigation</span>
+  </section>
+
+  <!-- ============================================================
+       MEANING
+  ============================================================ -->
+  <section class="brand-section" aria-label="Meaning">
+    <span class="eyebrow" data-reveal>01. Meaning</span>
+    <h2 class="t-title" data-reveal data-reveal-delay="1">Foundation before execution.</h2>
+    <p class="brand-section__intro" data-reveal data-reveal-delay="2">
+      An axiom is a starting truth, a principle taken as self-evident, that everything
+      else is built on. That's the intent behind the name: design and engineering
+      decisions that start from first principles, namely structure, clarity, and craft, rather
+      than trend or template. AXIOM is not a company or a studio; it's the professional
+      identity Dušan "Drake" Stevanović works under. Every page on this site should make
+      that relationship legible: AXIOM is the brand, Drake is the person.
+    </p>
+  </section>
+
+  <!-- ============================================================
+       OCTOPUS SYMBOL
+  ============================================================ -->
+  <section class="brand-section" aria-label="Octopus symbol">
+    <span class="eyebrow" data-reveal>02. Symbol</span>
+    <h2 class="t-title" data-reveal data-reveal-delay="1">Rigid structure, organic intelligence.</h2>
+    <p class="brand-section__intro" data-reveal data-reveal-delay="2">
+      The octopus pairs precisely with the brand's dual nature: a creature of famously
+      distributed intelligence and adaptive problem-solving, rendered here as a
+      geometric, symmetrical mark rather than a literal illustration. It should read as
+      considered and architectural; never as a mascot, a nautical logo, or a kraken.
+    </p>
+
+    <div class="brand-logo-row" data-reveal data-reveal-delay="3">
+      <div class="brand-logo-block">
+        <svg class="ax-symbol" viewBox="0 0 265.632 273.116" width="72" height="72" aria-hidden="true" focusable="false"><use href="#axiom-symbol"></use></svg>
+      </div>
+      <div class="brand-logo-block">
+        <img src="assets/images/brand/axiom-symbol-micro.svg" alt="AXIOM symbol, simplified micro mark" width="48" height="48" />
+      </div>
+      <div class="brand-logo-block--light brand-logo-block">
+        <img src="assets/images/brand/axiom-symbol-micro.svg" alt="AXIOM symbol on light background" width="48" height="48" style="filter: invert(1);" />
+      </div>
+    </div>
+    <p class="brand-logo-caption">
+      Full mark (<code>axiom-symbol.svg</code>) for header/footer/password-screen sizes,
+      shown here via the shared <code>&lt;symbol id="axiom-symbol"&gt;</code> sprite
+      inlined once per page, referenced with <code>&lt;use href="#axiom-symbol"&gt;</code>
+      so it inherits <code>currentColor</code>. Micro mark (<code>axiom-symbol-micro.svg</code>,
+      with a thicker stroke) is for favicon and anywhere under ~48px, where the full
+      mark's tentacle detail stops reading cleanly.
+    </p>
+
+    <div class="brand-rules">
+      <div class="brand-rules--do">
+        <h3>Use</h3>
+        <ul>
+          <li>The symbol alone at small sizes (favicon, app icon)</li>
+          <li>The horizontal lockup (symbol + wordmark) in navigation and footers</li>
+          <li>Restraint: one mark per screen in most cases</li>
+        </ul>
+      </div>
+      <div class="brand-rules--dont">
+        <h3>Avoid</h3>
+        <ul>
+          <li>Waves, anchors, or nautical textures anywhere near the mark</li>
+          <li>Pirate/kraken styling, neon effects, gradients</li>
+          <li>Animating the tentacles as if swimming; the mark is static</li>
+          <li>Scattering the symbol decoratively across a layout</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LOGO LOCKUPS
+  ============================================================ -->
+  <section class="brand-section" aria-label="Logo lockups">
+    <span class="eyebrow" data-reveal>03. Logo &amp; Lockups</span>
+    <h2 class="t-title" data-reveal data-reveal-delay="1">Symbol + wordmark.</h2>
+    <p class="brand-section__intro" data-reveal data-reveal-delay="2">
+      On the live site, the lockup is the <code>.ax-logo</code> component, an inline
+      <code>&lt;svg&gt;&lt;use&gt;</code> reference to the symbol sprite, set next to
+      live text in Bellefair, rather than a flattened logo file, so it stays crisp at
+      any size and the wordmark is trivially editable. <code>axiom-logo.svg</code>,
+      <code>axiom-logo-horizontal.svg</code> and <code>axiom-wordmark.svg</code> exist
+      only for contexts that can't render live HTML/CSS, like an email signature or a
+      shared document.
+    </p>
+
+    <div class="brand-logo-row" data-reveal data-reveal-delay="3">
+      <div class="brand-logo-block">
+        <svg class="brand-logo-block__mark ax-symbol" viewBox="0 0 265.632 273.116" width="28" height="28" aria-hidden="true" focusable="false"><use href="#axiom-symbol"></use></svg>
+        <span class="brand-logo-block__word">AXIOM</span>
+      </div>
+      <div class="brand-logo-block--light brand-logo-block">
+        <svg class="brand-logo-block__mark" viewBox="0 0 265.632 273.116" width="28" height="28" style="fill:#0A0A0B;" aria-hidden="true" focusable="false"><use href="#axiom-symbol"></use></svg>
+        <span class="brand-logo-block__word">AXIOM</span>
+      </div>
+    </div>
+    <p class="brand-logo-caption">
+      Minimum clear space: leave at least the mark's own width free on every side.
+      Don't set the wordmark below ~14px; at that size, use the symbol alone. Below
+      the 40px symbol minimum, switch to the micro mark instead of scaling this one down.
+    </p>
+  </section>
+
+  <!-- ============================================================
+       TYPOGRAPHY
+  ============================================================ -->
+  <section class="brand-section" aria-label="Typography">
+    <span class="eyebrow" data-reveal>04. Typography</span>
+    <h2 class="t-title" data-reveal data-reveal-delay="1">Editorial serif, technical sans.</h2>
+    <p class="brand-section__intro" data-reveal data-reveal-delay="2">
+      Newsreader carries headlines and identity moments; it's what makes the site feel
+      editorial rather than corporate. Archivo carries every working part of the
+      interface: body copy, navigation, labels, buttons. IBM Plex Mono is reserved for
+      technical/numeric micro-labels (eyebrows, stats, section numbers). Bellefair is
+      reserved for the AXIOM wordmark alone; it never appears as body or heading text.
+    </p>
+
+    <div class="brand-type-row" data-reveal data-reveal-delay="3">
+      <div class="brand-type-item">
+        <span class="brand-type-item__label">H1 / t-headline</span>
+        <span class="t-headline" style="font-size:clamp(2rem,4vw,3.5rem);">Built with precision.</span>
+      </div>
+      <div class="brand-type-item">
+        <span class="brand-type-item__label">H2 / t-title</span>
+        <span class="t-title" style="font-size:clamp(1.5rem,2.5vw,2.25rem);">Foundation before execution.</span>
+      </div>
+      <div class="brand-type-item">
+        <span class="brand-type-item__label">H3 / subtitle</span>
+        <span class="t-subtitle">Rigid structure, organic intelligence.</span>
+      </div>
+      <div class="brand-type-item">
+        <span class="brand-type-item__label">Eyebrow</span>
+        <span class="eyebrow">Selected Work</span>
+      </div>
+      <div class="brand-type-item">
+        <span class="brand-type-item__label">Body</span>
+        <span class="t-body" style="color:#C4BFB4;">Clean, semantic, maintainable code isn't optional; it's the foundation everything else depends on.</span>
+      </div>
+      <div class="brand-type-item">
+        <span class="brand-type-item__label">Nav label</span>
+        <span style="font-family:'Archivo',sans-serif;font-size:0.8125rem;letter-spacing:0.06em;text-transform:uppercase;color:#C4BFB4;">Work</span>
+      </div>
+      <div class="brand-type-item">
+        <span class="brand-type-item__label">Button</span>
+        <a href="#" class="btn btn--ghost" style="pointer-events:none;">View Selected Work</a>
+      </div>
+      <div class="brand-type-item">
+        <span class="brand-type-item__label">Caption / meta</span>
+        <span class="t-mono">002 · Real Estate · 2024</span>
+      </div>
+      <div class="brand-type-item">
+        <span class="brand-type-item__label">Tag</span>
+        <span class="tag tag--gold">AgentFire</span>
+      </div>
+      <div class="brand-type-item">
+        <span class="brand-type-item__label">Wordmark</span>
+        <span style="font-family:'Bellefair',Georgia,serif;font-size:2rem;">AXIOM</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COLOR
+  ============================================================ -->
+  <section class="brand-section" aria-label="Color system">
+    <span class="eyebrow" data-reveal>05. Color</span>
+    <h2 class="t-title" data-reveal data-reveal-delay="1">Dark, warm, restrained.</h2>
+    <p class="brand-section__intro" data-reveal data-reveal-delay="2">
+      No gradients, anywhere. The accent reads as brass or champagne, a warm, muted
+      material tone, never bright or saturated gold. Tokens are centralized in
+      <code>scss/base/_axiom-tokens.scss</code> as <code>$ax-*</code> values, mapped
+      onto the original variable names (<code>$black</code>, <code>$paper</code>,
+      <code>$gold</code>, etc.) in <code>scss/base/_variables.scss</code> so the rest
+      of the codebase needed no changes.
+    </p>
+
+    <div class="brand-swatches" data-reveal data-reveal-delay="3">
+      <div class="brand-swatch">
+        <div class="brand-swatch__chip" style="background:#0A0A0B;"></div>
+        <div class="brand-swatch__name">Obsidian, Primary Background</div>
+        <div class="brand-swatch__role">$ax-obsidian / $black</div>
+        <div class="brand-swatch__hex">#0A0A0B</div>
+      </div>
+      <div class="brand-swatch">
+        <div class="brand-swatch__chip" style="background:#121215;"></div>
+        <div class="brand-swatch__name">Carbon, Surface</div>
+        <div class="brand-swatch__role">$ax-carbon / $dark</div>
+        <div class="brand-swatch__hex">#121215</div>
+      </div>
+      <div class="brand-swatch">
+        <div class="brand-swatch__chip" style="background:#242428;"></div>
+        <div class="brand-swatch__name">Line, Border</div>
+        <div class="brand-swatch__role">$ax-line / $line-solid</div>
+        <div class="brand-swatch__hex">#242428</div>
+      </div>
+      <div class="brand-swatch">
+        <div class="brand-swatch__chip" style="background:#F2EEE6;"></div>
+        <div class="brand-swatch__name">Ivory, Primary Text</div>
+        <div class="brand-swatch__role">$ax-ivory / $paper</div>
+        <div class="brand-swatch__hex">#F2EEE6</div>
+      </div>
+      <div class="brand-swatch">
+        <div class="brand-swatch__chip" style="background:#C4BFB4;"></div>
+        <div class="brand-swatch__name">Bone, Secondary Text</div>
+        <div class="brand-swatch__role">$ax-bone / $muted</div>
+        <div class="brand-swatch__hex">#C4BFB4</div>
+      </div>
+      <div class="brand-swatch">
+        <div class="brand-swatch__chip" style="background:#7E7970;"></div>
+        <div class="brand-swatch__name">Stone, Tertiary Text</div>
+        <div class="brand-swatch__role">$ax-stone / $slate</div>
+        <div class="brand-swatch__hex">#7E7970</div>
+      </div>
+      <div class="brand-swatch">
+        <div class="brand-swatch__chip" style="background:#C8B79A;"></div>
+        <div class="brand-swatch__name">Champagne, Sole Accent</div>
+        <div class="brand-swatch__role">$ax-champagne / $gold</div>
+        <div class="brand-swatch__hex">#C8B79A</div>
+      </div>
+      <div class="brand-swatch">
+        <div class="brand-swatch__chip" style="background:#9A8A6E;"></div>
+        <div class="brand-swatch__name">Champagne Deep, Hover</div>
+        <div class="brand-swatch__role">$ax-champagne-deep</div>
+        <div class="brand-swatch__hex">#9A8A6E</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       VISUAL LANGUAGE
+  ============================================================ -->
+  <section class="brand-section" aria-label="Visual language">
+    <span class="eyebrow" data-reveal>06. Visual Language</span>
+    <h2 class="t-title" data-reveal data-reveal-delay="1">Rigid structure &times; organic intelligence.</h2>
+    <div class="brand-rules" data-reveal data-reveal-delay="1">
+      <div class="brand-rules--do">
+        <h3>Principles</h3>
+        <ul>
+          <li>Fine grid lines and architectural alignment</li>
+          <li>Controlled asymmetry: one deliberate break in an otherwise strict grid</li>
+          <li>Precise spacing, generous negative space</li>
+          <li>Subtle technical labels (section numbers, mono captions)</li>
+          <li>Restrained organic curves, sourced only from the octopus mark</li>
+        </ul>
+      </div>
+      <div class="brand-rules--dont">
+        <h3>Not</h3>
+        <ul>
+          <li>CAD/blueprint aesthetics</li>
+          <li>Marine or nautical branding</li>
+          <li>Gaming or esports styling</li>
+          <li>Pirate/Kraken theming</li>
+          <li>Abstract AI-generated art</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PHOTOGRAPHY
+  ============================================================ -->
+  <section class="brand-section" aria-label="Photography">
+    <span class="eyebrow" data-reveal>07. Photography</span>
+    <h2 class="t-title" data-reveal data-reveal-delay="1">Architecture, not office stock.</h2>
+    <div class="brand-rules" data-reveal data-reveal-delay="1">
+      <div class="brand-rules--do">
+        <h3>Preferred</h3>
+        <ul>
+          <li>Modern architecture: strong geometry, glass, steel, concrete</li>
+          <li>Dramatic, directional light and shadow</li>
+          <li>Dark interiors, minimal environments</li>
+          <li>Unusual perspective over straight-on shots</li>
+        </ul>
+      </div>
+      <div class="brand-rules--dont">
+        <h3>Avoid</h3>
+        <ul>
+          <li>Office stock photography, handshake imagery</li>
+          <li>Cliché "developer at laptop with code" shots</li>
+          <li>Generic startup/SaaS illustration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MOTION
+  ============================================================ -->
+  <section class="brand-section" aria-label="Motion">
+    <span class="eyebrow" data-reveal>08. Motion</span>
+    <h2 class="t-title" data-reveal data-reveal-delay="1">Short, controlled, purposeful.</h2>
+    <dl class="brand-note-list" data-reveal data-reveal-delay="1">
+      <div>
+        <dt>Scroll reveal</dt>
+        <dd>Opacity 0&rarr;1 with a small translateY, via <code>[data-reveal]</code> + IntersectionObserver (see <code>js/animations.js</code>). Every new section should use this, not a bespoke animation.</dd>
+      </div>
+      <div>
+        <dt>Hover</dt>
+        <dd>An underline that grows from 0 to full width on links (<code>@mixin hover-line</code>), or a slight opacity/scale shift on buttons. Nothing bounces or overshoots.</dd>
+      </div>
+      <div>
+        <dt>Password unlock</dt>
+        <dd>The lock screen (see <code>middleware.js</code>) fades/lifts as a single controlled block; the octopus mark is static (never "swimming"), the wordmark and identity resolve as part of that same reveal, then the screen recedes and the real page loads underneath. All motion respects <code>prefers-reduced-motion</code>.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ============================================================
+       APPLICATION NOTES
+  ============================================================ -->
+  <section class="brand-section" aria-label="Application notes">
+    <span class="eyebrow" data-reveal>09. Applying the Brand</span>
+    <h2 class="t-title" data-reveal data-reveal-delay="1">Where this shows up.</h2>
+    <dl class="brand-note-list" data-reveal data-reveal-delay="1">
+      <div>
+        <dt>Work presentation</dt>
+        <dd>AXIOM frames the work, a small mark in the header/footer, but never competes with a project screenshot for attention. No AXIOM watermarks on project imagery.</dd>
+      </div>
+      <div>
+        <dt>Testimonials</dt>
+        <dd>Every review on <code>testimonials.html</code> is about Dušan "Drake" Stevanović's personal work (many from his time at AgentFire), never described as feedback about "AXIOM" as a company; see the note at the top of that page.</dd>
+      </div>
+      <div>
+        <dt>Résumé / CV</dt>
+        <dd>Header: "Dušan 'Drake' Stevanović" as the primary name, "AXIOM" as a secondary line (e.g. "Personal brand: AXIOM (axiom-portfolio-url)"). Don't lead a résumé with the brand name; recruiters search for the person.</dd>
+      </div>
+      <div>
+        <dt>Email signature</dt>
+        <dd>Use <code>axiom-logo.svg</code> (flattened lockup) since most email clients won't render live web fonts. Suggested block: Name, title line, AXIOM + portfolio URL.</dd>
+      </div>
+      <div>
+        <dt>Favicon</dt>
+        <dd>Multi-format: <code>favicon.ico</code> (16/32/48px, browser tab default), <code>assets/images/brand/axiom-symbol-micro.svg</code> (modern browsers, scales cleanly), <code>apple-touch-icon.png</code> (180×180, iOS/macOS), plus <code>&lt;meta name="theme-color" content="#0A0A0B"&gt;</code>. All four are generated straight from the real symbol artwork; nothing hand-drawn.</dd>
+      </div>
+      <div>
+        <dt>Open Graph / social</dt>
+        <dd>Titles follow "&lt;Page&gt; | AXIOM, Dušan Stevanović" (or the reverse on the homepage). <code>assets/images/og-image.jpg</code> (1200×630) is the shared social preview: obsidian background, architectural grid, the symbol in champagne, AXIOM + name + title lower-left.</dd>
+      </div>
+    </dl>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__cta">
+    <div class="footer__cta-label">Exploring What's Next</div>
+    <div class="footer__cta-headline" data-reveal>
+      Let's build what's <em>next.</em>
+    </div>
+    <a href="contact.html" class="footer__cta-email">Get in Touch &rarr;</a>
+  </div>
+
+  <div class="footer__main">
+    <div class="footer__brand">
+      <a href="index.html" class="footer__logo ax-logo" aria-label="AXIOM, Dušan Stevanović">
+        <svg class="ax-logo__symbol" viewBox="0 0 265.632 273.116" aria-hidden="true" focusable="false"><use href="#axiom-symbol"></use></svg>
+        <span class="ax-logo__word">AXIOM</span>
+      </a>
+      <p>AXIOM is the personal professional identity of Dušan "Drake" Stevanović, senior web designer &amp; front-end developer, and the way I present my work today.</p>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Navigation</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="websites.html">Work</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="about.html#experience">Experience</a></li>
+        <li><a href="services.html">Capabilities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title">Capabilities</div>
+      <ul>
+        <li><a href="services.html">Website Design</a></li>
+        <li><a href="services.html">Frontend Dev</a></li>
+        <li><a href="services.html">WordPress</a></li>
+        <li><a href="services.html">AgentFire</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__bottom-copy">&copy; 2024 AXIOM. All rights reserved.</p>
+    <div class="footer__bottom-right">
+      <a href="#top" class="back-top" aria-label="Back to top">
+        <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 12V2M2 7l5-5 5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Top
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="js/utils.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,1 +1,134 @@
-// Contact — defined in _about.scss
+// ============================================================
+// CONTACT PAGE
+// ============================================================
+
+.page-contact {
+  padding-top: 8rem;
+
+  @include lg {
+    padding-top: 10rem;
+  }
+}
+
+.contact-hero {
+  padding: 0 $gutter $space-xl;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: 0 $gutter-lg $space-2xl;
+  }
+
+  &__headline {
+    @include page-hero-headline;
+
+    em {
+      font-style: italic;
+      color: $gold;
+    }
+  }
+
+  &__sub {
+    max-width: 40rem;
+    margin-top: 2rem;
+    font-size: clamp(0.9375rem, 1.25vw, 1.125rem);
+    color: $muted;
+    line-height: 1.75;
+  }
+}
+
+.contact-main {
+  padding: $space-xl $gutter;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+
+  @include lg {
+    grid-template-columns: 5fr 7fr;
+    gap: 10rem;
+    align-items: start;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: sticky;
+  top: 7rem;
+
+  &__section {
+    &-label {
+      @extend .eyebrow;
+      margin-bottom: 1.25rem;
+    }
+
+    &-email {
+      font-family: $font-display;
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: $paper;
+      @include hover-line;
+
+      &:hover { color: $gold; }
+    }
+
+    &-note {
+      font-size: 0.875rem;
+      color: $slate;
+      line-height: 1.65;
+    }
+  }
+
+  &__avail {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.75rem;
+    color: $slate;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 6px rgba(74, 222, 128, 0.5);
+      animation: pulse-green 2s infinite;
+    }
+  }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 4px rgba(74, 222, 128, 0.5); }
+  50%       { box-shadow: 0 0 10px rgba(74, 222, 128, 0.9); }
+}
+
+.contact-form-wrap {
+  &__heading {
+    font-family: $font-display;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: -0.015em;
+    margin-bottom: 3rem;
+  }
+
+  &__submit {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__note {
+    font-size: 0.8125rem;
+    color: $slate;
+  }
+}

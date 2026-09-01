@@ -7,6 +7,32 @@
   @include container;
 }
 
+// Skip to main content — first focusable element on every page.
+// Off-screen until keyboard-focused, so it never affects sighted
+// mouse users; high-contrast and on-brand once visible.
+.skip-link {
+  position: fixed;
+  top: -6rem;
+  left: 1rem;
+  z-index: 9999;
+  background: $paper;
+  color: $black;
+  padding: 0.85rem 1.5rem;
+  font-family: $font-body;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: auto;
+  transition: top $duration-fast $ease-out;
+
+  &:focus {
+    top: 1rem;
+    outline: 2px solid $gold;
+    outline-offset: 2px;
+  }
+}
+
 // Horizontal rule
 hr, .hr {
   @include hr;
@@ -33,16 +59,33 @@ hr, .hr {
   }
 }
 
-// Fade up elements (JS targets)
+// Fade up elements (JS targets).
+//
+// Visible by default: this is the no-JS baseline. The dependency-free
+// fail-safe script in <head> adds `.js-reveal` to <html> immediately,
+// and that's what actually hides these elements until animations.js
+// reveals them one by one on scroll. If animations.js never runs
+// (jQuery CDN blocked, script error, JS disabled entirely), that same
+// script adds `.reveal-fallback` after a short grace period, forcing
+// every [data-reveal] element back to visible rather than leaving the
+// page permanently blank.
 [data-reveal] {
+  transition: opacity 0.75s $ease-out, transform 0.75s $ease-out;
+}
+
+.js-reveal [data-reveal] {
   opacity: 0;
   transform: translateY(2.5rem);
-  transition: opacity 0.75s $ease-out, transform 0.75s $ease-out;
 
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.reveal-fallback [data-reveal] {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 [data-reveal-delay="1"] { transition-delay: 0.1s; }
@@ -63,6 +106,24 @@ hr, .hr {
 
   &.is-visible img {
     transform: scale(1);
+  }
+}
+
+// Reduced motion: every reveal collapses to a short opacity fade,
+// no translate/scale — same is-visible classes, no JS changes needed.
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    transform: none;
+    transition: opacity 0.12s linear;
+  }
+
+  [data-reveal-delay] {
+    transition-delay: 0s;
+  }
+
+  .img-reveal img {
+    transition: opacity 0.12s linear;
+    transform: none !important;
   }
 }
 

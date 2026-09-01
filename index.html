@@ -2,16 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+<script>
+(function () {
+  document.documentElement.classList.add('js-reveal');
+  window.setTimeout(function () {
+    if (!window.__axiomRevealReady) {
+      document.documentElement.classList.add('reveal-fallback');
+      // jQuery-dependent Loader.init() never ran either in this case,
+      // so the preloader would otherwise stay on screen forever,
+      // covering the now-visible content underneath it.
+      var loader = document.querySelector('.loader');
+      if (loader) loader.classList.add('is-hidden');
+      document.body.classList.add('loaded');
+    }
+  }, 2500);
+})();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studio Craft — Dusan Stevanovic, Senior Web Designer &amp; Front-End Developer</title>
-  <meta name="description" content="Dusan &quot;Drake&quot; Stevanovic — senior web designer and front-end developer with 11+ years of experience and 500+ websites delivered for US and European clients." />
-  <meta name="author" content="Dusan Stevanovic" />
+  <title>Dušan Stevanović (Drake), Senior Web Designer &amp; Front-End Developer | AXIOM</title>
+  <meta name="description" content="AXIOM is the personal professional brand of Dušan &quot;Drake&quot; Stevanović, senior web designer, front-end developer, and technical lead. 18+ years in the industry, 11+ years at senior level, and 500+ websites and digital products delivered." />
+  <meta name="author" content="Dušan Stevanović" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://yourdomain.com/" />
-  <meta property="og:title"       content="Studio Craft — Dusan Stevanovic, Senior Web Designer &amp; Front-End Developer" />
-  <meta property="og:description" content="11+ years of experience. 500+ websites delivered. Senior Web Designer / Front-End Developer, former CTO." />
+  <meta property="og:title"       content="Dušan Stevanović (Drake), Senior Web Designer &amp; Front-End Developer | AXIOM" />
+  <meta property="og:description" content="18+ years in the industry. 11+ years at senior level. 500+ websites delivered. Senior Web Designer / Front-End Developer, former CTO." />
   <meta property="og:image"       content="assets/images/og-image.jpg" />
 
   <!-- JSON-LD -->
@@ -19,10 +35,11 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Dusan Stevanovic",
-    "alternateName": "Drake",
-    "jobTitle": "Senior Web Designer / Front-End Developer",
-    "description": "Senior Web Designer / Front-End Developer and former CTO with 11+ years of experience and 500+ websites delivered for US and European clients.",
+    "name": "Dušan Stevanović",
+    "alternateName": ["Dusan Stevanovic", "Drake", "Drake Stevanovic"],
+    "jobTitle": "Senior Web Designer, Front-End Developer, Technical Lead",
+    "description": "Senior Web Designer, Front-End Developer, and Technical Lead. 18+ years in the industry, 11+ years at senior level, 500+ shipped websites and digital products, and former CTO experience.",
+    "brand": { "@type": "Brand", "name": "AXIOM" },
     "url": "https://yourdomain.com",
     "sameAs": [
       "https://twitter.com/yourhandle",
@@ -34,24 +51,39 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono&display=swap" rel="stylesheet" />
+  <!-- Non-render-blocking font load: fetched with high priority via preload,
+       applied once ready. display=swap already shows fallback text
+       immediately, so this only removes the stylesheet as a paint blocker. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..400&family=Archivo:wdth,wght@62..125,400..600&family=IBM+Plex+Mono:wght@400;500&family=Bellefair&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..400&family=Archivo:wdth,wght@62..125,400..600&family=IBM+Plex+Mono:wght@400;500&family=Bellefair&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..400&family=Archivo:wdth,wght@62..125,400..600&family=IBM+Plex+Mono:wght@400;500&family=Bellefair&display=swap" rel="stylesheet" /></noscript>
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/main.css" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/axiom-symbol-micro.svg" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#0A0A0B" />
 </head>
 <body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- AXIOM symbol sprite — inlined once so .ax-logo__symbol / .ax-symbol
+     can use <use href="#axiom-symbol"> and inherit color via currentColor.
+     Paths are byte-identical to assets/images/brand/axiom-symbol.svg. -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="axiom-symbol" viewBox="0 0 265.632 273.116"><g><path d="M0,0C7.427,6.123 12.736,13.229 14,23C15.012,36.154 12.385,47.263 6.816,59.121C3.927,65.772 4.233,74.08 6.188,80.988C9.046,88.067 14.215,92.742 21,96C28.456,98.423 36.022,97.209 43,94C48.712,90.887 52.498,87.007 55.148,81.039C57.409,72.97 57.377,63.937 53.875,56.25C50.591,50.768 46.733,48.344 40.625,46.75C39.429,46.503 38.233,46.255 37,46L37,45C43.935,44.488 49.282,44.792 55,49C61.447,54.722 65.32,61.486 66.379,70.07C66.796,81.229 64.237,91.547 56.832,100.074C56.227,100.71 55.623,101.345 55,102C54.488,102.563 53.976,103.127 53.449,103.707C46.575,110.445 37.462,113.219 28.021,113.338C24.674,113.301 21.343,113.18 18,113C25.55,124.666 36.238,129.318 49.508,132.625C60.623,134.298 73.796,134.03 83.281,127.422C88.34,123.237 91.518,118.579 92.406,111.984C92.607,105.059 92.089,100.324 87.801,94.746C85.077,92.105 82.616,91.085 79,90L79,89C85.282,89.112 88.69,90.468 93.234,94.852C97.965,100.608 99.667,107.187 99.32,114.555C98.252,122.709 95.167,129.67 88.688,134.848C73.572,145.196 56.21,146.117 38.563,142.938C27.744,140.191 18.444,134.933 9.988,127.699C7.906,125.851 7.906,125.851 5,124C7.562,136.175 12.764,148.392 23,156C35.523,163.436 48.362,165.115 62.485,161.565C63.191,161.379 63.898,161.192 64.625,161C74.537,158.409 84.737,156.808 94.172,161.805C99.034,164.984 103.252,169.382 105,175C105.809,182.334 106.257,189.941 102.27,196.422C98.992,200.496 95.139,203.685 90,205C86.991,205.147 84.009,205.118 81,205L81,204C82.176,203.794 83.351,203.588 84.563,203.375C90.594,201.856 94.257,198.306 97.938,193.438C99.981,186.825 100.27,179.783 97.375,173.438C92.653,168.592 89.581,166.741 82.75,166.5C76.396,166.702 71.675,168.295 66,171C64.214,171.742 62.422,172.471 60.625,173.188C59.438,173.673 59.438,173.673 58.227,174.168C47.423,178.205 35.31,176.684 25,172C9.027,164.215 -1.92,151.109 -8.246,134.574C-8.901,132.794 -8.901,132.794 -11,132C-9.713,152.619 -2.673,167.833 7.992,185.254C15.354,197.372 18.945,208.506 16.527,222.793C13.712,233.667 7.112,240.766 -2,247C-3.61,247.922 -5.235,248.82 -6.875,249.688C-11.827,252.308 -14.251,255.014 -16.25,260.313C-16.498,261.199 -16.745,262.086 -17,263L-19,263C-19.576,258.391 -19.279,255.832 -16.563,252C-13.534,248.278 -10.015,245.623 -6.18,242.781C-0.506,238.144 4.13,231.369 5.318,224.038C6.581,207.141 -0.508,195.855 -9.059,181.828C-17.604,167.81 -23.301,154.264 -25.543,137.906C-25.694,137.277 -25.845,136.648 -26,136C-26.66,135.67 -27.32,135.34 -28,135C-28.155,136.856 -28.155,136.856 -28.313,138.75C-30.437,156.995 -38.197,172.434 -47.937,187.718C-55.962,200.378 -60.296,210.89 -59,226C-56.293,236.096 -47.745,242.927 -40,249.375C-37.285,251.751 -36.287,252.802 -35,256C-34.875,259.25 -34.875,259.25 -35,262C-37,260 -37,260 -38.25,257.688C-41.594,252.553 -46.311,249.776 -51.438,246.625C-60.431,240.934 -66.845,234.448 -70,224C-72.603,204.67 -65.22,190.717 -55.835,174.518C-47.5,160.112 -43.987,148.579 -43,132L-45,132C-45.095,132.69 -45.191,133.379 -45.289,134.09C-48.462,147.076 -59.988,160.187 -70.766,167.691C-82.551,174.594 -95.306,178.444 -109,176C-114.988,173.976 -120.562,171.012 -126.072,167.94C-130.775,165.648 -135.863,165.258 -141,166C-146.461,168.227 -150.544,171.576 -153,177C-154.182,184.106 -152.773,190.877 -149,197C-144.973,201.224 -140.945,203.703 -135,204L-135,205C-141.403,205.523 -145.92,205.12 -151,201C-157.403,195.173 -158.961,189.445 -159.375,181C-159.204,174.813 -157.388,170.481 -153.094,166.02C-148.624,161.975 -144.862,158.753 -138.629,158.734C-137.807,158.732 -136.985,158.729 -136.139,158.727C-134.863,158.738 -134.863,158.738 -133.563,158.75C-132.716,158.742 -131.87,158.735 -130.998,158.727C-126.504,158.741 -123.102,159.002 -119,161C-113.909,163.048 -109.528,163.304 -104.125,163.25C-103.361,163.258 -102.596,163.265 -101.809,163.273C-90.404,163.235 -80.328,159.242 -71.813,151.563C-64.694,143.945 -60.208,134.082 -58,124C-61.301,126.146 -64.431,128.346 -67.5,130.813C-83.59,142.911 -101.312,145.577 -121,144C-131.457,142.509 -141.142,137.303 -147.715,128.973C-152.16,122.149 -154.21,115.106 -153,107C-151.137,99.233 -147.472,94.581 -141,90C-138.291,88.646 -135.991,88.935 -133,89C-136,91 -136,91 -138.938,92.625C-143.435,96.113 -145.548,99.8 -146.348,105.461C-146.637,113.641 -144.531,119.932 -139,126C-133.159,129.724 -126.995,132.75 -120,133C-119.085,133.037 -118.17,133.075 -117.227,133.113C-110.829,133.266 -105.135,132.792 -99,131C-97.579,130.615 -97.579,130.615 -96.129,130.223C-86.204,127.277 -78.106,122.469 -72,114C-71.67,113.34 -71.34,112.68 -71,112C-71.921,112.039 -71.921,112.039 -72.861,112.079C-95.42,112.916 -95.42,112.916 -103,107C-104.046,106.29 -104.046,106.29 -105.113,105.566C-111.797,100.519 -116.439,92.617 -118.672,84.582C-120.065,73.621 -119.966,63.399 -113.645,53.98C-110.531,50.015 -106.918,46.478 -102,45C-97.975,44.692 -94.027,44.762 -90,45L-90,46C-90.652,46.159 -91.305,46.317 -91.977,46.48C-97.709,48.011 -101.936,49.453 -106,54C-110.503,62.035 -111.122,69.248 -108.875,78.063C-106.301,85.748 -101.601,91.655 -94.688,95.93C-87.787,98.678 -79.755,98.078 -72.938,95.313C-66.334,91.827 -61.369,86.108 -59,79C-57.792,67.771 -59.651,59.685 -64.371,49.547C-68.674,40.178 -68.37,27.66 -66.316,17.676C-65.401,15.255 -64.374,13.19 -63,11C-62.588,10.301 -62.175,9.603 -61.75,8.883C-56.214,0.547 -47.737,-4.509 -38.281,-7.348C-24.358,-10.116 -11.707,-7.822 0,0Z" transform="translate(159.375,10.116)"></path><path d="M0,0C3.163,2.875 4.756,5.397 5.406,9.664C5.658,17.602 4.104,22.847 -1,29C-7.153,34.127 -13.185,35.521 -21,35C-21.66,34.34 -22.32,33.68 -23,33C-21.845,32.752 -20.69,32.505 -19.5,32.25C-15.607,31.289 -12.285,29.796 -8.762,27.902C-7,27 -7,27 -4,26C-2.916,24.251 -2.916,24.251 -2,22C-1.196,20.732 -1.196,20.732 -0.375,19.438C2.134,13.165 1.458,6.504 0,0Z" transform="translate(197.429,211.898)"></path><path d="M0,0C0.66,0.33 1.32,0.66 2,1C1.67,1.66 1.34,2.32 1,3C0.451,9.863 0.128,17.039 4,23C9.959,29.513 15.273,31.973 24,33L24,34C16.505,34.45 10.173,34.698 4,30C-1.349,25.068 -3.658,20.48 -4.375,13.188C-4.28,8.292 -2.219,4.279 0,0Z" transform="translate(66.431,211.898)"></path></g></symbol>
+</svg>
+
 
 <!-- ============================================================
      LOADER
 ============================================================ -->
 <div class="loader" aria-hidden="true" role="presentation">
-  <div class="loader__inner">
-    <div class="loader__wordmark">Studio<span>.</span></div>
-    <div class="loader__bar"></div>
-  </div>
+  <svg class="loader__symbol" viewBox="0 0 265.632 273.116" focusable="false"><use href="#axiom-symbol"></use></svg>
 </div>
 
 <!-- Scroll progress -->
@@ -65,24 +97,27 @@
      HEADER
 ============================================================ -->
 <header class="header" role="banner">
-  <a href="index.html" class="header__logo" aria-label="Studio Craft — Home">
-    Studio<span>.</span>
+  <a href="index.html" class="header__logo ax-logo ax-logo--header" aria-label="AXIOM, Dušan Stevanović">
+    <svg class="ax-logo__symbol" viewBox="0 0 265.632 273.116" aria-hidden="true" focusable="false"><use href="#axiom-symbol"></use></svg>
+    <span class="ax-logo__word">AXIOM</span>
   </a>
 
   <div class="header__right">
     <!-- Desktop nav -->
     <nav class="header__nav-desktop" aria-label="Primary navigation">
       <a href="index.html"   class="is-active">Home</a>
-      <a href="websites.html">Websites</a>
+      <a href="websites.html">Work</a>
       <a href="videos.html">Videos</a>
+      <a href="testimonials.html">Testimonials</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
+      <a href="about.html#experience">Experience</a>
+      <a href="services.html">Capabilities</a>
       <a href="contact.html">Contact</a>
     </nav>
 
     <!-- CTA -->
     <a href="contact.html" class="btn btn--primary btn--sm header__cta" data-magnetic="0.25">
-      Start a Project
+      Get in Touch
     </a>
 
     <!-- Mobile toggle -->
@@ -96,23 +131,20 @@
 <!-- ============================================================
      MOBILE NAVIGATION OVERLAY
 ============================================================ -->
-<nav class="nav-overlay" aria-label="Mobile navigation" aria-hidden="true">
+<nav class="nav-overlay" aria-label="Mobile navigation" aria-hidden="true" inert>
   <div class="nav-overlay__links">
     <a href="index.html"    class="nav-overlay__link">Home</a>
-    <a href="websites.html" class="nav-overlay__link">Websites</a>
+    <a href="websites.html" class="nav-overlay__link">Work</a>
     <a href="videos.html"   class="nav-overlay__link">Videos</a>
+    <a href="testimonials.html" class="nav-overlay__link">Testimonials</a>
     <a href="about.html"    class="nav-overlay__link">About</a>
-    <a href="services.html" class="nav-overlay__link">Services</a>
+    <a href="about.html#experience" class="nav-overlay__link">Experience</a>
+    <a href="services.html" class="nav-overlay__link">Capabilities</a>
     <a href="contact.html"  class="nav-overlay__link">Contact</a>
   </div>
 
   <div class="nav-overlay__bottom">
-    <p>&copy; 2024 Studio Craft</p>
-    <div class="nav-overlay__social">
-      <a href="#" target="_blank" rel="noopener">Twitter</a>
-      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#" target="_blank" rel="noopener">Dribbble</a>
-    </div>
+    <p>&copy; 2024 AXIOM</p>
   </div>
 </nav>
 
@@ -138,37 +170,54 @@
 <!-- ============================================================
      HERO
 ============================================================ -->
-<section class="hero" aria-label="Introduction">
-  <div class="hero__bg" aria-hidden="true"></div>
+<section class="hero" id="main" aria-label="Introduction">
+  <div class="hero__bg" aria-hidden="true">
+    <picture>
+      <source srcset="assets/images/projects/hero_img.webp" type="image/webp" />
+      <img
+        src="assets/images/projects/hero_img.png"
+        alt=""
+        fetchpriority="high"
+        decoding="async"
+        width="1774"
+        height="887"
+      />
+    </picture>
+  </div>
 
   <div class="hero__content">
     <div class="hero__label">
-      <span class="eyebrow">Dusan "Drake" Stevanovic</span>
+      <div class="hero__brand" data-reveal>
+        <svg class="hero__brand-mark" viewBox="0 0 265.632 273.116" aria-hidden="true" focusable="false"><use href="#axiom-symbol"></use></svg>
+        <span class="hero__brand-name">AXIOM</span>
+      </div>
+      <p class="hero__identity" data-reveal data-reveal-delay="1">Dušan "Drake" Stevanović</p>
+      <span class="eyebrow" data-reveal data-reveal-delay="1">Senior Web Designer · Front-End Developer · Technical Lead</span>
     </div>
 
     <h1 class="hero__headline" data-reveal>
-      Senior web designer building<br>
-      <em>premium</em> digital&nbsp;experiences.
+      I design what people see and build <em>what makes it work.</em>
     </h1>
 
     <div class="hero__bottom">
       <p class="hero__sub" data-reveal data-reveal-delay="2">
-        11+ years of experience. 500+ websites delivered. I design and develop
-        high-end websites for real estate brands and growing businesses across
-        the US and Europe.
+        Senior Web Designer and Front-End Developer: 18+ years in the industry,
+        11+ years at senior level, and 500+ websites and digital products delivered
+        for real estate brands, SaaS products, and growing businesses across the
+        US and Europe.
       </p>
 
       <div class="hero__cta" data-reveal data-reveal-delay="3">
         <a href="websites.html" class="btn btn--ghost" data-magnetic="0.3">
-          View Websites
+          View Selected Work
           <span class="btn__arrow">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/>
             </svg>
           </span>
         </a>
-        <a href="contact.html" class="btn btn--primary" data-magnetic="0.3">
-          Start a Project
+        <a href="about.html" class="btn btn--primary" data-magnetic="0.3">
+          About Drake
         </a>
       </div>
     </div>
@@ -214,14 +263,17 @@
   <!-- Featured card -->
   <article class="project-card project-card--featured" data-reveal>
     <div class="project-card__img-wrap img-reveal">
-      <img
-        src="assets/images/Meridian%20Luxury%20Properties/on_homepage.png"
-        alt="Sure Group website — homepage screenshot"
-        loading="lazy"
-        decoding="async"
-        width="1920"
-        height="2412"
-      />
+      <picture>
+        <source srcset="assets/images/Meridian%20Luxury%20Properties/on_homepage.webp" type="image/webp" />
+        <img
+          src="assets/images/Meridian%20Luxury%20Properties/on_homepage.png"
+          alt="Sure Group website homepage screenshot"
+          loading="lazy"
+          decoding="async"
+          width="1920"
+          height="2412"
+        />
+      </picture>
     </div>
 
     <div class="project-card__info">
@@ -251,14 +303,18 @@
 <section class="section-works" aria-label="Selected websites">
   <div class="section-intro">
     <div class="section-intro__text">
-      <span class="eyebrow">Selected Websites</span>
-      <h2 class="t-headline" style="margin-top:1.5rem;" data-reveal>
+      <span class="eyebrow">Selected Work</span>
+      <h2 class="t-headline" data-reveal>
         Built with precision.<br>
         Designed with intention.
       </h2>
+      <p class="section-videos__lead" data-reveal data-reveal-delay="1">
+        A selection of websites, digital experiences, and custom builds created across
+        real estate, technology, SaaS, and other industries.
+      </p>
     </div>
     <div class="section-intro__action" data-reveal data-reveal-delay="2">
-      <a href="websites.html" class="btn btn--ghost">View All Websites</a>
+      <a href="websites.html" class="btn btn--ghost">View All Work</a>
     </div>
   </div>
 
@@ -399,6 +455,26 @@
 </section>
 
 <!-- ============================================================
+     MORE WORK ON REQUEST
+     The public site is a curated selection, not the full archive —
+     this section says so directly rather than leaving it implied.
+============================================================ -->
+<section class="section-more-work" aria-label="Additional work available on request">
+  <span class="eyebrow" style="justify-content:center;" data-reveal>Want to See More?</span>
+  <h2 class="t-title" data-reveal data-reveal-delay="1">
+    This is a selection,<br>not the whole archive.
+  </h2>
+  <p class="section-more-work__body" data-reveal data-reveal-delay="2">
+    These projects represent only a small selection of my work. I have an extensive
+    archive of completed projects and can share additional examples relevant to your
+    industry, role, or specific requirements upon request.
+  </p>
+  <div class="btn-group" style="justify-content:center;" data-reveal data-reveal-delay="3">
+    <a href="contact.html" class="btn btn--primary" data-magnetic="0.3">Request More Examples</a>
+  </div>
+</section>
+
+<!-- ============================================================
      VIDEO SHOWCASE
      Videos are hosted on Cloudflare R2 as direct public MP4 URLs —
      no embed providers involved.
@@ -425,7 +501,7 @@
       <h2 class="t-headline" data-reveal data-reveal-delay="1">Selected Video Work</h2>
       <p class="section-videos__lead" data-reveal data-reveal-delay="2">
         A selection of website walkthroughs, project presentations, and client
-        testimonials — highlighting both the work and the experience behind it.
+        testimonials, highlighting both the work and the experience behind it.
       </p>
     </div>
   </div>
@@ -440,8 +516,8 @@
         data-cursor="view"
         data-cursor-label="Play"
         data-video-src="https://pub-305c96ca93cb4dc5b075e51fd57c0e2e.r2.dev/Home%20-%20Alex%20Pinck%20Real%20Estate%20-%20Google%20Chrome%202024-10-23%2011-06-02%20(1).mp4"
-        data-video-title="Alex Pinck Real Estate — Full Walkthrough"
-        aria-label="Play video: Alex Pinck Real Estate — Full Walkthrough"
+        data-video-title="Alex Pinck Real Estate: Full Walkthrough"
+        aria-label="Play video: Alex Pinck Real Estate: Full Walkthrough"
       >
         <img
           class="video-card__thumb"
@@ -473,8 +549,8 @@
         data-cursor="view"
         data-cursor-label="Play"
         data-video-src="https://pub-305c96ca93cb4dc5b075e51fd57c0e2e.r2.dev/aspen_homepage_video.mp4"
-        data-video-title="Boutique Brokerage Platform — Project Video"
-        aria-label="Play video: Boutique Brokerage Platform — Project Video"
+        data-video-title="Boutique Brokerage Platform: Project Video"
+        aria-label="Play video: Boutique Brokerage Platform: Project Video"
       >
         <img
           class="video-card__thumb"
@@ -506,8 +582,8 @@
         data-cursor="view"
         data-cursor-label="Play"
         data-video-src="https://pub-305c96ca93cb4dc5b075e51fd57c0e2e.r2.dev/sure_homepage_video.mp4"
-        data-video-title="Client Experience — Video Testimonial"
-        aria-label="Play video: Client Experience — Video Testimonial"
+        data-video-title="Client Experience: Video Testimonial"
+        aria-label="Play video: Client Experience: Video Testimonial"
       >
         <img
           class="video-card__thumb"
@@ -539,8 +615,8 @@
         data-cursor="view"
         data-cursor-label="Play"
         data-video-src="https://pub-305c96ca93cb4dc5b075e51fd57c0e2e.r2.dev/video_review_new.mp4"
-        data-video-title="Working With Studio Craft — Client Review"
-        aria-label="Play video: Working With Studio Craft — Client Review"
+        data-video-title="Working With Drake Stevanovic: Client Review"
+        aria-label="Play video: Working With Drake Stevanovic: Client Review"
       >
         <img
           class="video-card__thumb"
@@ -568,8 +644,7 @@
 
   <!-- More video work CTA -->
   <div class="section-videos__cta">
-    <!-- TODO: point this at a dedicated videos page once one exists -->
-    <a href="#" class="btn btn--ghost" data-magnetic="0.3">
+    <a href="videos.html" class="btn btn--ghost" data-magnetic="0.3">
       More Video Work
       <span class="btn__arrow">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -600,22 +675,22 @@
 
     <h2 class="t-headline" data-reveal data-reveal-delay="1">
       Precision craft,<br>
-      <em style="font-style:italic;color:#A48442;">every detail.</em>
+      <em style="font-style:italic;color:#C8B79A;">every detail.</em>
     </h2>
 
     <p class="section-about-preview__body" data-reveal data-reveal-delay="2">
-      With 11+ years of experience and 500+ websites delivered, I work with real
-      estate brands and growing businesses across the US and Europe that know
-      the difference a serious website makes.
+      I work with real estate brands, SaaS products, and growing businesses
+      across the US and Europe, on projects that need more than a template
+      to feel right.
     </p>
 
     <p class="section-about-preview__body" data-reveal data-reveal-delay="3">
       Specializing in WordPress, Elementor, and AgentFire development, I bring
-      together thoughtful design and clean, hands-on front-end code — backed
-      by AI-assisted workflows.
+      together thoughtful design and clean, hands-on front-end code, backed
+      by a modern, AI-assisted workflow.
     </p>
 
-    <div data-reveal data-reveal-delay="4">
+    <div class="section-about-preview__cta" data-reveal data-reveal-delay="4">
       <a href="about.html" class="btn btn--ghost" data-magnetic="0.3">
         Learn More About Me
       </a>
@@ -626,22 +701,22 @@
 <!-- ============================================================
      SERVICES PREVIEW
 ============================================================ -->
-<section class="section-services-preview" aria-label="Services">
+<section class="section-services-preview" aria-label="Capabilities">
   <div class="section-intro">
     <div class="section-intro__text">
       <span class="eyebrow">What I Do</span>
-      <h2 class="t-headline" style="margin-top:1.5rem" data-reveal>Services</h2>
+      <h2 class="t-headline" data-reveal>Capabilities</h2>
     </div>
     <div class="section-intro__action" data-reveal data-reveal-delay="2">
       <a href="services.html" class="btn btn--ghost">All Services</a>
     </div>
   </div>
 
-  <nav class="services-list" aria-label="Service list">
+  <nav class="services-list" aria-label="Capability list">
 
     <div class="service-item" data-reveal>
       <span class="service-item__num">01</span>
-      <span class="service-item__name">Custom Website Design</span>
+      <span class="service-item__name">Web Design &amp; UX/UI</span>
       <span class="service-item__arrow" aria-hidden="true">
         <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
       </span>
@@ -649,7 +724,7 @@
 
     <div class="service-item" data-reveal data-reveal-delay="1">
       <span class="service-item__num">02</span>
-      <span class="service-item__name">Frontend Development</span>
+      <span class="service-item__name">Front-End Development</span>
       <span class="service-item__arrow" aria-hidden="true">
         <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
       </span>
@@ -657,7 +732,7 @@
 
     <div class="service-item" data-reveal data-reveal-delay="2">
       <span class="service-item__num">03</span>
-      <span class="service-item__name">WordPress &amp; AgentFire Development</span>
+      <span class="service-item__name">WordPress &amp; Web Platforms</span>
       <span class="service-item__arrow" aria-hidden="true">
         <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
       </span>
@@ -665,7 +740,7 @@
 
     <div class="service-item" data-reveal data-reveal-delay="3">
       <span class="service-item__num">04</span>
-      <span class="service-item__name">Real Estate Websites</span>
+      <span class="service-item__name">Product &amp; Technical Thinking</span>
       <span class="service-item__arrow" aria-hidden="true">
         <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
       </span>
@@ -673,7 +748,15 @@
 
     <div class="service-item" data-reveal data-reveal-delay="4">
       <span class="service-item__num">05</span>
-      <span class="service-item__name">Motion &amp; Interaction Design</span>
+      <span class="service-item__name">AI-Assisted Workflow</span>
+      <span class="service-item__arrow" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+    </div>
+
+    <div class="service-item" data-reveal data-reveal-delay="5">
+      <span class="service-item__num">06</span>
+      <span class="service-item__name">Leadership &amp; Collaboration</span>
       <span class="service-item__arrow" aria-hidden="true">
         <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/></svg>
       </span>
@@ -686,48 +769,46 @@
      PROCESS
 ============================================================ -->
 <section class="section-process" aria-label="Process">
-  <div class="container">
-    <span class="eyebrow" data-reveal>How I Work</span>
+  <span class="eyebrow" data-reveal>How I Work</span>
 
-    <div class="process-steps">
+  <div class="process-steps">
 
-      <div class="process-step" data-reveal data-reveal-delay="1">
-        <div class="process-step__num">01</div>
-        <h3 class="process-step__title">Discovery</h3>
-        <p class="process-step__body">
-          Understanding your brand, goals, audience, and competitive landscape
-          before a single pixel is placed.
-        </p>
-      </div>
-
-      <div class="process-step" data-reveal data-reveal-delay="2">
-        <div class="process-step__num">02</div>
-        <h3 class="process-step__title">Design</h3>
-        <p class="process-step__body">
-          Custom design direction, wireframes, and high-fidelity mockups.
-          Refined until it's exactly right.
-        </p>
-      </div>
-
-      <div class="process-step" data-reveal data-reveal-delay="3">
-        <div class="process-step__num">03</div>
-        <h3 class="process-step__title">Development</h3>
-        <p class="process-step__body">
-          Clean, semantic, performant code.
-          Built to last and easy for your team to manage.
-        </p>
-      </div>
-
-      <div class="process-step" data-reveal data-reveal-delay="4">
-        <div class="process-step__num">04</div>
-        <h3 class="process-step__title">Launch</h3>
-        <p class="process-step__body">
-          Thorough QA, speed optimization, SEO setup,
-          and a smooth handoff with full documentation.
-        </p>
-      </div>
-
+    <div class="process-step" data-reveal data-reveal-delay="1">
+      <div class="process-step__num">01</div>
+      <h3 class="process-step__title">Discovery</h3>
+      <p class="process-step__body">
+        Understanding your brand, goals, audience, and competitive landscape
+        before a single pixel is placed.
+      </p>
     </div>
+
+    <div class="process-step" data-reveal data-reveal-delay="2">
+      <div class="process-step__num">02</div>
+      <h3 class="process-step__title">Design</h3>
+      <p class="process-step__body">
+        Custom design direction, wireframes, and high-fidelity mockups.
+        Refined until it's exactly right.
+      </p>
+    </div>
+
+    <div class="process-step" data-reveal data-reveal-delay="3">
+      <div class="process-step__num">03</div>
+      <h3 class="process-step__title">Development</h3>
+      <p class="process-step__body">
+        Clean, semantic, performant code.
+        Built to last and easy for any team to maintain.
+      </p>
+    </div>
+
+    <div class="process-step" data-reveal data-reveal-delay="4">
+      <div class="process-step__num">04</div>
+      <h3 class="process-step__title">Launch</h3>
+      <p class="process-step__body">
+        Thorough QA, speed optimization, SEO setup,
+        and a smooth handoff with full documentation.
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -735,29 +816,29 @@
      STATS
 ============================================================ -->
 <section class="section-stats" aria-label="Statistics">
-  <div class="container">
-    <span class="eyebrow" data-reveal>By the Numbers</span>
-  </div>
+  <span class="eyebrow" data-reveal>By the Numbers</span>
 
   <div class="stats-grid" style="margin-top:3rem;">
 
     <div class="stat-item" data-reveal>
       <div class="stat-item__num">
-        <span data-counter="500" data-suffix="+">500+</span>
+        <span data-counter="18" data-suffix="">18</span><span style="color:#C8B79A">+</span>
       </div>
-      <div class="stat-item__label">Websites Delivered</div>
+      <div class="stat-item__label">Years in the Industry</div>
     </div>
 
     <div class="stat-item" data-reveal data-reveal-delay="1">
       <div class="stat-item__num">
-        <span data-counter="11" data-suffix="">11</span><span style="color:#A48442">+</span>
+        <span data-counter="11" data-suffix="">11</span><span style="color:#C8B79A">+</span>
       </div>
-      <div class="stat-item__label">Years Experience</div>
+      <div class="stat-item__label">Years at Senior Level</div>
     </div>
 
     <div class="stat-item" data-reveal data-reveal-delay="2">
-      <div class="stat-item__num">US + EU</div>
-      <div class="stat-item__label">Client Markets</div>
+      <div class="stat-item__num">
+        <span data-counter="500" data-suffix="+">500+</span>
+      </div>
+      <div class="stat-item__label">Websites / Digital Experiences</div>
     </div>
 
     <div class="stat-item" data-reveal data-reveal-delay="3">
@@ -769,72 +850,41 @@
 </section>
 
 <!-- ============================================================
-     TESTIMONIALS
+     CLIENT FEEDBACK CTA
+     Full testimonials live on their own dedicated page — this is a
+     subtle pointer, not a section, per design intent.
 ============================================================ -->
-<section class="section-testimonials" aria-label="Client testimonials">
-  <div class="container">
-    <span class="eyebrow" data-reveal>What Clients Say</span>
-    <h2 class="t-title" style="margin-top:1.5rem" data-reveal data-reveal-delay="1">
-      Trusted by leading brands.
-    </h2>
+<section class="section-feedback-cta" aria-label="Client feedback">
+  <div>
+    <span class="eyebrow" data-reveal>Client Feedback</span>
+    <p class="section-feedback-cta__body" data-reveal data-reveal-delay="1">
+      Read what clients I've worked with say about the experience.
+    </p>
   </div>
-
-  <div class="testimonials-grid" style="margin-left:4rem;margin-right:4rem;margin-top:3rem;">
-
-    <div class="testimonial-item" data-reveal>
-      <blockquote class="testimonial-item__quote">
-        The website completely transformed how buyers perceive our brand.
-        Within three months we saw a 60% increase in qualified leads.
-      </blockquote>
-      <div class="testimonial-item__author">
-        <div class="testimonial-item__author-name">Sarah Mitchell</div>
-        <div class="testimonial-item__author-role">Principal Broker, Coastal Homes Group</div>
-      </div>
-    </div>
-
-    <div class="testimonial-item" data-reveal data-reveal-delay="1">
-      <blockquote class="testimonial-item__quote">
-        Best investment we made this year. The AgentFire customization
-        exceeded every expectation. Fast, beautiful, and our agents love it.
-      </blockquote>
-      <div class="testimonial-item__author">
-        <div class="testimonial-item__author-name">James Keller</div>
-        <div class="testimonial-item__author-role">CEO, Premier Real Estate</div>
-      </div>
-    </div>
-
-    <div class="testimonial-item" data-reveal data-reveal-delay="2">
-      <blockquote class="testimonial-item__quote">
-        Working with Studio Craft was different. They thought like a business
-        partner, not just a vendor. The results speak for themselves.
-      </blockquote>
-      <div class="testimonial-item__author">
-        <div class="testimonial-item__author-name">Rachel Torres</div>
-        <div class="testimonial-item__author-role">Founder, Vanguard Properties</div>
-      </div>
-    </div>
-
-  </div>
+  <a href="testimonials.html" class="section-feedback-cta__link" data-reveal data-reveal-delay="2">
+    View Testimonials
+    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  </a>
 </section>
 
 <!-- ============================================================
      TECHNOLOGY STACK
 ============================================================ -->
 <section class="section-tech" aria-label="Technology stack">
-  <div class="container">
-    <span class="eyebrow" data-reveal>Technology</span>
-    <h2 class="t-title" style="margin-top:1.5rem" data-reveal data-reveal-delay="1">
-      Tools I build with.
-    </h2>
-  </div>
+  <span class="eyebrow" data-reveal>Technology</span>
+  <h2 class="t-title" data-reveal data-reveal-delay="1">
+    Tools I build with.
+  </h2>
 
-  <div class="tech-grid" style="margin:3rem 4rem 0;">
+  <div class="tech-grid" style="margin-top:3rem;">
 
     <div class="tech-item" data-reveal>
       <div class="tech-item__icon">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
-          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="11" font-family="DM Mono">WP</text>
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#C4BFB4" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#C4BFB4" font-size="11" font-family="IBM Plex Mono">WP</text>
         </svg>
       </div>
       <span class="tech-item__name">WordPress</span>
@@ -843,8 +893,8 @@
     <div class="tech-item" data-reveal data-reveal-delay="1">
       <div class="tech-item__icon">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
-          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="11" font-family="DM Mono">AF</text>
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#C4BFB4" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#C4BFB4" font-size="11" font-family="IBM Plex Mono">AF</text>
         </svg>
       </div>
       <span class="tech-item__name">AgentFire</span>
@@ -853,8 +903,8 @@
     <div class="tech-item" data-reveal data-reveal-delay="2">
       <div class="tech-item__icon">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
-          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="10" font-family="DM Mono">EL</text>
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#C4BFB4" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#C4BFB4" font-size="10" font-family="IBM Plex Mono">EL</text>
         </svg>
       </div>
       <span class="tech-item__name">Elementor</span>
@@ -863,8 +913,8 @@
     <div class="tech-item" data-reveal data-reveal-delay="3">
       <div class="tech-item__icon">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
-          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="10" font-family="DM Mono">JS</text>
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#C4BFB4" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#C4BFB4" font-size="10" font-family="IBM Plex Mono">JS</text>
         </svg>
       </div>
       <span class="tech-item__name">JavaScript</span>
@@ -873,8 +923,8 @@
     <div class="tech-item" data-reveal data-reveal-delay="4">
       <div class="tech-item__icon">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#AEB4C0" stroke-width="1.5"/>
-          <text x="16" y="21" text-anchor="middle" fill="#AEB4C0" font-size="10" font-family="DM Mono">Git</text>
+          <rect x="2" y="2" width="28" height="28" rx="4" stroke="#C4BFB4" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#C4BFB4" font-size="10" font-family="IBM Plex Mono">Git</text>
         </svg>
       </div>
       <span class="tech-item__name">Git</span>
@@ -886,26 +936,25 @@
 <!-- ============================================================
      FINAL CTA
 ============================================================ -->
-<section class="section-final-cta" aria-label="Start a project">
+<section class="section-final-cta" aria-label="Get in touch">
   <span class="eyebrow" data-reveal style="justify-content:center;">
-    Ready to build something exceptional?
+    Exploring What's Next
   </span>
 
   <h2 class="section-final-cta__headline" data-reveal data-reveal-delay="1">
-    Let's create your<br>
-    <em>next website.</em>
+    Let's build what's <em>next.</em>
   </h2>
 
   <div class="btn-group" style="justify-content:center;" data-reveal data-reveal-delay="2">
     <a href="contact.html" class="btn btn--primary" data-magnetic="0.3">
-      Start a Project
+      Get in Touch
       <span class="btn__arrow">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/>
         </svg>
       </span>
     </a>
-    <a href="websites.html" class="btn btn--ghost" data-magnetic="0.3">View Portfolio</a>
+    <a href="websites.html" class="btn btn--ghost" data-magnetic="0.3">View Selected Work</a>
   </div>
 </section>
 
@@ -916,12 +965,12 @@
 
   <!-- Footer CTA band -->
   <div class="footer__cta">
-    <div class="footer__cta-label">Get in touch</div>
+    <div class="footer__cta-label">Exploring What's Next</div>
     <div class="footer__cta-headline" data-reveal>
-      Have a project<br>in mind? <em>Let's talk.</em>
+      Let's build what's <em>next.</em>
     </div>
-    <a href="mailto:hello@yourdomain.com" class="footer__cta-email">
-      hello@yourdomain.com
+    <a href="contact.html" class="footer__cta-email">
+      Get in Touch &rarr;
     </a>
   </div>
 
@@ -929,10 +978,14 @@
   <div class="footer__main">
 
     <div class="footer__brand">
-      <a href="index.html" class="footer__logo">Studio<span>.</span></a>
+      <a href="index.html" class="footer__logo ax-logo" aria-label="AXIOM, Dušan Stevanović">
+        <svg class="ax-logo__symbol" viewBox="0 0 265.632 273.116" aria-hidden="true" focusable="false"><use href="#axiom-symbol"></use></svg>
+        <span class="ax-logo__word">AXIOM</span>
+      </a>
       <p>
-        The independent practice of Dusan "Drake" Stevanovic — senior web
-        designer &amp; front-end developer. 11+ years, 500+ websites delivered.
+        AXIOM is the personal professional identity of Dušan "Drake" Stevanović,
+        senior web designer &amp; front-end developer, and the way I present my
+        work today.
       </p>
     </div>
 
@@ -940,16 +993,18 @@
       <div class="footer__col-title">Navigation</div>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="websites.html">Websites</a></li>
+        <li><a href="websites.html">Work</a></li>
         <li><a href="videos.html">Videos</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html#experience">Experience</a></li>
+        <li><a href="services.html">Capabilities</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
 
     <div class="footer__col">
-      <div class="footer__col-title">Services</div>
+      <div class="footer__col-title">Capabilities</div>
       <ul>
         <li><a href="services.html">Website Design</a></li>
         <li><a href="services.html">Frontend Dev</a></li>
@@ -958,22 +1013,12 @@
       </ul>
     </div>
 
-    <div class="footer__col">
-      <div class="footer__col-title">Connect</div>
-      <ul>
-        <li><a href="#" target="_blank" rel="noopener">Twitter / X</a></li>
-        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="#" target="_blank" rel="noopener">Dribbble</a></li>
-        <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
-      </ul>
-    </div>
-
   </div>
 
   <!-- Bottom bar -->
   <div class="footer__bottom">
     <p class="footer__bottom-copy">
-      &copy; 2024 Studio Craft. All rights reserved.
+      &copy; 2024 AXIOM. All rights reserved.
     </p>
     <div class="footer__bottom-right">
       <a href="#top" class="back-top" aria-label="Back to top">

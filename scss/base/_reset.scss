@@ -70,3 +70,31 @@ input, textarea, select {
   outline: 1px solid $gold;
   outline-offset: 4px;
 }
+
+// ------------------------------------------------------------
+// Cursor fail-safe
+// The custom cursor (js/cursor.js) hides the native cursor via the
+// `cursor: none` rules scattered across components (buttons, links,
+// cards, etc.). Those rules assume the custom cursor is actually
+// running. If jQuery or cursor.js fails to load (blocked CDN,
+// restrictive network, JS disabled), cursor.js never adds
+// `.cursor-active` to <html>, and this rule keeps a normal, usable
+// cursor visible everywhere instead of an invisible one. The
+// `!important` is deliberate: it must win over every scoped
+// `cursor: none` declaration until the custom cursor confirms it's
+// live.
+// ------------------------------------------------------------
+html:not(.cursor-active) * {
+  cursor: auto !important;
+}
+
+html:not(.cursor-active) a,
+html:not(.cursor-active) button,
+html:not(.cursor-active) [role="button"] {
+  cursor: pointer !important;
+}
+
+html:not(.cursor-active) input,
+html:not(.cursor-active) textarea {
+  cursor: text !important;
+}

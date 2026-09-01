@@ -14,6 +14,13 @@ $(document).ready(function () {
   // ---- Sticky Header ----
   Navigation.init();
 
+  // ---- Testimonials grid (testimonials.html) — must run before
+  // Animations.init() below, since it builds the .masonry__item
+  // elements that the scroll-reveal observer needs to already exist.
+  if (typeof Testimonials !== 'undefined') {
+    Testimonials.init();
+  }
+
   // ---- Scroll animations ----
   Animations.init();
 

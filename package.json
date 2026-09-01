@@ -1,0 +1,15 @@
+{
+  "name": "drake-portfolio",
+  "private": true,
+  "type": "module",
+  "description": "Personal portfolio for Drake (Dusan Stevanovic) — static HTML/SCSS/JS, with a Vercel Routing Middleware gate for optional password protection.",
+  "scripts": {
+    "sass": "sass scss/main.scss css/main.css --style compressed --no-source-map"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.9.5"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

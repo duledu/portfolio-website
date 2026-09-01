@@ -1,0 +1,360 @@
+// ============================================================
+// AXIOM BRAND COMPONENTS
+//
+// New partial. Add to scss/main.scss under ---- Components ----:
+//     @import 'components/axiom-brand';
+//
+// Contains only things that do not exist in the repo yet:
+// the logo lockups, the password gate, and the symbol preloader.
+// Nothing here overrides an existing selector.
+// ============================================================
+
+
+// ------------------------------------------------------------
+// LOGO
+// Geometry comes from $ax-lockup-* in base/_axiom-tokens.scss,
+// which were measured off the supplied artwork.
+// ------------------------------------------------------------
+
+.ax-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: $paper;
+  @include transition(color);
+
+  &__symbol {
+    display: block;
+    flex-shrink: 0;
+    width: auto;
+    height: 1.75rem;          // 28px — above the 40px rule only
+    aspect-ratio: 265.632 / 273.116;
+    fill: currentColor;
+  }
+
+  &__word {
+    font-family: $font-wordmark;
+    font-size: 1.35rem;        // symbol height ÷ 1.2907, rounded
+    font-weight: 400;
+    letter-spacing: 0;         // Bellefair as supplied — do not track
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  // Header lockup sits slightly tighter than the master ratio so
+  // it reads as one object at small sizes.
+  &--header {
+    gap: 0.6rem;
+
+    .ax-logo__symbol { height: 1.625rem; }
+    .ax-logo__word   { font-size: 1.25rem; }
+  }
+
+  // Stacked — password screen, Open Graph, print.
+  &--stacked {
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+
+    .ax-logo__symbol {
+      height: 4.5rem;
+      margin-bottom: 0.772rem;   // 0.1715 × symbol height
+    }
+
+    .ax-logo__word {
+      font-size: 3.486rem;       // 4.5rem ÷ 1.2907
+    }
+  }
+
+  // Below $ax-symbol-min the micro mark replaces the symbol.
+  &--micro .ax-logo__symbol {
+    height: 1rem;
+  }
+}
+
+// Symbol on its own — mobile header, avatar, favicon fallback.
+.ax-symbol {
+  display: block;
+  aspect-ratio: 265.632 / 273.116;
+  fill: currentColor;
+  color: $paper;
+}
+
+
+// ------------------------------------------------------------
+// PROFESSIONAL LOCKUP
+// AXIOM → name → title. The only place all three appear together.
+// ------------------------------------------------------------
+
+.ax-identity {
+  text-align: center;
+
+  &__rule {
+    width: 2.25rem;
+    height: 1px;
+    background: $gold;
+    margin: 1.625rem auto;
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-weight: $ax-heading-weight;
+    font-size: clamp(1.0625rem, 1.8vw, 1.3125rem);
+    color: $paper;
+    letter-spacing: 0;
+  }
+
+  &__title {
+    font-family: $font-mono;
+    font-size: 0.625rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $slate;
+    line-height: 2;
+    margin-top: 0.75rem;
+  }
+}
+
+
+// ------------------------------------------------------------
+// PASSWORD GATE
+// Not an admin login. Establishes brand, person and title before
+// asking for anything.
+// ------------------------------------------------------------
+
+.ax-gate {
+  position: fixed;
+  inset: 0;
+  z-index: $z-loader;
+  background: $black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $space-md $gutter;
+
+  @include lg {
+    padding: $space-lg $gutter-lg;
+  }
+
+  // Two construction lines. They sweep to the viewport edges on
+  // unlock — this is the architectural half of the motion.
+  &__line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba($paper, 0.06);
+    transition: left $ax-dur-page $ease-out, right $ax-dur-page $ease-out;
+
+    &--l { left: 22%; }
+    &--r { right: 22%; }
+  }
+
+  &__meta {
+    position: absolute;
+    top: $space-md;
+    left: $gutter;
+    right: $gutter;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: $font-mono;
+    font-size: 0.625rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $slate;
+
+    @include lg {
+      top: $space-md;
+      left: $gutter-lg;
+      right: $gutter-lg;
+    }
+
+    span:last-child { color: $gold; }
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    max-width: 27.5rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  // ---- Field ----
+  &__form {
+    display: flex;
+    margin-top: $space-md;
+    border: 1px solid $line-solid;
+    background: $dark;
+  }
+
+  &__input {
+    flex: 1;
+    padding: 1.0625rem 1.25rem;
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    color: $paper;
+    background: none;
+    border: none;
+
+    // ⚠ The site sets `cursor: none` globally for the custom
+    // cursor. A password field needs a real caret, so the text
+    // cursor is restored here — and only here. The custom cursor
+    // itself is untouched.
+    cursor: text;
+
+    &::placeholder {
+      color: rgba($slate, 0.6);
+      letter-spacing: 0.16em;
+    }
+  }
+
+  &__submit {
+    padding: 1.0625rem 1.625rem;
+    font-family: $font-body;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $black;
+    background: $paper;
+    white-space: nowrap;
+    cursor: none;
+    @include transition(background, color);
+
+    &:hover {
+      background: $gold;
+    }
+  }
+
+  &__note {
+    margin-top: 1.25rem;
+    font-family: $font-mono;
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba($slate, 0.7);
+  }
+
+  &__foot {
+    position: absolute;
+    bottom: $space-md;
+    left: $gutter;
+    right: $gutter;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: $font-mono;
+    font-size: 0.625rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba($slate, 0.7);
+
+    @include lg {
+      left: $gutter-lg;
+      right: $gutter-lg;
+    }
+  }
+
+  // ---- Fail: no shake, no red ----
+  &.is-error &__form {
+    border-color: $gold;
+  }
+
+  &.is-error &__note {
+    color: $gold;
+  }
+
+  // ---- Unlock: symbol reveals, lines sweep out, gate lifts ----
+  &.is-unlocked {
+    .ax-gate__line--l { left: 0; }
+    .ax-gate__line--r { right: 0; }
+
+    .ax-logo__symbol {
+      clip-path: inset(0 0 0 0);
+    }
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $ax-dur-page $ease-out $ax-dur-element;
+  }
+}
+
+
+// ------------------------------------------------------------
+// PRELOADER
+// The same symbol reveal at 60%, no wordmark. The repo's existing
+// Loader module in js/utils.js drives .is-hidden — reused as-is.
+// ------------------------------------------------------------
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: $z-loader;
+  background: $black;
+  @include flex-center;
+  transition: opacity $ax-dur-page $ease-out, visibility $ax-dur-page $ease-out;
+
+  &__symbol {
+    width: 3.5rem;
+    height: auto;
+    aspect-ratio: 265.632 / 273.116;
+    fill: $paper;
+    clip-path: inset(0 0 100% 0);
+    animation: ax-symbol-reveal $ax-dur-preloader $ease-out forwards;
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes ax-symbol-reveal {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0% 0); }
+}
+
+
+// ------------------------------------------------------------
+// RIGID × ORGANIC
+// The one recurring brand device. A section may carry ONE cropped
+// symbol against the grid. Never two, never on a project card.
+// ------------------------------------------------------------
+
+.ax-organic {
+  position: absolute;
+  pointer-events: none;
+  color: $gold;
+  opacity: 0.9;
+
+  // The symbol is allowed to crop off the edge of its container.
+  // The grid is never distorted to accommodate it.
+  &--tr { right: 6%; top: -14%; width: min(14.375rem, 34%); }
+  &--bl { left: -8%;  bottom: -10%; width: min(11.25rem, 28%); }
+
+  @include max-md {
+    display: none;   // organic interruption is a desktop device
+  }
+}
+
+
+// ------------------------------------------------------------
+// REDUCED MOTION
+// Every duration collapses; reveals become a short opacity fade.
+// ------------------------------------------------------------
+
+@media (prefers-reduced-motion: reduce) {
+  .loader__symbol {
+    animation: none;
+    clip-path: none;
+  }
+
+  .ax-gate__line,
+  .ax-gate,
+  .ax-logo {
+    transition-duration: $ax-dur-state !important;
+  }
+}

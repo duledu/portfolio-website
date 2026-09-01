@@ -56,16 +56,20 @@ const Navigation = (function () {
 
   function openMenu() {
     isOpen = true;
-    $overlay.addClass('is-open');
-    $toggle.addClass('is-open');
+    $overlay.addClass('is-open').attr('aria-hidden', 'false').prop('inert', false);
+    $toggle.addClass('is-open').attr('aria-expanded', 'true');
     $('body').addClass('no-scroll');
+    FocusTrap.activate($overlay);
+    $overlay.find('.nav-overlay__link').first().trigger('focus');
   }
 
   function closeMenu() {
     isOpen = false;
-    $overlay.removeClass('is-open');
-    $toggle.removeClass('is-open');
+    $overlay.removeClass('is-open').attr('aria-hidden', 'true').prop('inert', true);
+    $toggle.removeClass('is-open').attr('aria-expanded', 'false');
     $('body').removeClass('no-scroll');
+    FocusTrap.deactivate();
+    $toggle.trigger('focus');
   }
 
   function setActiveLink() {

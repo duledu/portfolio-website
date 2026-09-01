@@ -26,6 +26,11 @@ const Cursor = (function () {
 
     bindEvents();
     tick();
+
+    // Only hide the native cursor once the custom one is actually
+    // running (see the fail-safe rule in base/_reset.scss). If this
+    // line never executes, the native cursor stays visible.
+    document.documentElement.classList.add('cursor-active');
   }
 
   function bindEvents() {

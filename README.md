@@ -1,6 +1,27 @@
-# Studio Craft — Portfolio
+# Drake — Personal Portfolio
 
-Premium web designer & frontend developer portfolio.
+Senior Web Designer, Front-End Developer, and Technical Lead — personal portfolio.
+
+---
+
+## Password Protection (Vercel Routing Middleware)
+
+The site can be locked behind a premium password screen, enforced server-side
+at Vercel's edge via `middleware.js` at the project root — unauthenticated
+visitors never receive the real HTML/CSS/JS/images, only a self-contained
+lock screen. See the comment block at the top of `middleware.js` for the
+full explanation; short version:
+
+- **Turn it on**: set `PORTFOLIO_PASSWORD` in Vercel → Project Settings →
+  Environment Variables, then redeploy.
+- **Turn it off**: delete `PORTFOLIO_PASSWORD`, or set
+  `PORTFOLIO_LOCK_ENABLED=false` to disable without losing the password.
+- **Change the password**: update `PORTFOLIO_PASSWORD` and redeploy.
+- All of this logic lives in exactly one file (`middleware.js`) — nothing is
+  duplicated elsewhere. See `.env.example` for the full list of variables.
+- Requires `npm install` once (adds the small `@vercel/functions` helper
+  package used by the middleware) — this does not change how the static
+  site itself is built or served.
 
 ---
 
@@ -140,10 +161,11 @@ $line:   rgba(249,244,237,.12);
 ```
 
 ### Your name / brand
-- Header logo: search `Studio<span>.</span>` → replace with your name
-- Footer logo: same
+- Header/footer/loader logo: `Drake<span>.</span>` — update if the brand name changes
 - Contact email: search `hello@yourdomain.com` → replace everywhere
 - JSON-LD schema in `index.html`: update `"name"`, `"url"`, `"sameAs"`
+- Résumé: the "View Résumé" button in `about.html` (Experience section) has `href="#"` —
+  connect it to a hosted PDF or URL once one is available
 
 ### Social links
 Search `href="#" target="_blank"` in each file and add your real URLs.

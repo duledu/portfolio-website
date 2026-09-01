@@ -131,3 +131,20 @@
   border: none;
   border-top: 1px solid $line;
 }
+
+// ------------------------------------------------------------
+// AXIOM interior page hero headline
+// One deliberate secondary scale for every page-level hero title
+// (About, Capabilities, Contact, case studies, Work, Videos,
+// Testimonials). The homepage hero stays the largest, most
+// restrained expression of the display type; this mixin caps
+// interior heroes below it rather than letting each page invent
+// its own clamp/line-height/letter-spacing combination.
+// ------------------------------------------------------------
+@mixin page-hero-headline {
+  font-family: $font-display;
+  font-size: clamp(2rem, 1.4rem + 3vw, 4.25rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}

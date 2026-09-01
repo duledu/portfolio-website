@@ -1,0 +1,88 @@
+// ============================================================
+// VARIABLES
+//
+// AXIOM REBRAND — the existing variable NAMES are deliberately
+// unchanged. Only their values now point at AXIOM tokens.
+//
+// Why: $gold, $paper, $black etc. are referenced across ~30
+// partials. Renaming them to $champagne / $ivory would mean
+// touching every one of those files for zero visual gain.
+// Remapping here changes the whole site from one place.
+//
+// The AXIOM names are also exposed, so NEW code can use them.
+// ============================================================
+
+@import 'axiom-tokens';
+
+// ---- Colors — remapped onto AXIOM tokens ----
+$black:   $ax-obsidian;    // was #050509
+$dark:    $ax-carbon;      // was #0B0B0F
+$paper:   $ax-ivory;       // was #F9F4ED
+$muted:   $ax-bone;        // was #AEB4C0  (now warm, not blue-grey)
+$slate:   $ax-stone;       // was #737E87   (now warm, not blue-grey)
+$gold:    $ax-champagne;   // was #A48442  — SEE WARNING BELOW
+$line:    $ax-line-soft;   // unchanged in form: rgba(ivory, .12)
+
+// Solid border for bordered containers and grid cells, where the
+// translucent $line reads too faint on carbon surfaces.
+$line-solid: $ax-line;
+
+// ⚠ $gold is now champagne (#C8B79A) — 10.3:1 against the
+// background where the old gold was ~4.4:1. Every existing usage
+// is now significantly brighter and more prominent. Before
+// shipping, audit each one and reduce: the AXIOM rule is one
+// accent moment per viewport. The likely offenders are
+// .scroll-progress, .footer__cta-headline em, .btn--circle:hover
+// and the .eyebrow::before rule.
+
+// ---- Typography ----
+$font-display: $ax-font-display;   // Newsreader   (was Cormorant Garamond)
+$font-body:    $ax-font-body;      // Archivo      (was DM Sans)
+$font-mono:    $ax-font-mono;      // IBM Plex Mono (was DM Mono)
+$font-wordmark: $ax-font-wordmark; // Bellefair — AXIOM wordmark only
+
+// ---- Spacing — UNCHANGED ----
+$space-xs:  0.5rem;
+$space-sm:  1rem;
+$space-md:  2rem;
+$space-lg:  4rem;
+$space-xl:  8rem;
+$space-2xl: 12rem;
+$space-3xl: 16rem;
+
+// Desktop top/bottom padding for major homepage sections. Adjacent
+// sections share a border, so two sections each padded by this value
+// produce ~120px of visual space between them.
+$space-section: 3.75rem; // 60px
+
+// ---- Grid — UNCHANGED ----
+// The repo's 1440 / 2rem / 4rem system supersedes the brand guide's
+// 1320 / 24px sketch. The guide's column logic still applies:
+// editorial content in columns 4–9, section numbers hanging in
+// column 1, technical labels right-aligned in column 12.
+$max-width: 1440px;
+$gutter:    2rem;
+$gutter-lg: 4rem;
+
+// ---- Transitions ----
+// $ease-out already matches the AXIOM reveal curve exactly.
+$ease:        cubic-bezier(0.25, 0.1, 0.25, 1);
+$ease-out:    cubic-bezier(0.16, 1, 0.3, 1);   // AXIOM reveal
+$ease-in:     cubic-bezier(0.4, 0, 1, 1);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);    // AXIOM state
+$duration:      0.6s;
+$duration-fast: 0.3s;
+
+// ---- Breakpoints — UNCHANGED ----
+$bp-sm:  640px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;
+$bp-2xl: 1440px;
+
+// ---- Z-index — UNCHANGED ----
+$z-cursor:  9999;
+$z-loader:  9998;
+$z-nav:     900;
+$z-header:  800;
+$z-overlay: 700;

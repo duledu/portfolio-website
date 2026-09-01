@@ -1,0 +1,133 @@
+// ============================================================
+// AXIOM — BRAND TOKENS
+// Source of truth: AXIOM Brand Guide (Claude Design)
+//
+// This file defines the AXIOM identity values ONLY. It does not
+// rename or restructure anything. `base/_variables.scss` maps the
+// repository's existing variable names onto these tokens, so no
+// component, layout or page partial needs to change.
+//
+// Import BEFORE base/_variables.scss.
+// ============================================================
+
+
+// ------------------------------------------------------------
+// COLOUR
+// Seven values. No gradients anywhere in the system.
+// ------------------------------------------------------------
+
+$ax-obsidian:   #0A0A0B;  // primary background
+$ax-carbon:     #121215;  // secondary surface, cards, footer
+$ax-line:       #242428;  // borders, construction lines
+$ax-stone:      #87827A;  // tertiary text, eyebrows   : 5.2:1 on obsidian, 4.9:1 on carbon (WCAG AA)
+$ax-bone:       #C4BFB4;  // body copy                 — 11.5:1 on obsidian
+$ax-ivory:      #F2EEE6;  // primary text, symbol      — 17.6:1 on obsidian
+$ax-champagne:  #C8B79A;  // sole accent               — 10.3:1 on obsidian
+
+// Press / visited only. Never a second accent.
+$ax-champagne-deep: #9A8A6E;
+
+// Hairline over obsidian, used where a solid border would read too hard.
+$ax-line-soft: rgba($ax-ivory, 0.12);
+
+
+// ------------------------------------------------------------
+// TYPOGRAPHY
+//
+// Newsreader  — editorial serif. Thought, vision, headings.
+// Archivo     — variable grotesque. System, UI, navigation, wordmark.
+// IBM Plex Mono — instrumentation. Labels, numbers, metadata.
+// Bellefair   — the AXIOM wordmark ONLY. Never body, never UI.
+//
+// Google Fonts, all four. Load in every page <head>:
+// https://fonts.googleapis.com/css2
+//   ?family=Newsreader:opsz,wght@6..72,200..400
+//   &family=Archivo:wdth,wght@62..125,400..600
+//   &family=IBM+Plex+Mono:wght@400;500
+//   &family=Bellefair
+//   &display=swap
+// ------------------------------------------------------------
+
+$ax-font-display:  'Newsreader', 'Georgia', serif;
+$ax-font-body:     'Archivo', 'Helvetica Neue', sans-serif;
+$ax-font-mono:     'IBM Plex Mono', 'Courier New', monospace;
+$ax-font-wordmark: 'Bellefair', 'Georgia', serif;
+
+// Newsreader is used at 200 and 300 only. The light cuts are what
+// hold the architectural line; 400+ makes it look like body copy.
+$ax-display-weight: 200;
+$ax-heading-weight: 300;
+
+// Archivo width axis. 100 for interface, 125 reserved for display
+// lockups. Applied via font-variation-settings, not font-stretch.
+$ax-ui-width:      100;
+$ax-display-width: 125;
+
+
+// ------------------------------------------------------------
+// LOGO GEOMETRY
+// Measured from the supplied artwork — not invented. Use these
+// ratios rather than positioning the lockup by eye.
+// ------------------------------------------------------------
+
+// Symbol intrinsic aspect (265.632 × 273.116)
+$ax-symbol-ratio: 0.97259;
+
+// Symbol height ÷ wordmark font-size. In the supplied file the
+// symbol is 273.116u tall and AXIOM is set at 211.611px.
+$ax-lockup-symbol-to-type: 1.2907;
+
+// Gap from symbol bottom to wordmark cap-top, ÷ symbol height.
+$ax-lockup-gap-ratio: 0.1715;
+
+// Wordmark ink width ÷ symbol width. Determines the stacked
+// lockup's overall proportion.
+$ax-lockup-width-ratio: 2.6839;
+
+// Clear space on every side = half the symbol height.
+$ax-logo-clearspace-ratio: 0.5;
+
+// Minimum sizes. Below $ax-symbol-min the micro mark is used —
+// the full symbol is never scaled smaller.
+$ax-symbol-min:            40px;
+$ax-symbol-micro-min:      16px;
+$ax-lockup-min-h:         120px;  // horizontal
+$ax-lockup-min-stacked:   180px;  // with name + title
+
+
+// ------------------------------------------------------------
+// MOTION
+//
+// The repository's existing $ease-out already matches the AXIOM
+// reveal curve exactly. It is reused, not replaced.
+// ------------------------------------------------------------
+
+$ax-dur-state:      120ms;
+$ax-dur-element:    320ms;
+$ax-dur-section:    520ms;
+$ax-dur-page:       640ms;
+$ax-dur-preloader:  900ms;  // hard cap, once per session
+
+$ax-stagger:        60ms;   // between siblings, max 5 then move as a group
+
+
+// ------------------------------------------------------------
+// USAGE RULES ENCODED AS COMMENTS
+// These are constraints, not values — the reason the palette
+// stays disciplined once it is in the codebase.
+// ------------------------------------------------------------
+//
+// CHAMPAGNE: once per viewport, on the element that carries
+// meaning. Two champagne moments on one screen means one is wrong.
+// IMPORTANT: champagne (#C8B79A, 10.3:1) is far brighter than the
+// gold it replaces (#A48442, ~4.4:1). Every existing $gold usage
+// becomes louder. Audit large-area and decorative uses and reduce
+// them — do not port them across one-for-one.
+//
+// SYMBOL: single fill, currentColor. Never outlined, never
+// rotated, mirrored or tilted. No gradient, glow, bevel or shadow.
+// Never near waves, anchors, ropes, bubbles or water.
+//
+// WORDMARK: Bellefair Regular, default tracking, exactly as
+// supplied. No custom cuts, no letter-spacing overrides, no
+// A/X monogram, no intervention on any glyph.

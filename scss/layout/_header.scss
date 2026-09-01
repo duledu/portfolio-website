@@ -10,6 +10,7 @@
   z-index: $z-header;
   padding: 1.5rem $gutter;
   @include flex-between;
+  gap: 1.5rem;
   transition: background $duration-fast $ease, backdrop-filter $duration-fast $ease, padding $duration-fast $ease;
 
   @include lg {
@@ -25,18 +26,23 @@
   }
 
   // ---- Logo ----
+  // Visual styling (mark + wordmark) comes from .ax-logo.ax-logo--header
+  // in components/_axiom-brand.scss — this class only adds the fixed-
+  // header stacking context.
   &__logo {
-    font-family: $font-display;
-    font-size: 1.375rem;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    color: $paper;
     position: relative;
     z-index: $z-nav + 1;
-    @include transition(color);
 
-    span {
-      color: $gold;
+    &:hover { color: $gold; }
+  }
+
+  // Below `lg` the header shows the symbol alone — hide the wordmark
+  // rather than shrinking the lockup further.
+  &__logo .ax-logo__word {
+    display: none;
+
+    @include xl {
+      display: inline;
     }
   }
 
@@ -81,16 +87,20 @@
       }
     }
 
-    @include lg {
+    @include xl {
       display: none;
     }
   }
 
   // ---- Desktop nav ----
+  // Gated to `xl` (1280px) rather than `lg` (1024px) — eight nav links
+  // plus the full wordmark lockup and CTA button don't fit between
+  // 1024–1279px without crowding the logo; the mobile overlay nav
+  // covers that range instead.
   &__nav-desktop {
     display: none;
 
-    @include lg {
+    @include xl {
       display: flex;
       align-items: center;
       gap: 2.5rem;
@@ -121,7 +131,7 @@
   &__cta {
     display: none;
 
-    @include lg {
+    @include xl {
       display: inline-flex;
     }
   }

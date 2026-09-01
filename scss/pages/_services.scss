@@ -1,1 +1,104 @@
-// Services — defined in _about.scss
+// ============================================================
+// SERVICES / CAPABILITIES PAGE
+// ============================================================
+
+.page-services {
+  padding-top: 8rem;
+
+  @include lg {
+    padding-top: 10rem;
+  }
+}
+
+.services-hero {
+  padding: 0 $gutter $space-xl;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    padding: 0 $gutter-lg $space-2xl;
+  }
+
+  &__headline {
+    @include page-hero-headline;
+  }
+
+  &__sub {
+    max-width: 36rem;
+    margin-top: 3rem;
+    font-size: clamp(0.9375rem, 1.25vw, 1.125rem);
+    color: $muted;
+    line-height: 1.7;
+  }
+}
+
+.services-full-list {
+  padding: $space-xl $gutter;
+
+  @include lg {
+    padding: $space-2xl $gutter-lg;
+  }
+}
+
+.service-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid $line;
+
+  @include lg {
+    grid-template-columns: 1fr 3fr;
+    gap: 6rem;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__num {
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    color: $gold;
+    letter-spacing: 0.08em;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__desc {
+    font-size: 1rem;
+    color: $muted;
+    line-height: 1.75;
+    max-width: 40rem;
+  }
+
+  &__deliverables {
+    h4 {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: $slate;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+  }
+}

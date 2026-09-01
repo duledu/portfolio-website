@@ -24,19 +24,30 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url('../assets/images/projects/hero_img.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    // Mobile: push the building further toward the edge so the
-    // headline area stays clear.
-    background-position: 80% center;
 
-    @include md {
-      background-position: 74% center;
+    // LCP-critical hero image, loaded via <picture>/<img> (not a CSS
+    // background) so the browser's preload scanner can discover it
+    // immediately, rather than only after CSS parses.
+    picture,
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
 
-    @include lg {
-      background-position: 70% center;
+    img {
+      object-fit: cover;
+      // Mobile: push the building further toward the edge so the
+      // headline area stays clear.
+      object-position: 80% center;
+
+      @include md {
+        object-position: 74% center;
+      }
+
+      @include lg {
+        object-position: 70% center;
+      }
     }
 
     // Dark gradient: near-black on the left for headline legibility,
@@ -89,14 +100,59 @@
     margin-bottom: 3rem;
   }
 
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__brand-mark {
+    width: auto;
+    height: 1.25rem;
+    aspect-ratio: 265.632 / 273.116;
+    fill: currentColor;
+    color: $paper;
+  }
+
+  &__brand-name {
+    font-family: $font-wordmark;
+    font-size: 1.0625rem;
+    letter-spacing: 0;
+    color: $paper;
+  }
+
+  &__identity {
+    font-family: $font-display;
+    font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+    font-weight: 300;
+    font-style: italic;
+    color: $muted;
+    margin-bottom: 0.875rem;
+  }
+
   &__headline {
     font-family: $font-display;
-    font-size: clamp(3rem, 7.5vw, 9.5rem);
+    font-size: clamp(2rem, 1.4rem + 2.8vw, 4.5rem);
     font-weight: 300;
-    line-height: 0.93;
-    letter-spacing: -0.025em;
+    line-height: 1.14;
+    letter-spacing: -0.01em;
     color: $paper;
-    margin-bottom: 3rem;
+    max-width: 30rem;
+    margin-bottom: 2.5rem;
+
+    @include md {
+      max-width: 36rem;
+    }
+
+    @include lg {
+      max-width: 42rem;
+      margin-bottom: 3rem;
+    }
+
+    @include xxl {
+      max-width: 46rem;
+    }
 
     em {
       font-style: italic;
@@ -298,7 +354,10 @@
     padding: $space-section $gutter-lg;
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
-    align-items: flex-end;
+    // Image is the taller grid item and still defines the row height;
+    // centering only moves the shorter text column to sit level with
+    // the visible portrait instead of pinned to its bottom edge.
+    align-items: center;
   }
 
   &__img {
@@ -312,18 +371,43 @@
       object-fit: cover;
       object-position: 50% 22%;
     }
+
+    // Homepage-only: inset the portrait ~20% within its existing box on
+    // large desktop so it reads as smaller and more deliberately framed,
+    // without touching the section grid/layout or about.html's own
+    // .about-intro__image (a separate selector, untouched).
+    @include lg {
+      img {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 80%;
+        height: 80%;
+      }
+    }
   }
 
   &__text {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    // Was flex + gap, which double-counted the eyebrow's own
+    // margin-bottom (see .eyebrow in base/_typography.scss). Normal
+    // block flow lets that single rule control the eyebrow→heading
+    // gap; heading→body spacing is set explicitly below.
   }
 
   &__body {
     font-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
     color: $muted;
     line-height: 1.75;
+    margin-top: 2rem;
+  }
+
+  // Same heading-to-CTA gap as .section-final-cta__headline: a clear
+  // beat of separation from body copy so the button reads as the next
+  // step, not another paragraph in the flow.
+  &__cta {
+    margin-top: 2.5rem;
   }
 }
 
@@ -520,71 +604,47 @@
   }
 }
 
-// ---- Testimonials ----
-.section-testimonials {
-  padding: $space-xl $gutter;
+// ---- Client Feedback CTA ----
+// A subtle pointer to the dedicated testimonials.html archive — the
+// homepage intentionally does not host the testimonials themselves.
+.section-feedback-cta {
+  padding: $space-lg $gutter;
   border-top: 1px solid $line;
-  background: $dark;
 
   @include lg {
-    padding: $space-section $gutter-lg;
-  }
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1px;
-  background: $line;
-  border: 1px solid $line;
-  margin-top: $space-lg;
-
-  @include md {
-    grid-template-columns: repeat(2, 1fr);
+    padding: $space-lg $gutter-lg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
   }
 
-  @include lg {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+  &__body {
+    margin-top: 1rem;
+    color: $muted;
+    font-size: 0.9375rem;
+    max-width: 26rem;
 
-.testimonial-item {
-  background: $dark;
-  padding: 2.5rem 2rem;
-
-  @include lg {
-    padding: 3rem;
-  }
-
-  &__quote {
-    font-family: $font-display;
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    font-weight: 300;
-    line-height: 1.55;
-    color: $paper;
-    margin-bottom: 2rem;
-
-    &::before {
-      content: '"';
-      display: block;
-      font-size: 3rem;
-      color: $gold;
-      line-height: 1;
-      margin-bottom: 0.75rem;
+    @include lg {
+      margin-top: 0.75rem;
     }
   }
 
-  &__author {
-    &-name {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: $paper;
-    }
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $gold;
+    @include hover-line;
 
-    &-role {
-      font-size: 0.75rem;
-      color: $slate;
-      margin-top: 0.25rem;
+    @include lg {
+      margin-top: 0;
+      flex-shrink: 0;
     }
   }
 }
@@ -618,13 +678,22 @@
 
 .tech-item {
   background: $black;
-  padding: 2rem 1.5rem;
+  // Tighter than the desktop value — at the 3-column mobile grid, the
+  // full 1.5rem side padding left too little room for names like
+  // "JAVASCRIPT" or "AGENTFIRE", pushing the grid past the viewport.
+  padding: 1.5rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
   text-align: center;
+  min-width: 0; // let the item shrink to its grid track instead of
+                // forcing the track (and the page) wider than the viewport
   @include transition(background);
+
+  @include md {
+    padding: 2rem 1.5rem;
+  }
 
   &:hover {
     background: $dark;
@@ -640,13 +709,20 @@
     font-family: $font-mono;
     font-size: 0.75rem;
     letter-spacing: 0.06em;
+    flex-shrink: 0;
   }
 
   &__name {
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
     color: $slate;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
+
+    @include md {
+      font-size: 0.6875rem;
+      letter-spacing: 0.08em;
+    }
   }
 }
 
@@ -662,15 +738,41 @@
 
   &__headline {
     font-family: $font-display;
-    font-size: clamp(2.5rem, 6vw, 7rem);
+    // Capped in line with the hero headline's restrained scale — this is
+    // a closing statement, not the page's largest element. Left free to
+    // sit on one line at typical desktop widths; text-wrap: balance keeps
+    // any narrower wrap from stranding a single orphan word.
+    font-size: clamp(2rem, 1.35rem + 2.6vw, 4.5rem);
     font-weight: 300;
-    line-height: 0.95;
-    letter-spacing: -0.025em;
-    margin-bottom: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin: 0 auto 2.5rem;
+    text-wrap: balance;
 
     em {
       font-style: italic;
       color: $gold;
     }
+  }
+}
+
+// ---- More Work on Request ----
+// Understated, not competing with .section-final-cta at the bottom of
+// the page — makes explicit that the public portfolio is curated.
+.section-more-work {
+  padding: $space-lg $gutter;
+  border-top: 1px solid $line;
+  text-align: center;
+
+  @include lg {
+    padding: $space-lg $gutter-lg;
+  }
+
+  &__body {
+    max-width: 38rem;
+    margin: 1.25rem auto 2rem;
+    color: $muted;
+    font-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
+    line-height: 1.75;
   }
 }

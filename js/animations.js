@@ -8,6 +8,10 @@ const Animations = (function () {
   function init() {
     revealOnScroll();
     revealImages();
+
+    // Tells the fail-safe inline script in <head> that the real reveal
+    // system is running, so it doesn't need to force everything visible.
+    window.__axiomRevealReady = true;
   }
 
   // ---- Generic [data-reveal] elements ----

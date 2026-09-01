@@ -30,6 +30,55 @@ const Loader = (function () {
 })();
 
 // ============================================================
+// Focus trap — keeps Tab / Shift+Tab cycling inside an open modal
+// instead of leaking into the page behind it. Used by video-modal.js
+// and testimonials.js; shared here so both stay in sync.
+// ============================================================
+
+const FocusTrap = (function () {
+
+  const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), ' +
+    'textarea:not([disabled]), select:not([disabled]), video[controls], ' +
+    '[tabindex]:not([tabindex="-1"])';
+
+  let $container = null;
+  let handler = null;
+
+  function activate($el) {
+    $container = $el;
+
+    handler = function (e) {
+      if (e.key !== 'Tab') return;
+
+      const $focusable = $container.find(FOCUSABLE).filter(':visible');
+      if (!$focusable.length) return;
+
+      const first = $focusable.get(0);
+      const last  = $focusable.get($focusable.length - 1);
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handler, true);
+  }
+
+  function deactivate() {
+    if (handler) document.removeEventListener('keydown', handler, true);
+    handler = null;
+    $container = null;
+  }
+
+  return { activate, deactivate };
+
+})();
+
+// ============================================================
 
 const Utils = (function () {
 
