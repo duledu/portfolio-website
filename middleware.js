@@ -380,6 +380,19 @@ function renderLockPage() {
     line-height: 2;
     margin: 0 0 2.5rem;
   }
+  @media (min-width: 64rem) {
+    /* Let the line size to its own text instead of wrapping inside the
+       440px .ax-gate__inner column, then re-center it against that same
+       column regardless of how wide the unwrapped text turns out to be. */
+    .ax-gate__title {
+      white-space: nowrap;
+      width: max-content;
+      max-width: none;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
   .ax-gate__form {
     display: flex;
     border: 1px solid #242428;
@@ -483,7 +496,7 @@ function renderLockPage() {
       <div class="ax-gate__word">AXIOM</div>
       <div class="ax-gate__rule"></div>
       <p class="ax-gate__name">Dušan "Drake" Stevanović</p>
-      <p class="ax-gate__title">Senior Web Designer &middot; Front-End Developer &middot; Technical Lead</p>
+      <p class="ax-gate__title">Senior Web Designer &middot; Web Developer &middot; Technical Lead</p>
 
       <form class="ax-gate__form" id="lock-form" autocomplete="off">
         <input
