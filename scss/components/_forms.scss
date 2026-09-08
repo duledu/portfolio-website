@@ -8,6 +8,18 @@
   gap: 0;
 }
 
+// Submission result — reuses the AXIOM convention already used on the
+// password gate (no red for errors: paper for success, champagne/gold
+// for error, same restrained palette either way).
+.form-status {
+  margin-top: 1.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+
+  &.is-success { color: $paper; }
+  &.is-error { color: $gold; }
+}
+
 .form-field {
   border-bottom: 1px solid $line;
   padding: 1.75rem 0;

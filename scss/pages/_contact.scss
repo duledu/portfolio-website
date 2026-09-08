@@ -58,8 +58,15 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  position: sticky;
-  top: 7rem;
+
+  // Sticky only makes sense once .contact-main is a two-column layout
+  // (see the matching @include lg above). Below that it's a single
+  // stacked column, and a sticky sidebar there just overlaps the form
+  // as the page scrolls.
+  @include lg {
+    position: sticky;
+    top: 7rem;
+  }
 
   &__section {
     &-label {
@@ -68,6 +75,7 @@
     }
 
     &-email {
+      display: block;
       font-family: $font-display;
       font-size: 1.5rem;
       font-weight: 300;
@@ -76,6 +84,15 @@
       @include hover-line;
 
       &:hover { color: $gold; }
+
+      // A second email in the same section (kept alternate address)
+      // reads as secondary: smaller, muted, not competing with the
+      // primary address listed first.
+      & + & {
+        margin-top: 0.5rem;
+        font-size: 1.0625rem;
+        color: $muted;
+      }
     }
 
     &-note {

@@ -138,12 +138,9 @@
         </p>
       </div>
 
-      <!--
-        Temporary address, will be replaced with a custom-domain email.
-        Update both the href and the visible text below when that's ready.
-      -->
       <div class="contact-info__section">
         <div class="contact-info__section-label"><span class="eyebrow">Email</span></div>
+        <a href="mailto:dusan@builtbyaxiom.net" class="contact-info__section-email">dusan@builtbyaxiom.net</a>
         <a href="mailto:duledu25@gmail.com" class="contact-info__section-email">duledu25@gmail.com</a>
       </div>
 
@@ -168,13 +165,17 @@
 
       <!--
         FORM SETUP NOTE:
-        Replace action="#" with your form handler (Netlify, Formspree, etc.)
-        Netlify: add netlify attribute → <form netlify action="/thank-you">
-        Formspree: action="https://formspree.io/f/yourformid"
+        Submits via Formspree (https://formspree.io). Replace YOUR_FORM_ID
+        below with the real form ID from a Formspree form whose notification
+        address is set to dusan@builtbyaxiom.net. js/contact-form.js handles
+        the AJAX submit + success/error states; if that script never loads,
+        this still works as a plain form POST straight to Formspree, just
+        with a full-page redirect instead of the inline status message.
       -->
       <form
+        id="inquiry-form"
         class="form"
-        action="#"
+        action="https://formspree.io/f/YOUR_FORM_ID"
         method="POST"
         name="inquiry"
         aria-label="Contact form"
@@ -183,6 +184,7 @@
       >
         <!-- Hidden honeypot field (spam protection) -->
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="_subject" value="New AXIOM portfolio inquiry" />
 
         <!-- Name -->
         <div class="form-field">
@@ -249,7 +251,7 @@
         <!-- Submit -->
         <div class="contact-form-wrap__submit">
           <button type="submit" class="btn btn--primary" data-magnetic="0.3">
-            Send Message
+            <span class="btn__label">Send Message</span>
             <span class="btn__arrow">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5"/>
@@ -260,6 +262,8 @@
             I respond within 24 business hours.
           </p>
         </div>
+
+        <output class="form-status" id="form-status" for="inquiry-form" aria-live="polite" hidden></output>
 
       </form>
     </div>
@@ -317,6 +321,7 @@
         <span class="ax-logo__word">AXIOM</span>
       </a>
       <p>AXIOM is the personal professional identity of Dušan "Drake" Stevanović, senior web designer &amp; web developer, and the way I present my work today.</p>
+      <a href="mailto:dusan@builtbyaxiom.net" class="footer__brand-email">dusan@builtbyaxiom.net</a>
     </div>
     <div class="footer__col">
       <div class="footer__col-title">Navigation</div>
@@ -358,6 +363,7 @@
 <script src="js/cursor.js"></script>
 <script src="js/navigation.js"></script>
 <script src="js/animations.js"></script>
+<script src="js/contact-form.js"></script>
 <script src="js/main.js"></script>
 
 </body>

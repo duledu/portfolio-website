@@ -33,6 +33,11 @@
   &:hover &__arrow {
     transform: translate(4px, -2px);
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
 }
 
 // Primary — paper fill

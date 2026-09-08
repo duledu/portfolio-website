@@ -55,4 +55,9 @@ $(document).ready(function () {
     VideoFilters.init();
   }
 
+  // ---- Contact form (contact.html) ----
+  if (typeof ContactForm !== 'undefined') {
+    ContactForm.init();
+  }
+
 });

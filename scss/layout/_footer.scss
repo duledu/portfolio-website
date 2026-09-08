@@ -91,6 +91,16 @@
       line-height: 1.65;
       max-width: 22rem;
     }
+
+    &-email {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8125rem;
+      color: $muted;
+      @include hover-line;
+
+      &:hover { color: $paper; }
+    }
   }
 
   &__col {
