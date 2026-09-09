@@ -16,7 +16,7 @@ The portfolio itself is designed and built as a custom, lightweight website usin
 
 ## Portfolio Preview
 
-[![AXIOM — Web & Product Design Portfolio](assets/images/axiom-github-preview.jpg)](https://builtbyaxiom.net)
+[![AXIOM — Web & Product Design Portfolio](assets/images/screencapture_axiom.png)](https://builtbyaxiom.net)
 
 > **Note:** Preview image is being prepared. Visit the live portfolio above to explore the current version.
 
